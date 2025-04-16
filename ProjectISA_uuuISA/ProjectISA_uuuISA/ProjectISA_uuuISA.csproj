@@ -66,11 +66,29 @@
     <Compile Include="User Control\UC_EditNilaiRaport.Designer.cs">
       <DependentUpon>UC_EditNilaiRaport.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Control\UC_EditNilaiRaportSiswa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_EditNilaiRaportSiswa.Designer.cs">
+      <DependentUpon>UC_EditNilaiRaportSiswa.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Control\UC_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User Control\UC_Home.Designer.cs">
       <DependentUpon>UC_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\UC_InputNilaiRaportSiswa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_InputNilaiRaportSiswa.Designer.cs">
+      <DependentUpon>UC_InputNilaiRaportSiswa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\UC_Utama.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_Utama.Designer.cs">
+      <DependentUpon>UC_Utama.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control\UC_InputNilaiRaport.cs">
       <SubType>UserControl</SubType>
@@ -126,8 +144,17 @@
     <EmbeddedResource Include="User Control\UC_EditNilaiRaport.resx">
       <DependentUpon>UC_EditNilaiRaport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_EditNilaiRaportSiswa.resx">
+      <DependentUpon>UC_EditNilaiRaportSiswa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Control\UC_Home.resx">
       <DependentUpon>UC_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_InputNilaiRaportSiswa.resx">
+      <DependentUpon>UC_InputNilaiRaportSiswa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_Utama.resx">
+      <DependentUpon>UC_Utama.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\UC_InputNilaiRaport.resx">
       <DependentUpon>UC_InputNilaiRaport.cs</DependentUpon>
