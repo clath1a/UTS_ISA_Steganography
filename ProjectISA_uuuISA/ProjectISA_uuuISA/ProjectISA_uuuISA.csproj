@@ -54,6 +54,63 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User Control\UC_DownloadRaport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_DownloadRaport.Designer.cs">
+      <DependentUpon>UC_DownloadRaport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\UC_EditNilaiRaport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_EditNilaiRaport.Designer.cs">
+      <DependentUpon>UC_EditNilaiRaport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\UC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_Home.Designer.cs">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\UC_InputNilaiRaport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_InputNilaiRaport.Designer.cs">
+      <DependentUpon>UC_InputNilaiRaport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\UC_KonfirmasiPeminjamanBuku.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_KonfirmasiPeminjamanBuku.Designer.cs">
+      <DependentUpon>UC_KonfirmasiPeminjamanBuku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\UC_LogAktivitas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_LogAktivitas.Designer.cs">
+      <DependentUpon>UC_LogAktivitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\UC_Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_Login.Designer.cs">
+      <DependentUpon>UC_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\UC_LogPeminjaman.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_LogPeminjaman.Designer.cs">
+      <DependentUpon>UC_LogPeminjaman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\UC_PeminjamanBuku.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_PeminjamanBuku.Designer.cs">
+      <DependentUpon>UC_PeminjamanBuku.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormUtama.resx">
+      <DependentUpon>FormUtama.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +120,33 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="User Control\UC_DownloadRaport.resx">
+      <DependentUpon>UC_DownloadRaport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_EditNilaiRaport.resx">
+      <DependentUpon>UC_EditNilaiRaport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_Home.resx">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_InputNilaiRaport.resx">
+      <DependentUpon>UC_InputNilaiRaport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_KonfirmasiPeminjamanBuku.resx">
+      <DependentUpon>UC_KonfirmasiPeminjamanBuku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_LogAktivitas.resx">
+      <DependentUpon>UC_LogAktivitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_Login.resx">
+      <DependentUpon>UC_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_LogPeminjaman.resx">
+      <DependentUpon>UC_LogPeminjaman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_PeminjamanBuku.resx">
+      <DependentUpon>UC_PeminjamanBuku.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
