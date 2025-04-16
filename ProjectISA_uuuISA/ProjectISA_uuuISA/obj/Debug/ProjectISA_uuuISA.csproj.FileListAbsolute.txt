@@ -1,0 +1,11 @@
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\ProjectISA_uuuISA.exe.config
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\ProjectISA_uuuISA.exe
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\ProjectISA_uuuISA.pdb
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\obj\Debug\ProjectISA_uuuISA.csproj.AssemblyReference.cache
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\obj\Debug\ProjectISA_uuuISA.FormUtama.resources
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\obj\Debug\ProjectISA_uuuISA.Properties.Resources.resources
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\obj\Debug\ProjectISA_uuuISA.csproj.GenerateResource.cache
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\obj\Debug\ProjectISA_uuuISA.csproj.CoreCompileInputs.cache
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\obj\Debug\ProjectISA_uuuISA.exe
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\obj\Debug\ProjectISA_uuuISA.pdb
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\obj\Debug\ProjectISA_uuuISA.User_Control.Login.resources

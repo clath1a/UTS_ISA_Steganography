@@ -16,5 +16,17 @@ namespace ProjectISA_uuuISA
         {
             InitializeComponent();
         }
+
+        private void FormUtama_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                //koneksi database
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Koneksi ke Database Gagal : \n" + ex.Message);
+            }
+        }
     }
 }
