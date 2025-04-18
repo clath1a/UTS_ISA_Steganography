@@ -14,6 +14,7 @@ namespace ProjectISA_uuuISA
 {
     public partial class FormUtama : Form
     {
+        public static Akun current_user = new Akun();
         public FormUtama()
         {
             InitializeComponent();
@@ -21,21 +22,11 @@ namespace ProjectISA_uuuISA
 
         private void FormUtama_Load(object sender, EventArgs e)
         {
-            /*this.Visible = false;
-            try
-            {
-                //koneksi database
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Koneksi ke Database Gagal : \n" + ex.Message);
-            }*/
-            this.Visible = true;
+            this.Visible = false;
 
             UC_Login uC = new UC_Login(this);
             panelUtama.Controls.Add(uC);
 
-            this.WindowState = FormWindowState.Maximized;
             this.IsMdiContainer = true;
             try
             {
@@ -46,6 +37,7 @@ namespace ProjectISA_uuuISA
             {
                 MessageBox.Show("Koneksi Gagal. Pesan Kesalahan: " + ex);
             }
+            this.Visible = true;
         }
 
         public void AddUserControl(UserControl userControl)

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using class_uuuISA;
 
 namespace ProjectISA_uuuISA.User_Control
 {
@@ -21,16 +22,32 @@ namespace ProjectISA_uuuISA.User_Control
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            string username = textBoxUsername.Text;
-            string password = textBoxPassword.Text;
-            Console.WriteLine(username + ": "+password);
+            try
+            {
+                int idAkun = int.Parse(textBoxUsername.Text);
+                string password = textBoxPassword.Text;
+                Console.WriteLine(idAkun + ": " + password);
 
-            //login method
+                //login method
+                Akun.User_Login(idAkun, password);
 
-            formUtama.panelUtama.Controls.Remove(this);
+                FormUtama.current_user = Akun.User_Login(idAkun, password);
+                Console.WriteLine("Current user: "+FormUtama.current_user.Username);
 
-            UC_Utama uC_Utama = new UC_Utama(formUtama);
-            formUtama.panelUtama.Controls.Add(uC_Utama);
+                MessageBox.Show("LOGIN BERHASIL");
+
+                formUtama.panelUtama.Controls.Remove(this);
+
+                UC_Utama uC_Utama = new UC_Utama(formUtama);
+                formUtama.panelUtama.Controls.Add(uC_Utama);
+
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

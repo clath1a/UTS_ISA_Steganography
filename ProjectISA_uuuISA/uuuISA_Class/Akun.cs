@@ -17,6 +17,7 @@ namespace ProjectISA_uuuISA
         private List<Siswa> listSiswa;
         private List<Guru> listGuru;
         private List<Pustakawan> listPustakawan;
+        private Role role;
 
 
         #endregion
@@ -32,12 +33,21 @@ namespace ProjectISA_uuuISA
             this.username = username;
             this.password = password;
         }
+
+        public Akun(int idAkun, string username, string password, Role role)
+        {
+            this.idAkun = idAkun;
+            this.username = username;
+            this.password = password;
+            this.role = role;
+        }
         #endregion
 
         #region PROPERTIES
         public int IdAkun { get => idAkun; set => idAkun = value; }
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
+        public Role Role { get => role; set => role = value; }
         #endregion
 
         #region METHOD
@@ -70,6 +80,41 @@ namespace ProjectISA_uuuISA
             return listAkun;
 
             #endregion
+        }
+
+        public static Akun User_Login(int idAkun, string password)
+        {
+            string perintah = "SELECT * FROM akun a INNER JOIN role r ON a.role_idrole = r.idrole " +
+                      "WHERE a.idAkun = '" + idAkun + "' AND a.password = SHA2('" + password + "', 256);";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+
+            Akun akun;
+            if (hasil.Read())
+            {
+                // Data akun
+                int id = int.Parse(hasil.GetValue(0).ToString());
+                string username = hasil.GetValue(1).ToString();
+                string hashedPassword = hasil.GetValue(2).ToString();
+
+                // Data role
+                int idRole = int.Parse(hasil.GetValue(4).ToString());  // FIXED
+                string namaRole = hasil.GetValue(5).ToString();        // FIXED
+
+                // Buat objek role
+                Role role = new Role(idRole, namaRole);
+                Console.WriteLine("NAMA ROLE: " + namaRole);
+
+                // Buat objek akun
+                akun = new Akun(id, username, hashedPassword, role);
+
+                Console.WriteLine("DATA PENGGUNA BERHASIL DIAMBIL");
+            }
+            else
+            {
+                throw new Exception("User password or username is incorrect");
+            }
+            return akun;
         }
     }
 }

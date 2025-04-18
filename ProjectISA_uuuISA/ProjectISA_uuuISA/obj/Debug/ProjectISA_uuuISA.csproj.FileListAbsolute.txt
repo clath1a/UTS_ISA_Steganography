@@ -39,3 +39,39 @@ C:\Campus File\Semester 4\Information Security & Assurance\UTS\UTS_ISA\ProjectIS
 C:\Campus File\Semester 4\Information Security & Assurance\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\obj\Debug\ProjectISA_uuuISA.csproj.CoreCompileInputs.cache
 C:\Campus File\Semester 4\Information Security & Assurance\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\obj\Debug\ProjectISA_uuuISA.exe
 C:\Campus File\Semester 4\Information Security & Assurance\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\obj\Debug\ProjectISA_uuuISA.pdb
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\BouncyCastle.Cryptography.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\Google.Protobuf.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\K4os.Compression.LZ4.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\K4os.Hash.xxHash.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\MySql.Data.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\System.Buffers.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\System.IO.Pipelines.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\System.Memory.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\System.Numerics.Vectors.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\uuuISA_Class.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\ZstdSharp.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\BouncyCastle.Cryptography.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\Google.Protobuf.pdb
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\Google.Protobuf.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\K4os.Compression.LZ4.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\K4os.Compression.LZ4.Streams.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\K4os.Hash.xxHash.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\MySql.Data.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\System.Buffers.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\System.IO.Pipelines.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\System.Memory.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\System.Numerics.Vectors.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\uuuISA_Class.pdb
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\uuuISA_Class.dll.config
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\obj\Debug\ProjectI.18A9B5B4.Up2Date
