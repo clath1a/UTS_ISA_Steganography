@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using class_uuuISA;
 
 namespace ProjectISA_uuuISA
 {
@@ -33,6 +34,18 @@ namespace ProjectISA_uuuISA
 
             UC_Login uC = new UC_Login(this);
             panelUtama.Controls.Add(uC);
+
+            this.WindowState = FormWindowState.Maximized;
+            this.IsMdiContainer = true;
+            try
+            {
+                Koneksi koneksi = new Koneksi(db.Default.DbServer, db.Default.DbName ,db.Default.DbUsername, db.Default.DbPassword);
+                MessageBox.Show("Koneksi berhasil", "Informasi");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Koneksi Gagal. Pesan Kesalahan: " + ex);
+            }
         }
 
         public void AddUserControl(UserControl userControl)
@@ -41,6 +54,11 @@ namespace ProjectISA_uuuISA
             panelUtama.Controls.Clear();
             panelUtama.Controls.Add(userControl);
             userControl.BringToFront();
+        }
+
+        private void panelUtama_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
