@@ -55,6 +55,7 @@
             this.dataGridViewDaftarBuku.RowTemplate.Height = 28;
             this.dataGridViewDaftarBuku.Size = new System.Drawing.Size(961, 569);
             this.dataGridViewDaftarBuku.TabIndex = 48;
+            this.dataGridViewDaftarBuku.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDaftarBuku_CellContentClick);
             // 
             // UC_PeminjamanBuku
             // 
@@ -64,6 +65,7 @@
             this.Controls.Add(this.labelTitle);
             this.Name = "UC_PeminjamanBuku";
             this.Size = new System.Drawing.Size(1026, 720);
+            this.Load += new System.EventHandler(this.UC_PeminjamanBuku_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftarBuku)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

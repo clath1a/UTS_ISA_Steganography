@@ -16,5 +16,34 @@ namespace ProjectISA_uuuISA.User_Control
         {
             InitializeComponent();
         }
+
+        private void DisplayBuku()
+        {
+            List<Buku> listBuku = Buku.BacaData();
+            dataGridViewDaftarBuku.DataSource = listBuku;            
+        }
+
+        private void UC_PeminjamanBuku_Load(object sender, EventArgs e)
+        {
+            DisplayBuku();
+            //Console.WriteLine("JUMLAH KOLOM: " + dataGridViewDaftarBuku.Columns.Count);
+            if(dataGridViewDaftarBuku.Columns.Count == 8)
+            {
+                DataGridViewButtonColumn btnPinjam = new DataGridViewButtonColumn();
+                btnPinjam.Text = "PINJAM BUKU";
+                btnPinjam.HeaderText = "PINJAM";
+                btnPinjam.UseColumnTextForButtonValue = true;
+                btnPinjam.Name = "btnPinjamBuku";
+                dataGridViewDaftarBuku.Columns.Add(btnPinjam);
+            }
+        }
+
+        private void dataGridViewDaftarBuku_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {            
+            if (e.ColumnIndex == dataGridViewDaftarBuku.Columns["btnPinjamBuku"].Index)
+            {
+                
+            }
+        }
     }
 }
