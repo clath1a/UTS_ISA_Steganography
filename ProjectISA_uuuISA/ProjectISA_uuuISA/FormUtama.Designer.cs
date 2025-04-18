@@ -42,6 +42,7 @@
             this.panelUtama.Name = "panelUtama";
             this.panelUtama.Size = new System.Drawing.Size(1242, 720);
             this.panelUtama.TabIndex = 5;
+            this.panelUtama.Paint += new System.Windows.Forms.PaintEventHandler(this.panelUtama_Paint);
             // 
             // FormUtama
             // 
