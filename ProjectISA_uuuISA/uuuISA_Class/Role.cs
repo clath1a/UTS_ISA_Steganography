@@ -23,6 +23,12 @@ namespace ProjectISA_uuuISA
             this.namaRole = "";
             Akun = new Akun();
         }
+
+        public Role(int id, string namaRole)
+        {
+            this.idRole= id;
+            this.namaRole = namaRole;
+        }
         #endregion
 
         #region PROPERTIES
