@@ -79,7 +79,7 @@ siswa_idsiswa = VALUES(siswa_idsiswa),
 mataPelajaran_idmataPelajaran = VALUES(mataPelajaran_idmataPelajaran);
 
 -- Guru mengajar mata pelajaran
-INSERT INTOakunakunakun `uuuisa`.`guru_has_mataPelajaran` (`guru_idGuru`, `mataPelajaran_idmataPelajaran`) VALUES 
+INSERT INTO `uuuisa`.`guru_has_mataPelajaran` (`guru_idGuru`, `mataPelajaran_idmataPelajaran`) VALUES 
 (1, 1), (1, 3),
 (2, 3),
 (3, 2), (3, 5);
@@ -94,3 +94,8 @@ INSERT INTO `uuuisa`.`riwayat_aktivitas` (`waktu_masuk`, `waktu_keluar`, `durasi
 ('2023-08-01 08:00:00', '2023-08-01 12:30:00', '04:30:00', 3),
 ('2023-08-01 13:00:00', '2023-08-01 15:45:00', '02:45:00', 6),
 ('2023-08-02 07:30:00', '2023-08-02 11:20:00', '03:50:00', 2);
+
+INSERT INTO `uuuisa`.`status_peminjaman` (`id`, `status`) VALUES 
+('1', 'diajukan'), 
+('2', 'diterima'), 
+('3', 'ditolak');
