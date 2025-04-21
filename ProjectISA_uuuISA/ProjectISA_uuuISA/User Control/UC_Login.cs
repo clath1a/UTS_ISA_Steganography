@@ -30,17 +30,13 @@ namespace ProjectISA_uuuISA.User_Control
 
                 //login method
                 Akun.User_Login(idAkun, password);
-
-                FormUtama.current_user = Akun.User_Login(idAkun, password);
+                FormUtama.current_user = Akun.User_Login(idAkun, password);                
                 Console.WriteLine("Current user: "+FormUtama.current_user.Username);
-
                 MessageBox.Show("LOGIN BERHASIL");
 
-                formUtama.panelUtama.Controls.Remove(this);
+                LoadRoleData(idAkun);
 
-                UC_Utama uC_Utama = new UC_Utama(formUtama);
-                formUtama.panelUtama.Controls.Add(uC_Utama);
-
+                Load_UC_Utama();
                 
             }
             catch (Exception ex)
@@ -49,5 +45,35 @@ namespace ProjectISA_uuuISA.User_Control
             }
             
         }
+
+        #region METHOD
+        private void LoadRoleData(int idAkun)
+        {
+            //LOAD DATA BEDASARKAN ROLE YANG LOGIN
+            if (FormUtama.current_user.Role.NamaRole.ToString() == "Siswa")
+            {
+                FormUtama.siswa = Siswa.BacaData(idAkun);
+            }
+            else if (FormUtama.current_user.Role.NamaRole.ToString() == "Guru")
+            {
+
+            }
+            else if (FormUtama.current_user.Role.NamaRole.ToString() == "Admin")
+            {
+
+            }
+            else if (FormUtama.current_user.Role.NamaRole.ToString() == "Pustakawan")
+            {
+
+            }
+        }
+
+        private void Load_UC_Utama()
+        {
+            formUtama.panelUtama.Controls.Remove(this);
+            UC_Utama uC_Utama = new UC_Utama(formUtama);
+            formUtama.panelUtama.Controls.Add(uC_Utama);
+        }
+        #endregion
     }
 }

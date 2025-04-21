@@ -15,6 +15,7 @@ namespace ProjectISA_uuuISA
     public partial class FormUtama : Form
     {
         public static Akun current_user = new Akun();
+        public static Siswa siswa = new Siswa();
         public FormUtama()
         {
             InitializeComponent();

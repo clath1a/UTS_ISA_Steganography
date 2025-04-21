@@ -10,7 +10,8 @@ INSERT INTO `uuuisa`.`akun` (`username`, `password`, `role_idrole`) VALUES
 ('siswa1', SHA2('siswa123', 256), 3),
 ('pustakawan1', SHA2('pustaka123', 256), 4),
 ('guru2', SHA2('guru456', 256), 2),
-('siswa2', SHA2('siswa456', 256), 3);
+('siswa2', SHA2('siswa456', 256), 3),
+('siswa3', SHA2('siswa3', 256), 3);
 
 INSERT INTO `uuuisa`.`kelas` (`namaKelas`, `kapasitasKelas`, `lantaiRuangan`, `jenjang`) VALUES 
 ('X IPA 1', 30, '1', 'SMA'),
@@ -33,7 +34,7 @@ INSERT INTO `uuuisa`.`guru` (`nama`, `email`, `nomorTlp`, `tanggalLahir`, `pendi
 INSERT INTO `uuuisa`.`siswa` (`nama`, `tanggalLahir`, `alamatRumah`, `tahunMasuk`, `emailSekolah`, `akun_idAkun`, `kelas_idKelas`) VALUES 
 ('Andi Pratama', '2007-03-10', 'Jl. Merdeka No. 12', 2023, 'andi.pratama@uuuisa.sch.id', 3, 1),
 ('Bella Putri', '2007-06-25', 'Jl. Sudirman No. 45', 2023, 'bella.putri@uuuisa.sch.id', 6, 1),
-('Cahyo Nugroho', '2006-09-15', 'Jl. Diponegoro No. 78', 2022, 'cahyo.nugroho@uuuisa.sch.id', 3, 3);
+('Cahyo Nugroho', '2006-09-15', 'Jl. Diponegoro No. 78', 2022, 'cahyo.nugroho@uuuisa.sch.id', 8, 3);
 
 INSERT INTO `uuuisa`.`pustakawan` (`Nama`, `akun_idAkun`) VALUES 
 ('Dewi Kartini', 4);

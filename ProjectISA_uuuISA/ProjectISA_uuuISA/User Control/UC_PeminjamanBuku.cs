@@ -39,11 +39,29 @@ namespace ProjectISA_uuuISA.User_Control
         }
 
         private void dataGridViewDaftarBuku_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {            
-            if (e.ColumnIndex == dataGridViewDaftarBuku.Columns["btnPinjamBuku"].Index)
+        {     
+            try
             {
-                
+                if (e.ColumnIndex == dataGridViewDaftarBuku.Columns["btnPinjamBuku"].Index)
+                {
+                    int idBuku = (int)(dataGridViewDaftarBuku.CurrentRow.Cells["idbuku"].Value);
+                    string judulBuku = dataGridViewDaftarBuku.CurrentRow.Cells["judul"].Value.ToString(); 
+
+                    DialogResult result = MessageBox.Show("Anda akan meminjam buku "+judulBuku, "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        Buku.Insert_PeminjamanBuku(FormUtama.siswa.IdSiswa, idBuku);
+                        MessageBox.Show("Peminjaman buku berhasil");
+                    }                    
+                    
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }
