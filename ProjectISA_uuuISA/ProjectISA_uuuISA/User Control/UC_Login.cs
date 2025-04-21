@@ -56,7 +56,7 @@ namespace ProjectISA_uuuISA.User_Control
             }
             else if (FormUtama.current_user.Role.NamaRole.ToString() == "Guru")
             {
-
+                
             }
             else if (FormUtama.current_user.Role.NamaRole.ToString() == "Admin")
             {
@@ -64,7 +64,7 @@ namespace ProjectISA_uuuISA.User_Control
             }
             else if (FormUtama.current_user.Role.NamaRole.ToString() == "Pustakawan")
             {
-
+                FormUtama.pustakawan = Pustakawan.BacaData2(idAkun);
             }
         }
 

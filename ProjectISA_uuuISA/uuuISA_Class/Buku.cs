@@ -81,8 +81,10 @@ namespace ProjectISA_uuuISA
 
         public static bool Insert_PeminjamanBuku(int idSiswa, int idBuku)
         {
-            string perintah = "INSERT INTO riwayat_peminjaman (`siswa_idsiswa`, `buku_idbuku`, `tanggal_peminjaman`, `status_peminjaman_id`) " +
-                "VALUES ('" + idSiswa + "', '" + idBuku + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + 1 + "');";
+            string perintah = "INSERT INTO riwayat_peminjaman " +
+                "(`siswa_idsiswa`, `buku_idbuku`, `tanggal_peminjaman`, `tanggal_pengembalian`, `status_peminjaman_id`) " +
+                "VALUES ('" + idSiswa + "', '" + idBuku + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', NULL, 1);";
+
             int hasil = Koneksi.JalankanPerintahDML(perintah);
             if(hasil > 0)
             {

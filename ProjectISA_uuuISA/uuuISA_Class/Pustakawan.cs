@@ -25,6 +25,12 @@ namespace ProjectISA_uuuISA
             IdAkun = idAkun;
         }
 
+        public Pustakawan(int idPustakawan, string namaPustakawan)
+        {
+            this.IdPustakawan = idPustakawan;
+            this.NamaPustakawan=namaPustakawan;            
+        }
+
         public Pustakawan()
         {
             
@@ -65,6 +71,28 @@ namespace ProjectISA_uuuISA
                 listPustakawan.Add(p);
             }
             return listPustakawan;
+        }
+
+        public static Pustakawan BacaData2(int idAkun)
+        {
+            string perintah = "SELECT p.idpustakawan, p.Nama FROM pustakawan p INNER JOIN akun a ON p.akun_idAkun = a.idAkun WHERE a.idAkun  = " + idAkun + ";";
+
+            MySqlDataReader dr = Koneksi.JalankanPerintahSelect(perintah);
+
+            Pustakawan pustakawan;
+            if(dr.Read())
+            {
+                int idPustakawan = int.Parse(dr.GetValue(0).ToString());
+                string nama = dr.GetValue(1).ToString();
+
+                pustakawan = new Pustakawan(idPustakawan, nama);
+                //Console.WriteLine("Data Pustakawan: "+nama+" berhasil diambil");
+            }
+            else
+            {
+                throw new Exception("Data pustakawan gagal diambil");
+            }
+            return pustakawan;
         }
         #endregion
     }

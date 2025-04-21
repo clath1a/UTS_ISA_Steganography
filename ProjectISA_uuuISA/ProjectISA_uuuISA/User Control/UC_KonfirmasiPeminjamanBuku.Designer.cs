@@ -55,6 +55,7 @@
             this.dataGridViewKonfirmasiPeminjamanBuku.RowTemplate.Height = 28;
             this.dataGridViewKonfirmasiPeminjamanBuku.Size = new System.Drawing.Size(961, 569);
             this.dataGridViewKonfirmasiPeminjamanBuku.TabIndex = 52;
+            this.dataGridViewKonfirmasiPeminjamanBuku.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKonfirmasiPeminjamanBuku_CellContentClick);
             // 
             // UC_KonfirmasiPeminjamanBuku
             // 
@@ -64,6 +65,7 @@
             this.Controls.Add(this.labelTitle);
             this.Name = "UC_KonfirmasiPeminjamanBuku";
             this.Size = new System.Drawing.Size(1026, 720);
+            this.Load += new System.EventHandler(this.UC_KonfirmasiPeminjamanBuku_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKonfirmasiPeminjamanBuku)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
