@@ -108,6 +108,7 @@
     <Compile Include="RiwayatPeminjaman.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="Siswa.cs" />
+    <Compile Include="Status_Peminjaman.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
