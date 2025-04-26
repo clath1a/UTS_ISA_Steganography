@@ -1,4 +1,6 @@
-﻿using System;
+﻿using class_uuuISA;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +17,33 @@ namespace ProjectISA_uuuISA
         string nomorTelp;
         DateTime tglLahir;
         string pendidikanTerakhir;
-        Akun idAkun;
+        int idAkun;
+
+        public Guru(int idGuru, string nama, string email, string nomorTelp, DateTime tglLahir, string pendidikanTerakhir)
+        {
+            IdGuru = idGuru;
+            Nama = nama;
+            Email = email;
+            NomorTelp = nomorTelp;
+            TglLahir = tglLahir;
+            PendidikanTerakhir = pendidikanTerakhir;
+        }
+
+        public Guru(int idGuru, string nama, string email, string nomorTelp, DateTime tglLahir, string pendidikanTerakhir, int idAkun)
+        {
+            IdGuru = idGuru;
+            Nama = nama;
+            Email = email;
+            NomorTelp = nomorTelp;
+            TglLahir = tglLahir;
+            PendidikanTerakhir = pendidikanTerakhir;     
+            IdAkun = idAkun;
+        }
+
+        public Guru()
+        {
+
+        }
         #endregion
 
         #region PROPERTIES
@@ -25,7 +53,33 @@ namespace ProjectISA_uuuISA
         public string NomorTelp { get => nomorTelp; set => nomorTelp = value; }
         public DateTime TglLahir { get => tglLahir; set => tglLahir = value; }
         public string PendidikanTerakhir { get => pendidikanTerakhir; set => pendidikanTerakhir = value; }
-        public Akun IdAkun { get => idAkun; set => idAkun = value; }
+        public int IdAkun { get => idAkun; set => idAkun = value; }
         #endregion
+
+        public static Guru Select_DataGuru(int idAkun)
+        {
+            string perintah = "SELECT idGuru, nama, email, nomorTlp, tanggalLahir, pendidikanTerakhir " +
+                "FROM Guru WHERE akun_idAkun = " + idAkun + "; ";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+            Guru guru;
+
+            if(hasil.Read())
+            {
+                int idGuru = int.Parse(hasil.GetValue(0).ToString());
+                string nama = hasil.GetValue(1).ToString();
+                string email = hasil.GetValue(2).ToString();
+                string nomorTelp = hasil.GetValue(3).ToString();
+                DateTime tglLahir = DateTime.Parse(hasil.GetValue(4).ToString());
+                string pendidikanTerakhir = hasil.GetValue(5).ToString();
+
+                guru = new Guru(idGuru, nama, email,nomorTelp,tglLahir,pendidikanTerakhir);
+            }
+            else
+            {
+                throw new Exception("Data guru gagal diambil");
+            }
+            return guru;
+        }
     }
 }

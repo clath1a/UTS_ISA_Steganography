@@ -106,7 +106,7 @@ namespace ProjectISA_uuuISA.User_Control
             else if (FormUtama.current_user.Role.NamaRole == "Guru")
             {
                 panelMain.Controls.Clear();
-                UC_EditNilaiRaport uc = new UC_EditNilaiRaport();
+                UC_EditNilaiRaport uc = new UC_EditNilaiRaport(this);
                 panelMain.Controls.Add(uc);
             }
             else if (FormUtama.current_user.Role.NamaRole == "Pustakawan")
@@ -143,7 +143,7 @@ namespace ProjectISA_uuuISA.User_Control
             {
 
                 panelMain.Controls.Clear();
-                UC_EditNilaiRaport uc = new UC_EditNilaiRaport();
+                UC_EditNilaiRaport uc = new UC_EditNilaiRaport(this);
                 panelMain.Controls.Add(uc);
             }
             else if (FormUtama.current_user.Role.NamaRole == "Pustakawan")
@@ -270,5 +270,10 @@ namespace ProjectISA_uuuISA.User_Control
             labelContent4.ForeColor = Color.White;
         }
         #endregion
+
+        private void panelButton2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -115,6 +115,7 @@
             this.panelButton2.Size = new System.Drawing.Size(197, 51);
             this.panelButton2.TabIndex = 45;
             this.panelButton2.Click += new System.EventHandler(this.panelButton2_Click);
+            this.panelButton2.Paint += new System.Windows.Forms.PaintEventHandler(this.panelButton2_Paint);
             // 
             // labelContent2
             // 
@@ -207,6 +208,6 @@
         private System.Windows.Forms.Label labelContent2;
         private System.Windows.Forms.Panel panelButton4;
         private System.Windows.Forms.Label labelContent4;
-        private System.Windows.Forms.Panel panelMain;
+        public System.Windows.Forms.Panel panelMain;
     }
 }

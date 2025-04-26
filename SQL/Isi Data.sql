@@ -100,3 +100,13 @@ INSERT INTO `uuuisa`.`status_peminjaman` (`id`, `status`) VALUES
 ('1', 'diajukan'), 
 ('2', 'diterima'), 
 ('3', 'ditolak');
+
+-- guru mengajar di mata pelajaran apa saja-- 
+INSERT INTO `uuuisa`.`guru_has_matapelajaran` (`guru_idGuru`, `mataPelajaran_idmataPelajaran`) VALUES 
+('1', '1'), 
+('1', '2'), 
+('2', '2'), 
+('3', '3');
+
+-- siswa mengambil mata pelajaran apa saja --
+

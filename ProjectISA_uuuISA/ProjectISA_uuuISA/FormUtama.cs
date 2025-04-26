@@ -17,6 +17,7 @@ namespace ProjectISA_uuuISA
         public static Akun current_user = new Akun();
         public static Siswa siswa = new Siswa();
         public static Pustakawan pustakawan = new Pustakawan();
+        public static Guru guru = new Guru();
         public FormUtama()
         {
             InitializeComponent();
