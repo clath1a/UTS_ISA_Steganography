@@ -56,7 +56,7 @@ namespace ProjectISA_uuuISA.User_Control
             }
             else if (FormUtama.current_user.Role.NamaRole.ToString() == "Guru")
             {
-                
+                FormUtama.guru = Guru.Select_DataGuru(idAkun);
             }
             else if (FormUtama.current_user.Role.NamaRole.ToString() == "Admin")
             {

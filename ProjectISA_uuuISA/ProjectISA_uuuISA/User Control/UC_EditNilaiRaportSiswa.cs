@@ -12,9 +12,13 @@ namespace ProjectISA_uuuISA.User_Control
 {
     public partial class UC_EditNilaiRaportSiswa : UserControl
     {
-        public UC_EditNilaiRaportSiswa()
+        UC_EditNilaiRaport uc_edit;
+        int idSiswa;
+        public UC_EditNilaiRaportSiswa(UC_EditNilaiRaport uc_edit, int idSiswa)
         {
             InitializeComponent();
+            this.uc_edit = uc_edit;
+            this.idSiswa = idSiswa; //diganti query update nilai raport
         }
     }
 }
