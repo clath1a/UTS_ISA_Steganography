@@ -38,32 +38,34 @@
             this.labelTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(307, 55);
+            this.labelTitle.Location = new System.Drawing.Point(273, 44);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(412, 55);
+            this.labelTitle.Size = new System.Drawing.Size(345, 46);
             this.labelTitle.TabIndex = 49;
             this.labelTitle.Text = "Input Nilai Raport";
             // 
             // dataGridViewNamaSiswa
             // 
             this.dataGridViewNamaSiswa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewNamaSiswa.Location = new System.Drawing.Point(34, 128);
+            this.dataGridViewNamaSiswa.Location = new System.Drawing.Point(30, 102);
             this.dataGridViewNamaSiswa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewNamaSiswa.Name = "dataGridViewNamaSiswa";
             this.dataGridViewNamaSiswa.RowHeadersWidth = 62;
             this.dataGridViewNamaSiswa.RowTemplate.Height = 28;
-            this.dataGridViewNamaSiswa.Size = new System.Drawing.Size(961, 569);
+            this.dataGridViewNamaSiswa.Size = new System.Drawing.Size(854, 455);
             this.dataGridViewNamaSiswa.TabIndex = 53;
+            this.dataGridViewNamaSiswa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNamaSiswa_CellContentClick);
             // 
             // UC_InputNilaiRaport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridViewNamaSiswa);
             this.Controls.Add(this.labelTitle);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_InputNilaiRaport";
-            this.Size = new System.Drawing.Size(1026, 720);
+            this.Size = new System.Drawing.Size(912, 576);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNamaSiswa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

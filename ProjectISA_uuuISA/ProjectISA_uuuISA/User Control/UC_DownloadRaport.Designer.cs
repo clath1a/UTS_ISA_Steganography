@@ -39,19 +39,20 @@
             this.labelTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(426, 244);
+            this.labelTitle.Location = new System.Drawing.Point(379, 195);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(175, 55);
+            this.labelTitle.Size = new System.Drawing.Size(146, 46);
             this.labelTitle.TabIndex = 47;
             this.labelTitle.Text = "Raport";
             // 
             // comboBoxPilihSemester
             // 
             this.comboBoxPilihSemester.FormattingEnabled = true;
-            this.comboBoxPilihSemester.Location = new System.Drawing.Point(220, 327);
+            this.comboBoxPilihSemester.Location = new System.Drawing.Point(196, 262);
+            this.comboBoxPilihSemester.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxPilihSemester.Name = "comboBoxPilihSemester";
-            this.comboBoxPilihSemester.Size = new System.Drawing.Size(586, 28);
+            this.comboBoxPilihSemester.Size = new System.Drawing.Size(521, 24);
             this.comboBoxPilihSemester.TabIndex = 48;
             // 
             // buttonDownloadRaport
@@ -61,23 +62,25 @@
             this.buttonDownloadRaport.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonDownloadRaport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDownloadRaport.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonDownloadRaport.Location = new System.Drawing.Point(220, 373);
+            this.buttonDownloadRaport.Location = new System.Drawing.Point(196, 298);
             this.buttonDownloadRaport.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDownloadRaport.Name = "buttonDownloadRaport";
-            this.buttonDownloadRaport.Size = new System.Drawing.Size(586, 52);
+            this.buttonDownloadRaport.Size = new System.Drawing.Size(521, 42);
             this.buttonDownloadRaport.TabIndex = 63;
             this.buttonDownloadRaport.Text = "Download Raport";
             this.buttonDownloadRaport.UseVisualStyleBackColor = false;
+            this.buttonDownloadRaport.Click += new System.EventHandler(this.buttonDownloadRaport_Click);
             // 
             // UC_DownloadRaport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.buttonDownloadRaport);
             this.Controls.Add(this.comboBoxPilihSemester);
             this.Controls.Add(this.labelTitle);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_DownloadRaport";
-            this.Size = new System.Drawing.Size(1026, 720);
+            this.Size = new System.Drawing.Size(912, 576);
             this.ResumeLayout(false);
             this.PerformLayout();
 

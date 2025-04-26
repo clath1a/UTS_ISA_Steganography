@@ -16,5 +16,10 @@ namespace ProjectISA_uuuISA.User_Control
         {
             InitializeComponent();
         }
+
+        private void dataGridViewNamaSiswa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace ProjectISA_uuuISA.User_Control
         {
             InitializeComponent();
         }
+
+        private void buttonDownloadRaport_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
