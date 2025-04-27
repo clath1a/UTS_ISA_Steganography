@@ -132,17 +132,23 @@
     <Compile Include="User Control\UC_EditNilaiRaportSiswa.Designer.cs">
       <DependentUpon>UC_EditNilaiRaportSiswa.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control\UC_Home.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Control\UC_Home.Designer.cs">
-      <DependentUpon>UC_Home.cs</DependentUpon>
-    </Compile>
     <Compile Include="User Control\UC_InputNilaiRaportSiswa.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User Control\UC_InputNilaiRaportSiswa.Designer.cs">
       <DependentUpon>UC_InputNilaiRaportSiswa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\UC_UpdateNilai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_UpdateNilai.Designer.cs">
+      <DependentUpon>UC_UpdateNilai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\UC_UploadTTD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_UploadTTD.Designer.cs">
+      <DependentUpon>UC_UploadTTD.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control\UC_Utama.cs">
       <SubType>UserControl</SubType>
@@ -207,11 +213,14 @@
     <EmbeddedResource Include="User Control\UC_EditNilaiRaportSiswa.resx">
       <DependentUpon>UC_EditNilaiRaportSiswa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control\UC_Home.resx">
-      <DependentUpon>UC_Home.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="User Control\UC_InputNilaiRaportSiswa.resx">
       <DependentUpon>UC_InputNilaiRaportSiswa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_UpdateNilai.resx">
+      <DependentUpon>UC_UpdateNilai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_UploadTTD.resx">
+      <DependentUpon>UC_UploadTTD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\UC_Utama.resx">
       <DependentUpon>UC_Utama.cs</DependentUpon>

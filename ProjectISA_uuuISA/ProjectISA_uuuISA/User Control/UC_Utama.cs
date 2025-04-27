@@ -203,6 +203,8 @@ namespace ProjectISA_uuuISA.User_Control
         #region Method
         private void DisplayOnLoad()
         {
+            buttonUploadTTD.Visible = false;
+
             this.labelUsername.Text = FormUtama.current_user.Username.ToString();            
             this.labelRole.Text = FormUtama.current_user.Role.NamaRole.ToString();
             Console.WriteLine(FormUtama.current_user.Username.ToString());
@@ -216,6 +218,7 @@ namespace ProjectISA_uuuISA.User_Control
             }
             else if (FormUtama.current_user.Role.NamaRole == "Guru")
             {
+                buttonUploadTTD.Visible = true;
                 SetPanelButtonItem("Isi nilai", "Edit Nilai", "Download Raport");
                 UC_InputNilaiRaport uc = new UC_InputNilaiRaport(this);
                 panelMain.Controls.Add(uc);
@@ -274,6 +277,13 @@ namespace ProjectISA_uuuISA.User_Control
         private void panelButton2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void buttonUploadTTD_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+            UC_UploadTTD uc = new UC_UploadTTD();
+            panelMain.Controls.Add(uc);
         }
     }
 }
