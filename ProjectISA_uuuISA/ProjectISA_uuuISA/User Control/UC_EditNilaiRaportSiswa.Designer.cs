@@ -64,6 +64,7 @@
             this.Controls.Add(this.labelTitle);
             this.Name = "UC_EditNilaiRaportSiswa";
             this.Size = new System.Drawing.Size(1026, 720);
+            this.Load += new System.EventHandler(this.UC_EditNilaiRaportSiswa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridNilai)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

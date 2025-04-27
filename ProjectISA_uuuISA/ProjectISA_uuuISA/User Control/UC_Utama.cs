@@ -38,7 +38,7 @@ namespace ProjectISA_uuuISA.User_Control
             else if (FormUtama.current_user.Role.NamaRole == "Guru")
             {
                 panelMain.Controls.Clear();
-                UC_InputNilaiRaport uc = new UC_InputNilaiRaport();
+                UC_InputNilaiRaport uc = new UC_InputNilaiRaport(this);
                 panelMain.Controls.Add(uc);
             }
             else if(FormUtama.current_user.Role.NamaRole == "Pustakawan")
@@ -72,7 +72,7 @@ namespace ProjectISA_uuuISA.User_Control
             else if (FormUtama.current_user.Role.NamaRole == "Guru")
             {
                 panelMain.Controls.Clear();
-                UC_InputNilaiRaport uc = new UC_InputNilaiRaport();
+                UC_InputNilaiRaport uc = new UC_InputNilaiRaport(this);
                 panelMain.Controls.Add(uc);
             }
             else if (FormUtama.current_user.Role.NamaRole == "Pustakawan")
@@ -217,7 +217,7 @@ namespace ProjectISA_uuuISA.User_Control
             else if (FormUtama.current_user.Role.NamaRole == "Guru")
             {
                 SetPanelButtonItem("Isi nilai", "Edit Nilai", "Download Raport");
-                UC_InputNilaiRaport uc = new UC_InputNilaiRaport();
+                UC_InputNilaiRaport uc = new UC_InputNilaiRaport(this);
                 panelMain.Controls.Add(uc);
             }
             else if(FormUtama.current_user.Role.NamaRole == "Pustakawan")
