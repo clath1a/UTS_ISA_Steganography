@@ -138,6 +138,12 @@
     <Compile Include="User Control\UC_InputNilaiRaportSiswa.Designer.cs">
       <DependentUpon>UC_InputNilaiRaportSiswa.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Control\UC_Register.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_Register.Designer.cs">
+      <DependentUpon>UC_Register.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Control\UC_UpdateNilai.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\UC_InputNilaiRaportSiswa.resx">
       <DependentUpon>UC_InputNilaiRaportSiswa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_Register.resx">
+      <DependentUpon>UC_Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\UC_UpdateNilai.resx">
       <DependentUpon>UC_UpdateNilai.cs</DependentUpon>

@@ -13,12 +13,12 @@ namespace ProjectISA_uuuISA.User_Control
 {
     public partial class UC_Login : UserControl
     {
-        FormUtama formUtama;
+        FormUtama formUtama;        
         public UC_Login(FormUtama formUtama)
         {
             InitializeComponent();
             this.formUtama = formUtama;
-        }
+        }        
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
@@ -75,5 +75,19 @@ namespace ProjectISA_uuuISA.User_Control
             formUtama.panelUtama.Controls.Add(uC_Utama);
         }
         #endregion
+
+        private void panelRegister_Click(object sender, EventArgs e)
+        {
+            UC_Register uC_Register = new UC_Register(formUtama);
+            formUtama.panelUtama.Controls.Remove(this);            
+            formUtama.panelUtama.Controls.Add(uC_Register);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            UC_Register uC_Register = new UC_Register(formUtama);
+            formUtama.panelUtama.Controls.Remove(this);
+            formUtama.panelUtama.Controls.Add(uC_Register);
+        }
     }
 }

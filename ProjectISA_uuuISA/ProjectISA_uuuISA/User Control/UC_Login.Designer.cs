@@ -37,7 +37,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonDaftar = new System.Windows.Forms.Label();
             this.labelLogin = new System.Windows.Forms.Label();
+            this.panelRegister = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelDaftar.SuspendLayout();
+            this.panelRegister.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonLogin
@@ -154,10 +158,42 @@
             this.labelLogin.TabIndex = 46;
             this.labelLogin.Text = "Login";
             // 
+            // panelRegister
+            // 
+            this.panelRegister.Controls.Add(this.label2);
+            this.panelRegister.Controls.Add(this.label1);
+            this.panelRegister.Location = new System.Drawing.Point(458, 577);
+            this.panelRegister.Name = "panelRegister";
+            this.panelRegister.Size = new System.Drawing.Size(275, 45);
+            this.panelRegister.TabIndex = 58;
+            this.panelRegister.Click += new System.EventHandler(this.panelRegister_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(32, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(152, 20);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "Belum Punya Akun?";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Location = new System.Drawing.Point(181, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.TabIndex = 56;
+            this.label1.Text = "Register";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // UC_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelRegister);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPassword);
@@ -169,6 +205,8 @@
             this.Size = new System.Drawing.Size(1242, 720);
             this.panelDaftar.ResumeLayout(false);
             this.panelDaftar.PerformLayout();
+            this.panelRegister.ResumeLayout(false);
+            this.panelRegister.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +223,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label buttonDaftar;
         private System.Windows.Forms.Label labelLogin;
+        private System.Windows.Forms.Panel panelRegister;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

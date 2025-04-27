@@ -116,5 +116,17 @@ namespace ProjectISA_uuuISA
             }
             return akun;
         }
+
+        public static bool Register_Account(string username, string password, int idRole)
+        {
+            string perintah = "INSERT INTO `uuuisa`.`akun` (`username`, `password`, `role_idrole`) VALUES ('"+username+"', '"+password+"', '"+idRole+"');";
+
+            int hasil = Koneksi.JalankanPerintahDML(perintah);
+            if (hasil > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
