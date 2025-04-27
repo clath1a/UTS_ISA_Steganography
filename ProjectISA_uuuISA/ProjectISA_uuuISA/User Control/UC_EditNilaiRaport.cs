@@ -24,33 +24,33 @@ namespace ProjectISA_uuuISA.User_Control
         {
             DisplayOnLoad();
 
-            if(dataGridNamaSiswa.Columns.Count == 4 )
+            if(dataGridNamaKelas.Columns.Count == 4 )
             {
-                DataGridViewButtonColumn btnEditNilai = new DataGridViewButtonColumn();
-                btnEditNilai.Text = "Edit";
-                btnEditNilai.HeaderText = "EDIT NILAI";
-                btnEditNilai.UseColumnTextForButtonValue = true;
-                btnEditNilai.Name = "btnEditNilai";
-                dataGridNamaSiswa.Columns.Add(btnEditNilai);
+                DataGridViewButtonColumn btnPilihKelas = new DataGridViewButtonColumn();
+                btnPilihKelas.Text = "Pilih";
+                btnPilihKelas.HeaderText = "Pilih Kelas";
+                btnPilihKelas.UseColumnTextForButtonValue = true;
+                btnPilihKelas.Name = "btnPilihKelas";
+                dataGridNamaKelas.Columns.Add(btnPilihKelas);
             }
         }
 
         private void DisplayOnLoad()
-        {
-            List<Guru_MataPelajaran> list = Guru_MataPelajaran.Select_GuruPengajar(FormUtama.guru.IdGuru);
-            dataGridNamaSiswa.DataSource = list;
+        {            
+            List<Guru_MataPelajaran> list = Guru_MataPelajaran.Select_GuruPengajarBerdasarkanKelas(FormUtama.guru.IdGuru);            
+            dataGridNamaKelas.DataSource = list;
         }
 
         private void dataGridNamaSiswa_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                int editNilaiSiswa = int.Parse(dataGridNamaSiswa.CurrentRow.Cells["idSiswa"].Value.ToString());
-                if (e.ColumnIndex == dataGridNamaSiswa.Columns["btnEditNilai"].Index)
+                int idKelas = int.Parse(dataGridNamaKelas.CurrentRow.Cells["idKelas"].Value.ToString());
+                if (e.ColumnIndex == dataGridNamaKelas.Columns["btnPilihKelas"].Index)
                 {
                     uc_Utama.panelMain.Controls.Clear();
 
-                    UC_EditNilaiRaportSiswa uc = new UC_EditNilaiRaportSiswa(this, editNilaiSiswa);
+                    UC_EditNilaiRaportSiswa uc = new UC_EditNilaiRaportSiswa(this, idKelas);
                     uc_Utama.panelMain.Controls.Remove(this);
                     uc_Utama.panelMain.Controls.Add(uc);
                 }
