@@ -13,13 +13,15 @@ namespace ProjectISA_uuuISA.User_Control
 {
     public partial class UC_EditNilaiRaportSiswa : UserControl
     {
+        UC_Utama uc_Utama;
         UC_EditNilaiRaport uc_edit;
         int idKelas;
-        public UC_EditNilaiRaportSiswa(UC_EditNilaiRaport uc_edit, int idKelas)
+        public UC_EditNilaiRaportSiswa(UC_EditNilaiRaport uc_edit, int idKelas, UC_Utama uc_Utama)
         {
             InitializeComponent();
             this.uc_edit = uc_edit;
             this.idKelas = idKelas;
+            this.uc_Utama = uc_Utama;
         }
 
         private void UC_EditNilaiRaportSiswa_Load(object sender, EventArgs e)
@@ -32,7 +34,7 @@ namespace ProjectISA_uuuISA.User_Control
             List<NilaiMataPelajaran> listNilai = NilaiMataPelajaran.Select_NilaiMataPelajaranSiswa(FormUtama.guru.IdGuru, false, this.idKelas);
             dataGridNilai.DataSource = listNilai;
 
-            if(dataGridNilai.Columns.Count == 7 )
+            if(dataGridNilai.Columns.Count == 8 )
             {
                 DataGridViewButtonColumn btnEditNilai = new DataGridViewButtonColumn();
                 btnEditNilai.Text = "Edit";
@@ -41,6 +43,11 @@ namespace ProjectISA_uuuISA.User_Control
                 btnEditNilai.Name = "btnEditNilai";
                 dataGridNilai.Columns.Add(btnEditNilai);
             }
+        }
+
+        private void dataGridNilai_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -50,7 +50,7 @@ namespace ProjectISA_uuuISA.User_Control
                 {
                     uc_Utama.panelMain.Controls.Clear();
 
-                    UC_EditNilaiRaportSiswa uc = new UC_EditNilaiRaportSiswa(this, idKelas);
+                    UC_EditNilaiRaportSiswa uc = new UC_EditNilaiRaportSiswa(this, idKelas, uc_Utama);
                     uc_Utama.panelMain.Controls.Remove(this);
                     uc_Utama.panelMain.Controls.Add(uc);
                 }

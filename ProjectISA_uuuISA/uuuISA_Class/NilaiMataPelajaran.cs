@@ -10,6 +10,7 @@ namespace uuuISA_Class
 {
     public class NilaiMataPelajaran
     {
+        private int idRapot;
         private int idKelas;
         private string namaKelas;
         private int idSiswa;
@@ -18,8 +19,9 @@ namespace uuuISA_Class
         private string namaMapel;
         private int nilai;
 
-        public NilaiMataPelajaran(int idKelas, string namaKelas, int idSiswa, string namaSiswa, int idMapel, string namaMapel, int nilai)
+        public NilaiMataPelajaran(int idRapot, int idKelas, string namaKelas, int idSiswa, string namaSiswa, int idMapel, string namaMapel, int nilai)
         {
+            IdRapot = idRapot;
             IdKelas = idKelas;
             NamaKelas = namaKelas;
             IdSiswa = idSiswa;
@@ -31,6 +33,7 @@ namespace uuuISA_Class
 
         public NilaiMataPelajaran() { }
 
+        public int IdRapot { get => idRapot; set => idRapot = value; }
         public int IdKelas { get => idKelas; set => idKelas = value; }
         public string NamaKelas { get => namaKelas; set => namaKelas = value; }
         public int IdSiswa { get => idSiswa; set => idSiswa = value; }
@@ -38,6 +41,7 @@ namespace uuuISA_Class
         public string NamaMapel { get => namaMapel; set => namaMapel = value; }
         public int Nilai { get => nilai; set => nilai = value; }
         public int IdMapel { get => idMapel; set => idMapel = value; }
+        
 
         public static List<NilaiMataPelajaran> Select_NilaiMataPelajaranSiswa(int idGuru, Boolean nilaiNol, int filterIdKelas)
         {
@@ -46,7 +50,7 @@ namespace uuuISA_Class
             string perintah;
             if(nilaiNol)
             {
-                perintah = "SELECT k.idKelas, k.namaKelas, s.idsiswa, s.nama, mp.idmataPelajaran, mp.namaMataPelajaran, p.nilai " +
+                perintah = "SELECT r.idRapot, k.idKelas, k.namaKelas, s.idsiswa, s.nama, mp.idmataPelajaran, mp.namaMataPelajaran, p.nilai " +
                     "FROM siswa s " +
                     "INNER JOIN kelas k ON s.kelas_idKelas = k.idKelas " +
                     "INNER JOIN rapot r ON s.idsiswa = r.siswa_idsiswa " +
@@ -58,7 +62,7 @@ namespace uuuISA_Class
             }
             else
             {
-                perintah = "SELECT k.idKelas, k.namaKelas, s.idsiswa, s.nama, mp.idmataPelajaran, mp.namaMataPelajaran, p.nilai " +
+                perintah = "SELECT r.idRapot, k.idKelas, k.namaKelas, s.idsiswa, s.nama, mp.idmataPelajaran, mp.namaMataPelajaran, p.nilai " +
                     "FROM siswa s " +
                     "INNER JOIN kelas k ON s.kelas_idKelas = k.idKelas " +
                     "INNER JOIN rapot r ON s.idsiswa = r.siswa_idsiswa " +
@@ -75,15 +79,16 @@ namespace uuuISA_Class
             NilaiMataPelajaran nilaiSiswa;
             while (hasil.Read())
             {
-                int idKelas = int.Parse(hasil.GetValue(0).ToString());
-                string namaKelas = hasil.GetValue(1).ToString();
-                int idSiswa = int.Parse(hasil.GetValue(2).ToString());
-                string namaSiswa = hasil.GetValue(3).ToString();
-                int idMapel = int.Parse(hasil.GetValue(4).ToString());
-                string namaMapel = hasil.GetValue(5).ToString();
-                int nilai = int.Parse(hasil.GetValue(6).ToString());
+                int idRapot = int.Parse(hasil.GetValue(0).ToString());
+                int idKelas = int.Parse(hasil.GetValue(1).ToString());
+                string namaKelas = hasil.GetValue(2).ToString();
+                int idSiswa = int.Parse(hasil.GetValue(3).ToString());
+                string namaSiswa = hasil.GetValue(4).ToString();
+                int idMapel = int.Parse(hasil.GetValue(5).ToString());
+                string namaMapel = hasil.GetValue(6).ToString();
+                int nilai = int.Parse(hasil.GetValue(7).ToString());
 
-                nilaiSiswa = new NilaiMataPelajaran(idKelas, namaKelas,idSiswa,namaSiswa, idMapel,namaMapel, nilai);
+                nilaiSiswa = new NilaiMataPelajaran(idRapot, idKelas, namaKelas,idSiswa,namaSiswa, idMapel,namaMapel, nilai);
                 listNilaiSiswa.Add(nilaiSiswa);
             }
             return listNilaiSiswa;
