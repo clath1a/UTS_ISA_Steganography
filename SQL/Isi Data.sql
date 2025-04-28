@@ -86,15 +86,15 @@ INSERT INTO `uuuisa`.`guru_has_mataPelajaran` (`guru_idGuru`, `mataPelajaran_idm
 (3, 2), (3, 5);
 
 -- Riwayat peminjaman buku 
-INSERT INTO `uuuisa`.`riwayat_peminjaman` (`siswa_idsiswa`, `buku_idbuku`, `tanggal_peminjaman`, `tanggal_pengembalian`, `pustakawan_idpustakawan`) VALUES 
-(1, 1, '2023-08-10', '2023-08-17', 1),
-(2, 3, '2023-08-12', '2023-08-19', 1),
-(3, 2, '2023-08-15', '2023-08-22', 1);
+INSERT INTO `uuuisa`.`riwayat_peminjaman` (`siswa_idsiswa`, `buku_idbuku`, `tanggal_peminjaman`, `tanggal_pengembalian`, `pustakawan_idpustakawan`, `status_peminjaman_id`) VALUES 
+(1, 1, '2023-08-10', '2023-08-17', 1, 2),
+(2, 3, '2023-08-12', '2023-08-19', 1, 2),
+(3, 2, '2023-08-15', '2023-08-22', 1, 2);
 
-INSERT INTO `uuuisa`.`riwayat_aktivitas` (`waktu_masuk`, `waktu_keluar`, `durasi_aktif`, `akun_idAkun`) VALUES 
-('2023-08-01 08:00:00', '2023-08-01 12:30:00', '04:30:00', 3),
-('2023-08-01 13:00:00', '2023-08-01 15:45:00', '02:45:00', 6),
-('2023-08-02 07:30:00', '2023-08-02 11:20:00', '03:50:00', 2);
+-- INSERT INTO `uuuisa`.`riwayat_aktivitas` (`waktu_masuk`, `waktu_keluar`, `durasi_aktif`, `akun_idAkun`) VALUES 
+-- ('2023-08-01 08:00:00', '2023-08-01 12:30:00', '04:30:00', 3),
+-- ('2023-08-01 13:00:00', '2023-08-01 15:45:00', '02:45:00', 6),
+-- ('2023-08-02 07:30:00', '2023-08-02 11:20:00', '03:50:00', 2);
 
 INSERT INTO `uuuisa`.`status_peminjaman` (`id`, `status`) VALUES 
 ('1', 'diajukan'), 
@@ -108,5 +108,16 @@ INSERT INTO `uuuisa`.`guru_has_matapelajaran` (`guru_idGuru`, `mataPelajaran_idm
 ('2', '2'), 
 ('3', '3');
 
--- siswa mengambil mata pelajaran apa saja --
+-- kelas_has_guru
+INSERT INTO `uuuisa`.`kelas_has_guru` (`kelas_idkelas`, `guru_idGuru`) VALUES ('1', '1');
+INSERT INTO `uuuisa`.`kelas_has_guru` (`kelas_idkelas`, `guru_idGuru`) VALUES ('1', '2');
+INSERT INTO `uuuisa`.`kelas_has_guru` (`kelas_idkelas`, `guru_idGuru`) VALUES ('2', '2');
+INSERT INTO `uuuisa`.`kelas_has_guru` (`kelas_idkelas`, `guru_idGuru`) VALUES ('3', '3');
+INSERT INTO `uuuisa`.`kelas_has_guru` (`kelas_idkelas`, `guru_idGuru`) VALUES ('4', '4');
+
+-- matapelajaran_has_guru
+INSERT INTO `uuuisa`.`matapelajaran_has_guru` (`mataPelajaran_idmataPelajaran`, `guru_idGuru`) VALUES ('1', '1');
+INSERT INTO `uuuisa`.`matapelajaran_has_guru` (`mataPelajaran_idmataPelajaran`, `guru_idGuru`) VALUES ('2', '2');
+INSERT INTO `uuuisa`.`matapelajaran_has_guru` (`mataPelajaran_idmataPelajaran`, `guru_idGuru`) VALUES ('3', '3');
+
 

@@ -48,15 +48,15 @@ namespace ProjectISA_uuuISA
         #region METHOD
         public static Siswa BacaData(int idAkun)
         {
-            string perintah = "SELECT s.idsiswa, s.nama, s.tanggalLahir, s.alamatRumah, s.tahunMasuk, s.emailSekolah " +
-                "FROM siswa s INNER JOIN akun a ON s.akun_idAkun = a.idAkun " +
-                "WHERE s.akun_idAkun = '" + idAkun + "'";
-
+            string perintah = "SELECT s.idsiswa, s.nama, s.tanggalLahir, s.alamatRumah, s.tahunMasuk, s.emailSekolah FROM siswa s INNER JOIN akun a ON s.akun_idAkun = a.idAkun WHERE s.akun_idAkun = "+idAkun+";";
+            Console.WriteLine(perintah);
             MySqlDataReader dr = Koneksi.JalankanPerintahSelect(perintah);
 
             Siswa siswa;
+            Console.WriteLine("PANGGIL METHOD BACA DATA SISWA");
             if(dr.Read())
             {
+                Console.WriteLine("JALANKAN dr.Read()");
                 int idSiswa = int.Parse(dr.GetValue(0).ToString());
                 string nama = dr.GetValue(1).ToString();
                 DateTime tglLahir = DateTime.Parse(dr.GetValue(2).ToString());

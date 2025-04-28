@@ -85,7 +85,7 @@ namespace ProjectISA_uuuISA
         public static Akun User_Login(int idAkun, string password)
         {
             string perintah = "SELECT * FROM akun a INNER JOIN role r ON a.role_idrole = r.idrole " +
-                      "WHERE a.idAkun = '" + idAkun + "' AND a.password = SHA2('" + password + "', 256);";
+                      "WHERE a.idAkun = '" + idAkun + "' AND a.password = '" + password + "';";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
 
