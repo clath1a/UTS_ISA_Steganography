@@ -3,68 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuisa_class\\akun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|solutionrelative:uuuisa_class\\akun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|c:\\users\\megan\\documents\\isa project\\uts_isa\\projectisa_uuuisa\\projectisa_uuuisa\\user control\\uc_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|c:\\users\\megan\\documents\\isa project\\uts_isa\\projectisa_uuuisa\\uuuisa_class\\aes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuisa_class\\aes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|solutionrelative:uuuisa_class\\aes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|c:\\users\\megan\\documents\\isa project\\uts_isa\\projectisa_uuuisa\\projectisa_uuuisa\\user control\\uc_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuisa_class\\riwayatpeminjaman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|solutionrelative:uuuisa_class\\riwayatpeminjaman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_updatenilai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|c:\\users\\megan\\documents\\isa project\\uts_isa\\projectisa_uuuisa\\projectisa_uuuisa\\user control\\uc_updatenilai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_updatenilai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_updatenilai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_updatenilai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_editnilairaport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_editnilairaport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_editnilairaport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_editnilairaport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_downloadraport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_downloadraport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_inputnilairaportsiswa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_inputnilairaportsiswa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_inputnilairaportsiswa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_inputnilairaportsiswa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_konfirmasipeminjamanbuku.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_konfirmasipeminjamanbuku.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_peminjamanbuku.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_peminjamanbuku.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_utama.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_utama.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_logaktivitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -73,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_inputnilairaport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_inputnilairaport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuisa_class\\penilaian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -151,22 +115,6 @@
       "RelativeMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|solutionrelative:uuuisa_class\\steganography_raport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuisa_class\\guru_matapelajaran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|solutionrelative:uuuisa_class\\guru_matapelajaran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuisa_class\\kelas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|solutionrelative:uuuisa_class\\kelas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuisa_class\\matapelajaran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|solutionrelative:uuuisa_class\\matapelajaran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuisa_class\\koneksi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|solutionrelative:uuuisa_class\\koneksi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_downloadraport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_downloadraport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -187,16 +135,8 @@
       "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\formutama.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_utama.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_utama.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuisa_class\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E084E955-0C94-4F3E-AD50-F8DFA4925DF4}|uuuISA_Class\\uuuISA_Class.csproj|solutionrelative:uuuisa_class\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\projectisa_uuuisa\\user control\\uc_konfirmasipeminjamanbuku.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DB7DC6B-8C8A-4736-81E8-E35D76D6B007}|ProjectISA_uuuISA\\ProjectISA_uuuISA.csproj|solutionrelative:projectisa_uuuisa\\user control\\uc_konfirmasipeminjamanbuku.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -206,7 +146,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 239,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -216,22 +156,37 @@
               "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_Login.cs",
               "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Login.cs",
               "RelativeToolTip": "ProjectISA_uuuISA\\User Control\\UC_Login.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAApwFMAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAqwFEAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T08:12:05.959Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "UC_Register.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Register.cs",
               "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_Register.cs",
               "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Register.cs",
               "RelativeToolTip": "ProjectISA_uuuISA\\User Control\\UC_Register.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAADwvx4AAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T10:55:05.66Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Akun.cs",
+              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Akun.cs",
+              "RelativeDocumentMoniker": "uuuISA_Class\\Akun.cs",
+              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Akun.cs",
+              "RelativeToolTip": "uuuISA_Class\\Akun.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAuwH4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T07:26:33.528Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -243,9 +198,10 @@
               "RelativeDocumentMoniker": "uuuISA_Class\\AES.cs",
               "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\AES.cs",
               "RelativeToolTip": "uuuISA_Class\\AES.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAB4AAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAYwBYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-28T09:46:28.517Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
@@ -254,27 +210,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UC_EditNilaiRaport.cs",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_EditNilaiRaport.cs",
-              "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_EditNilaiRaport.cs",
-              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_EditNilaiRaport.cs",
-              "RelativeToolTip": "ProjectISA_uuuISA\\User Control\\UC_EditNilaiRaport.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAADwvzQAAABkAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "UC_UpdateNilai.cs",
+              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_UpdateNilai.cs",
+              "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_UpdateNilai.cs",
+              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_UpdateNilai.cs",
+              "RelativeToolTip": "ProjectISA_uuuISA\\User Control\\UC_UpdateNilai.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T10:40:17.533Z"
+              "WhenOpened": "2025-04-28T18:38:11.508Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Akun.cs",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Akun.cs",
-              "RelativeDocumentMoniker": "uuuISA_Class\\Akun.cs",
-              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Akun.cs",
-              "RelativeToolTip": "uuuISA_Class\\Akun.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAQwHMAAABOAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "UC_Register.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Register.cs",
+              "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_Register.cs",
+              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Register.cs [Design]",
+              "RelativeToolTip": "ProjectISA_uuuISA\\User Control\\UC_Register.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T07:26:33.528Z",
+              "WhenOpened": "2025-04-27T10:42:38.379Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UC_Utama.cs",
+              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Utama.cs",
+              "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_Utama.cs",
+              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Utama.cs",
+              "RelativeToolTip": "ProjectISA_uuuISA\\User Control\\UC_Utama.cs",
+              "ViewState": "AgIAABMBAAAAAAAAAAAuwBkBAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T08:25:44.941Z",
               "EditorCaption": ""
             },
             {
@@ -283,121 +252,15 @@
               "Title": "UC_Login.cs [Design]",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Login.cs",
               "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_Login.cs",
-              "ToolTip": "E:\\UBAYA\\Semester 4\\ISA\\UTS\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Login.cs [Design]",
+              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Login.cs [Design]",
+              "RelativeToolTip": "ProjectISA_uuuISA\\User Control\\UC_Login.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T02:12:38.642Z"
+              "WhenOpened": "2025-04-27T02:12:38.642Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RiwayatPeminjaman.cs",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\RiwayatPeminjaman.cs",
-              "RelativeDocumentMoniker": "uuuISA_Class\\RiwayatPeminjaman.cs",
-              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\RiwayatPeminjaman.cs",
-              "RelativeToolTip": "uuuISA_Class\\RiwayatPeminjaman.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAYwE8AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T14:09:03.07Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UC_UpdateNilai.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_UpdateNilai.cs",
-              "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_UpdateNilai.cs",
-              "ToolTip": "E:\\UBAYA\\Semester 4\\ISA\\UTS\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_UpdateNilai.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T02:58:26.474Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UC_UpdateNilai.cs",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_UpdateNilai.cs",
-              "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_UpdateNilai.cs",
-              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_UpdateNilai.cs",
-              "RelativeToolTip": "ProjectISA_uuuISA\\User Control\\UC_UpdateNilai.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAAwDAAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T02:13:51.285Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UC_EditNilaiRaport.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_EditNilaiRaport.cs",
-              "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_EditNilaiRaport.cs",
-              "ToolTip": "E:\\UBAYA\\Semester 4\\ISA\\UTS\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_EditNilaiRaport.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T20:50:09.98Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UC_DownloadRaport.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_DownloadRaport.cs",
-              "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_DownloadRaport.cs",
-              "ToolTip": "E:\\UBAYA\\Semester 4\\ISA\\UTS\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_DownloadRaport.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T10:14:57.344Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UC_InputNilaiRaportSiswa.cs",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_InputNilaiRaportSiswa.cs",
-              "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_InputNilaiRaportSiswa.cs",
-              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_InputNilaiRaportSiswa.cs",
-              "RelativeToolTip": "ProjectISA_uuuISA\\User Control\\UC_InputNilaiRaportSiswa.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T11:17:07.266Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UC_KonfirmasiPeminjamanBuku.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_KonfirmasiPeminjamanBuku.cs",
-              "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_KonfirmasiPeminjamanBuku.cs",
-              "ToolTip": "E:\\UBAYA\\Semester 4\\ISA\\UTS\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_KonfirmasiPeminjamanBuku.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T11:16:43.787Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "UC_PeminjamanBuku.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_PeminjamanBuku.cs",
-              "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_PeminjamanBuku.cs",
-              "ToolTip": "E:\\UBAYA\\Semester 4\\ISA\\UTS\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_PeminjamanBuku.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T08:30:02.23Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UC_InputNilaiRaportSiswa.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_InputNilaiRaportSiswa.cs",
-              "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_InputNilaiRaportSiswa.cs",
-              "ToolTip": "E:\\UBAYA\\Semester 4\\ISA\\UTS\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_InputNilaiRaportSiswa.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T20:49:55.799Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "UC_Utama.cs",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Utama.cs",
-              "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_Utama.cs",
-              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Utama.cs",
-              "RelativeToolTip": "ProjectISA_uuuISA\\User Control\\UC_Utama.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkBAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T08:25:44.941Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 8,
               "Title": "UC_LogAktivitas.cs [Design]",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_LogAktivitas.cs",
               "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_LogAktivitas.cs",
@@ -407,7 +270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 9,
               "Title": "UC_InputNilaiRaport.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_InputNilaiRaport.cs",
               "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_InputNilaiRaport.cs",
@@ -419,17 +282,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "UC_Register.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Register.cs",
-              "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_Register.cs",
-              "ToolTip": "E:\\UBAYA\\Semester 4\\ISA\\UTS\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Register.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T10:42:38.379Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 10,
               "Title": "Penilaian.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Penilaian.cs",
               "RelativeDocumentMoniker": "uuuISA_Class\\Penilaian.cs",
@@ -441,7 +294,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 11,
               "Title": "FormUtama.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\FormUtama.cs",
               "RelativeDocumentMoniker": "ProjectISA_uuuISA\\FormUtama.cs",
@@ -453,7 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 12,
               "Title": "UC_UploadTTD.cs [Design]",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_UploadTTD.cs",
               "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_UploadTTD.cs",
@@ -463,17 +316,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 13,
               "Title": "UC_Utama.cs [Design]",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Utama.cs",
               "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_Utama.cs",
-              "ToolTip": "E:\\UBAYA\\Semester 4\\ISA\\UTS\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Utama.cs [Design]",
+              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Utama.cs [Design]",
+              "RelativeToolTip": "ProjectISA_uuuISA\\User Control\\UC_Utama.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T02:22:19.926Z"
+              "WhenOpened": "2025-04-27T02:22:19.926Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 14,
               "Title": "UC_LogPeminjaman.cs [Design]",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_LogPeminjaman.cs",
               "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_LogPeminjaman.cs",
@@ -483,7 +338,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 15,
               "Title": "UC_UploadTTD.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_UploadTTD.cs",
               "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_UploadTTD.cs",
@@ -495,7 +350,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 16,
               "Title": "UC_InputNilaiRaport.cs [Design]",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_InputNilaiRaport.cs",
               "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_InputNilaiRaport.cs",
@@ -505,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 17,
               "Title": "UC_EditNilaiRaportSiswa.cs [Design]",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_EditNilaiRaportSiswa.cs",
               "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_EditNilaiRaportSiswa.cs",
@@ -515,7 +370,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 18,
               "Title": "Pustakawan.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Pustakawan.cs",
               "RelativeDocumentMoniker": "uuuISA_Class\\Pustakawan.cs",
@@ -527,7 +382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 19,
               "Title": "UC_PeminjamanBuku.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_PeminjamanBuku.cs",
               "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_PeminjamanBuku.cs",
@@ -539,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 20,
               "Title": "UC_EditNilaiRaportSiswa.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_EditNilaiRaportSiswa.cs",
               "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_EditNilaiRaportSiswa.cs",
@@ -551,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 21,
               "Title": "NilaiMataPelajaran.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\NilaiMataPelajaran.cs",
               "RelativeDocumentMoniker": "uuuISA_Class\\NilaiMataPelajaran.cs",
@@ -563,7 +418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 22,
               "Title": "Buku.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Buku.cs",
               "RelativeDocumentMoniker": "uuuISA_Class\\Buku.cs",
@@ -575,7 +430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 23,
               "Title": "Guru.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Guru.cs",
               "RelativeDocumentMoniker": "uuuISA_Class\\Guru.cs",
@@ -587,7 +442,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 24,
               "Title": "Status_Peminjaman.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Status_Peminjaman.cs",
               "RelativeDocumentMoniker": "uuuISA_Class\\Status_Peminjaman.cs",
@@ -599,7 +454,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 25,
               "Title": "Rapot.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Rapot.cs",
               "RelativeDocumentMoniker": "uuuISA_Class\\Rapot.cs",
@@ -611,7 +466,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 26,
               "Title": "app.config",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\app.config",
               "RelativeDocumentMoniker": "uuuISA_Class\\app.config",
@@ -623,7 +478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 27,
               "Title": "Steganography_Raport.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Steganography_Raport.cs",
               "RelativeDocumentMoniker": "uuuISA_Class\\Steganography_Raport.cs",
@@ -635,55 +490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "Guru_MataPelajaran.cs",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Guru_MataPelajaran.cs",
-              "RelativeDocumentMoniker": "uuuISA_Class\\Guru_MataPelajaran.cs",
-              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Guru_MataPelajaran.cs",
-              "RelativeToolTip": "uuuISA_Class\\Guru_MataPelajaran.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAD4v1MAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T10:28:33.42Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "Kelas.cs",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Kelas.cs",
-              "RelativeDocumentMoniker": "uuuISA_Class\\Kelas.cs",
-              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Kelas.cs",
-              "RelativeToolTip": "uuuISA_Class\\Kelas.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T08:03:02.089Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "MataPelajaran.cs",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\MataPelajaran.cs",
-              "RelativeDocumentMoniker": "uuuISA_Class\\MataPelajaran.cs",
-              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\MataPelajaran.cs",
-              "RelativeToolTip": "uuuISA_Class\\MataPelajaran.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T16:21:10.006Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "Koneksi.cs",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Koneksi.cs",
-              "RelativeDocumentMoniker": "uuuISA_Class\\Koneksi.cs",
-              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Koneksi.cs",
-              "RelativeToolTip": "uuuISA_Class\\Koneksi.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAD4vz8AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T07:17:52.085Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 28,
               "Title": "UC_DownloadRaport.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_DownloadRaport.cs",
               "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_DownloadRaport.cs",
@@ -691,11 +498,12 @@
               "RelativeToolTip": "ProjectISA_uuuISA\\User Control\\UC_DownloadRaport.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T15:55:03.968Z"
+              "WhenOpened": "2025-04-26T15:55:03.968Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 29,
               "Title": "RiwayatAktivitas.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\RiwayatAktivitas.cs",
               "RelativeDocumentMoniker": "uuuISA_Class\\RiwayatAktivitas.cs",
@@ -707,7 +515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 30,
               "Title": "Nisbi.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Nisbi.cs",
               "RelativeDocumentMoniker": "uuuISA_Class\\Nisbi.cs",
@@ -719,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 31,
               "Title": "Siswa.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Siswa.cs",
               "RelativeDocumentMoniker": "uuuISA_Class\\Siswa.cs",
@@ -731,7 +539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 32,
               "Title": "FormUtama.cs [Design]",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\FormUtama.cs",
               "RelativeDocumentMoniker": "ProjectISA_uuuISA\\FormUtama.cs",
@@ -741,19 +549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "UC_Utama.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Utama.Designer.cs",
-              "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_Utama.Designer.cs",
-              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_Utama.Designer.cs",
-              "RelativeToolTip": "ProjectISA_uuuISA\\User Control\\UC_Utama.Designer.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwNIAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T12:11:50.784Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 33,
               "Title": "Role.cs",
               "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\uuuISA_Class\\Role.cs",
               "RelativeDocumentMoniker": "uuuISA_Class\\Role.cs",
@@ -762,18 +558,6 @@
               "ViewState": "AgIAADAAAAAAAAAAAAArwD0AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-26T11:49:27.572Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "UC_KonfirmasiPeminjamanBuku.cs",
-              "DocumentMoniker": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_KonfirmasiPeminjamanBuku.cs",
-              "RelativeDocumentMoniker": "ProjectISA_uuuISA\\User Control\\UC_KonfirmasiPeminjamanBuku.cs",
-              "ToolTip": "C:\\Users\\megan\\Documents\\ISA PROJECT\\UTS_ISA\\ProjectISA_uuuISA\\ProjectISA_uuuISA\\User Control\\UC_KonfirmasiPeminjamanBuku.cs",
-              "RelativeToolTip": "ProjectISA_uuuISA\\User Control\\UC_KonfirmasiPeminjamanBuku.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAkwEgAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T09:26:21.35Z"
             }
           ]
         },

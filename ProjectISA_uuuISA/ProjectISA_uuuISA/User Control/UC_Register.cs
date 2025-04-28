@@ -12,7 +12,6 @@ namespace ProjectISA_uuuISA.User_Control
 {
     public partial class UC_Register : UserControl
     {
-        UC_Login uc_Login;
         FormUtama formUtama;
         
         public UC_Register(FormUtama formUtama)
@@ -58,6 +57,7 @@ namespace ProjectISA_uuuISA.User_Control
                 {
                     idRole = 1;
                 }
+
 
                 Akun.Register_Account(username, password, idRole);
                 MessageBox.Show("Berhasil membuat akun dengan username: " + username);

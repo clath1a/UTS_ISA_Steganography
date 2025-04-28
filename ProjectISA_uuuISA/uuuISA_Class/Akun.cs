@@ -79,14 +79,13 @@ namespace ProjectISA_uuuISA
             }
             return listAkun;
 
-            #endregion
         }
+        #endregion
 
         public static Akun User_Login(int idAkun, string password)
         {
-            string encryptedPassword = AES.Encrypt(password);
             string perintah = "SELECT * FROM akun a INNER JOIN role r ON a.role_idrole = r.idrole " +
-                      "WHERE a.idAkun = '" + idAkun + "' AND a.password = '" + password + "';";
+                      "WHERE a.idAkun = '" + idAkun + "';"; //pengecekan dilakukan setelah membaca isi akun
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
 
@@ -96,7 +95,7 @@ namespace ProjectISA_uuuISA
                 // Data akun
                 int id = int.Parse(hasil.GetValue(0).ToString());
                 string username = hasil.GetValue(1).ToString();
-                string hashedPassword = hasil.GetValue(2).ToString();
+                string encryptedPassword = hasil.GetValue(2).ToString(); //encrypted password
 
                 // Data role
                 int idRole = int.Parse(hasil.GetValue(4).ToString());  // FIXED
@@ -106,14 +105,21 @@ namespace ProjectISA_uuuISA
                 Role role = new Role(idRole, namaRole);
                 Console.WriteLine("NAMA ROLE: " + namaRole);
 
+                string decryptedPassword = AES.Decrypt(encryptedPassword);
+
+                if (decryptedPassword != password)
+                {
+                    throw new Exception("Password salah!");
+                }
+
                 // Buat objek akun
-                akun = new Akun(id, username, hashedPassword, role);
+                akun = new Akun(id, username, encryptedPassword, role);
 
                 Console.WriteLine("DATA PENGGUNA BERHASIL DIAMBIL");
             }
             else
             {
-                throw new Exception("User password or username is incorrect");
+                throw new Exception("User password or username is incorrect, or does not exists.");
             }
             return akun;
         }
@@ -121,7 +127,10 @@ namespace ProjectISA_uuuISA
         public static bool Register_Account(string username, string password, int idRole)
         {
             string encryptedPassword = AES.Encrypt(password);
-            string perintah = "INSERT INTO `uuuisa`.`akun` (`username`, `password`, `role_idrole`) VALUES ('"+username+"', '"+ encryptedPassword+ "', '"+idRole+"');";
+            System.Diagnostics.Debug.WriteLine("[DEBUG] Encrypted Password: " + encryptedPassword);
+
+            string perintah = "INSERT INTO `uuuisa`.`akun` (`username`, `password`, `role_idrole`) VALUES ('" + username + "', '" + encryptedPassword + "', '" + idRole + "');";
+            System.Diagnostics.Debug.WriteLine("[DEBUG] Perintah SQL: " + perintah);
 
             int hasil = Koneksi.JalankanPerintahDML(perintah);
             if (hasil > 0)

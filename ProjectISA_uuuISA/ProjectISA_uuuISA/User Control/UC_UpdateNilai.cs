@@ -14,7 +14,6 @@ namespace ProjectISA_uuuISA.User_Control
     {
         UC_EditNilaiRaportSiswa uc_edit;
         UC_InputNilaiRaportSiswa uc_input;
-        UC_Utama uc_Utama;
         int IdRapot, IdMatapelajaran;
         public UC_UpdateNilai(UC_InputNilaiRaportSiswa uc_Input, int idRapot, int idMataPelajaran)
         {

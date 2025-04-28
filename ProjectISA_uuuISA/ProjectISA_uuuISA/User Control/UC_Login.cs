@@ -13,12 +13,12 @@ namespace ProjectISA_uuuISA.User_Control
 {
     public partial class UC_Login : UserControl
     {
-        FormUtama formUtama;        
+        FormUtama formUtama;
         public UC_Login(FormUtama formUtama)
         {
             InitializeComponent();
             this.formUtama = formUtama;
-        }        
+        }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
@@ -30,20 +30,20 @@ namespace ProjectISA_uuuISA.User_Control
 
                 //login method
                 Akun.User_Login(idAkun, password);
-                FormUtama.current_user = Akun.User_Login(idAkun, password);                
-                Console.WriteLine("Current user: "+FormUtama.current_user.Username);
+                FormUtama.current_user = Akun.User_Login(idAkun, password);
+                Console.WriteLine("Current user: " + FormUtama.current_user.Username);
                 MessageBox.Show("LOGIN BERHASIL");
 
                 LoadRoleData(idAkun);
 
                 Load_UC_Utama();
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
 
         #region METHOD
@@ -79,7 +79,7 @@ namespace ProjectISA_uuuISA.User_Control
         private void panelRegister_Click(object sender, EventArgs e)
         {
             UC_Register uC_Register = new UC_Register(formUtama);
-            formUtama.panelUtama.Controls.Remove(this);            
+            formUtama.panelUtama.Controls.Remove(this);
             formUtama.panelUtama.Controls.Add(uC_Register);
         }
 
