@@ -1,9 +1,13 @@
 ﻿using class_uuuISA;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using uuuISA_Class;
 
 namespace ProjectISA_uuuISA
 {
@@ -17,7 +21,9 @@ namespace ProjectISA_uuuISA
         private int tahunAjaran;
         private string deskripsi;
         private int idNisbi;
+        #endregion
 
+        #region CONSTRUCTOR
         public Penilaian(int idMataPelajaran, int idRapot, double nilai, string semester, int tahunAjaran, string deskripsi, int idNisbi)
         {
             IdMataPelajaran = idMataPelajaran;
@@ -52,6 +58,8 @@ namespace ProjectISA_uuuISA
         public int IdNisbi { get => idNisbi; set => idNisbi = value; }
         #endregion
 
+        #region METHOD
+
         public static bool Update_NilaiRapot(int nilaiBaru, string semester, int tahunAjaran, string deskripsiBaru, int idNisbi, int idMataPelajaran, int idRapot)
         {
             string perintah = "UPDATE `uuuisa`.`penilaian` SET `nilai` = '"+nilaiBaru+ "', `semester` = '"+semester+"', `tahun_ajaran` = '" + tahunAjaran+"', " +
@@ -65,7 +73,32 @@ namespace ProjectISA_uuuISA
             return false;
         }
 
+        public static void Cetak(string pNamaFile, Font pTipeFont)
+        {
+            List<DownloadRapot> listHasil = DownloadRapot.BacaData();
 
+            //proses menulis filetext
+            StreamWriter fileCetak = new StreamWriter(pNamaFile);
+            fileCetak.WriteLine("Rapot");
+            fileCetak.WriteLine("Laporan Rapot");
+            fileCetak.WriteLine("----------------------------------------------------------------------");
+            fileCetak.WriteLine("");
 
+            for (int i = 0; i < listHasil.Count; i++)
+            {
+                fileCetak.WriteLine(listHasil[i].NamaSiswa + " - " + listHasil[i].IdMataPelajaran + " - " + listHasil[i].Nilai.ToString());
+
+            }
+
+            fileCetak.WriteLine();
+            fileCetak.WriteLine("-----------------------------------------------------------------------------------");
+            fileCetak.WriteLine("Tanggal Cetak = " + DateTime.Now.ToString("dd/MM/yyyy"));
+            fileCetak.Close();
+
+            //proses mencetak ke printer
+            CustomPrint p = new CustomPrint(pTipeFont, pNamaFile, 100, 50, 50, 50);
+            p.KirimKePrinter();
+        }
+        #endregion
     }
 }

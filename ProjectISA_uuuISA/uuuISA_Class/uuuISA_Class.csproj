@@ -99,6 +99,7 @@
     <Compile Include="Akun.cs" />
     <Compile Include="Buku.cs" />
     <Compile Include="CustomPrint.cs" />
+    <Compile Include="DownloadRapot.cs" />
     <Compile Include="Guru.cs" />
     <Compile Include="Guru_MataPelajaran.cs" />
     <Compile Include="Kelas.cs" />
