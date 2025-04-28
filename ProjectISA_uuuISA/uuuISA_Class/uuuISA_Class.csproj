@@ -96,6 +96,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AES.cs" />
     <Compile Include="Akun.cs" />
     <Compile Include="Buku.cs" />
     <Compile Include="CustomPrint.cs" />

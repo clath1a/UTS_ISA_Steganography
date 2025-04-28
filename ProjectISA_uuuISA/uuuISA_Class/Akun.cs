@@ -84,6 +84,7 @@ namespace ProjectISA_uuuISA
 
         public static Akun User_Login(int idAkun, string password)
         {
+            string encryptedPassword = AES.Encrypt(password);
             string perintah = "SELECT * FROM akun a INNER JOIN role r ON a.role_idrole = r.idrole " +
                       "WHERE a.idAkun = '" + idAkun + "' AND a.password = '" + password + "';";
 
@@ -119,7 +120,8 @@ namespace ProjectISA_uuuISA
 
         public static bool Register_Account(string username, string password, int idRole)
         {
-            string perintah = "INSERT INTO `uuuisa`.`akun` (`username`, `password`, `role_idrole`) VALUES ('"+username+"', '"+password+"', '"+idRole+"');";
+            string encryptedPassword = AES.Encrypt(password);
+            string perintah = "INSERT INTO `uuuisa`.`akun` (`username`, `password`, `role_idrole`) VALUES ('"+username+"', '"+ encryptedPassword+ "', '"+idRole+"');";
 
             int hasil = Koneksi.JalankanPerintahDML(perintah);
             if (hasil > 0)
