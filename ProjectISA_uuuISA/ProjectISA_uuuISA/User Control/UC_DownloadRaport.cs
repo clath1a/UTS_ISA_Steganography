@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PdfSharpCore.Pdf;
+using PdfSharpCore.Drawing;
 
 namespace ProjectISA_uuuISA.User_Control
 {
@@ -19,7 +21,7 @@ namespace ProjectISA_uuuISA.User_Control
 
         private void buttonDownloadRaport_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
