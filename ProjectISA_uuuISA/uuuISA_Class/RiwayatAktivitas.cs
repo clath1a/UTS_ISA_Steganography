@@ -61,13 +61,12 @@ namespace ProjectISA_uuuISA
             }            
             return listRiwayat;
         }
-
         public static int Select_Latest_IdRiwayat_Aktivitas()
         {
             string perintah = "select idriwayat_aktivitas from riwayat_aktivitas ORDER BY idriwayat_aktivitas DESC LIMIT 1";
             MySqlDataReader dr = Koneksi.JalankanPerintahSelect(perintah);
             int idRiwayat;
-            if(dr.Read())
+            if (dr.Read())
             {
                 idRiwayat = int.Parse(dr.GetValue(0).ToString());
             }
@@ -80,14 +79,14 @@ namespace ProjectISA_uuuISA
 
         public static bool Insert_LoginTime(DateTime waktu_masuk, DateTime waktu_keluar, string durasi_aktif, int idAkun)
         {
-            string perintah = "INSERT INTO `uuuisa`.`riwayat_aktivitas` (`waktu_masuk`, `waktu_keluar`, `durasi_aktif`, `akun_idAkun`) VALUES ('" + waktu_masuk.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + waktu_keluar.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + durasi_aktif + "', '" + idAkun + "');";
+            string perintah = "INSERT INTO uuuisa.riwayat_aktivitas (waktu_masuk, waktu_keluar, durasi_aktif, akun_idAkun) VALUES ('" + waktu_masuk.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + waktu_keluar.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + durasi_aktif + "', '" + idAkun + "');";
             int hasil = Koneksi.JalankanPerintahDML(perintah);
             return hasil > 0;
         }
 
         public static bool Update_LogoutTimt(DateTime waktu_keluar, string durasi_aktif, int idRiwayat_aktivitas)
         {
-            string perintah = "UPDATE `riwayat_aktivitas` SET `waktu_keluar` = '" + waktu_keluar.ToString("yyyy-MM-dd HH:mm:ss") + "', `durasi_aktif` = '" + durasi_aktif + "' WHERE `idriwayat_aktivitas` = '" + idRiwayat_aktivitas + "';";
+            string perintah = "UPDATE riwayat_aktivitas SET waktu_keluar = '" + waktu_keluar.ToString("yyyy-MM-dd HH:mm:ss") + "', durasi_aktif = '" + durasi_aktif + "' WHERE idriwayat_aktivitas = '" + idRiwayat_aktivitas + "';";
             int hasil = Koneksi.JalankanPerintahDML(perintah);
             return hasil > 0;
         }
