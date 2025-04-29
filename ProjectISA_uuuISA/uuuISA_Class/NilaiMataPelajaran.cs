@@ -48,7 +48,7 @@ namespace uuuISA_Class
             //nilainol == true --> untuk inputNilai
             //nilainol == false --> edit nilai
             string perintah;
-            if(nilaiNol)
+            if(nilaiNol == true)
             {
                 perintah = "SELECT r.idRapot, k.idKelas, k.namaKelas, s.idsiswa, s.nama, mp.idmataPelajaran, mp.namaMataPelajaran, p.nilai " +
                     "FROM siswa s " +
