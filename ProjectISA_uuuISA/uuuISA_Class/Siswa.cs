@@ -73,6 +73,22 @@ namespace ProjectISA_uuuISA
             }
             return siswa;
         }
+
+        public static bool Insert_Siswa(string nama, DateTime tglLahir, string alamatRumah, string emailSekolah)
+        {
+            int kelas = GetRandomNumber1to3();
+
+            string perintah = "INSERT INTO siswa (nama, tanggalLahir, alamatRumah, tahunMasuk, emailSekolah, akun_idakun, kelas_idkelas) SELECT '" + nama + "', '" + tglLahir.ToString("yyyy-MM-dd") + "', '" + alamatRumah + "', " + DateTime.Now.Year + ", '" + emailSekolah + "@frateran.ac.id', idakun, " + kelas + " FROM akun ORDER BY idakun DESC LIMIT 1;";
+            int hasil = Koneksi.JalankanPerintahDML(perintah);
+            return hasil > 0;
+        }
+
+        private static int GetRandomNumber1to3()
+        {
+            //untuk merandom kelas secara acak (sementara)
+            Random rand = new Random();
+            return rand.Next(1, 4);
+        }
         #endregion
     }
 }

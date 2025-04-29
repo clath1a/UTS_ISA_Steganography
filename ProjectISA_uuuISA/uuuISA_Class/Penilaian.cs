@@ -74,36 +74,43 @@ namespace ProjectISA_uuuISA
         }
 
         public static void Cetak(string pNamaFile, Font pTipeFont, int idSiswa)
-        {
+        {            
             List<DownloadRapot> listRapot = DownloadRapot.BacaData(idSiswa);
-
-            //proses menulis filetext
-            StreamWriter fileCetak = new StreamWriter(pNamaFile);
-            fileCetak.WriteLine("RAPOT");
-            fileCetak.WriteLine("Laporan Rapot");
-            fileCetak.WriteLine("Nama Siswa: " + listRapot[0].NamaSiswa.ToUpper());
-            fileCetak.WriteLine("----------------------------------------------------------------------");
-            fileCetak.WriteLine("");
-            fileCetak.WriteLine("Tahun Ajaran | Semester | Mata Pelajaran | Nilai | Nisbi");
-
-            for (int i = 0; i < listRapot.Count; i++)
+            if (listRapot.Count != 0)
             {
-                fileCetak.WriteLine("  "+listRapot[i].TahunAjaran + "  |  " +
-                    listRapot[i].Semester + "  |  " +
-                    listRapot[i].NamaMataPelajaran + "  |  " +
-                    listRapot[i].Nilai.ToString() + "  |  " +
-                    listRapot[i].Nisbi
-                );
+                //proses menulis filetext
+                StreamWriter fileCetak = new StreamWriter(pNamaFile);
+                fileCetak.WriteLine("RAPOT");
+                fileCetak.WriteLine("Laporan Rapot");
+                fileCetak.WriteLine("Nama Siswa: " + listRapot[0].NamaSiswa.ToUpper());
+                fileCetak.WriteLine("----------------------------------------------------------------------");
+                fileCetak.WriteLine("");
+                fileCetak.WriteLine("Tahun Ajaran | Semester | Mata Pelajaran | Nilai | Nisbi");
+
+                for (int i = 0; i < listRapot.Count; i++)
+                {
+                    fileCetak.WriteLine("  " + listRapot[i].TahunAjaran + "  |  " +
+                        listRapot[i].Semester + "  |  " +
+                        listRapot[i].NamaMataPelajaran + "  |  " +
+                        listRapot[i].Nilai.ToString() + "  |  " +
+                        listRapot[i].Nisbi
+                    );
+                }
+
+                fileCetak.WriteLine();
+                fileCetak.WriteLine("-----------------------------------------------------------------------------------");
+                fileCetak.WriteLine("");
+                fileCetak.Close();
+
+                //proses mencetak ke printer
+                CustomPrint p = new CustomPrint(pTipeFont, pNamaFile, 100, 50, 50, 50);
+                p.KirimKePrinter();
             }
-
-            fileCetak.WriteLine();
-            fileCetak.WriteLine("-----------------------------------------------------------------------------------");
-            fileCetak.WriteLine("");
-            fileCetak.Close();
-
-            //proses mencetak ke printer
-            CustomPrint p = new CustomPrint(pTipeFont, pNamaFile, 100, 50, 50, 50);
-            p.KirimKePrinter();
+            else
+            {
+                throw new Exception("Belum ada data rapot");
+            }
+            
         }
         #endregion
     }

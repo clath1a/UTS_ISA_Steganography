@@ -64,6 +64,7 @@
             this.Controls.Add(this.labelTitle);
             this.Name = "UC_LogAktivitas";
             this.Size = new System.Drawing.Size(1026, 720);
+            this.Load += new System.EventHandler(this.UC_LogAktivitas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLogAktivitas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

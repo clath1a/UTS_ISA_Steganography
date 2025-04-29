@@ -94,6 +94,14 @@ namespace ProjectISA_uuuISA
             }
             return pustakawan;
         }
+
+        public static bool Insert_Pustakawan(string nama)
+        {
+            string perintah = "INSERT INTO pustakawan (nama, akun_idakun) SELECT '" + nama + "', idakun FROM akun ORDER BY idakun DESC LIMIT 1;";
+
+            int hasil = Koneksi.JalankanPerintahDML(perintah);
+            return hasil > 0;
+        }
         #endregion
     }
 }
