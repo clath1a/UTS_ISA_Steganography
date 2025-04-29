@@ -21,7 +21,11 @@ namespace ProjectISA_uuuISA.User_Control
 
         private void buttonDownloadRaport_Click(object sender, EventArgs e)
         {
-            
+            string namaSiswa = FormUtama.siswa.Nama.ToString();
+            int idSiswa = FormUtama.siswa.IdSiswa;
+            string namaFile = "[RAPOT] " + namaSiswa;
+
+            Penilaian.Cetak(namaFile, new Font("Poppins", 12), idSiswa);
         }
     }
 }

@@ -73,26 +73,32 @@ namespace ProjectISA_uuuISA
             return false;
         }
 
-        public static void Cetak(string pNamaFile, Font pTipeFont)
+        public static void Cetak(string pNamaFile, Font pTipeFont, int idSiswa)
         {
-            List<DownloadRapot> listHasil = DownloadRapot.BacaData();
+            List<DownloadRapot> listRapot = DownloadRapot.BacaData(idSiswa);
 
             //proses menulis filetext
             StreamWriter fileCetak = new StreamWriter(pNamaFile);
-            fileCetak.WriteLine("Rapot");
+            fileCetak.WriteLine("RAPOT");
             fileCetak.WriteLine("Laporan Rapot");
+            fileCetak.WriteLine("Nama Siswa: " + listRapot[0].NamaSiswa.ToUpper());
             fileCetak.WriteLine("----------------------------------------------------------------------");
             fileCetak.WriteLine("");
+            fileCetak.WriteLine("Tahun Ajaran | Semester | Mata Pelajaran | Nilai | Nisbi");
 
-            for (int i = 0; i < listHasil.Count; i++)
+            for (int i = 0; i < listRapot.Count; i++)
             {
-                fileCetak.WriteLine(listHasil[i].NamaSiswa + " - " + listHasil[i].IdMataPelajaran + " - " + listHasil[i].Nilai.ToString());
-
+                fileCetak.WriteLine("  "+listRapot[i].TahunAjaran + "  |  " +
+                    listRapot[i].Semester + "  |  " +
+                    listRapot[i].NamaMataPelajaran + "  |  " +
+                    listRapot[i].Nilai.ToString() + "  |  " +
+                    listRapot[i].Nisbi
+                );
             }
 
             fileCetak.WriteLine();
             fileCetak.WriteLine("-----------------------------------------------------------------------------------");
-            fileCetak.WriteLine("Tanggal Cetak = " + DateTime.Now.ToString("dd/MM/yyyy"));
+            fileCetak.WriteLine("");
             fileCetak.Close();
 
             //proses mencetak ke printer
