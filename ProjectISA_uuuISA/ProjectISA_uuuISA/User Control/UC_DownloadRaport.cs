@@ -17,23 +17,39 @@ namespace ProjectISA_uuuISA.User_Control
         public UC_DownloadRaport()
         {
             InitializeComponent();
+            int idAkun = FormUtama.current_user.IdAkun;
+            try
+            {
+                
+                comboBoxPilihSiswa.DataSource = Siswa.BacaSemuaData();
+                comboBoxPilihSiswa.DisplayMember = "Nama";     // Yang ditampilkan di ComboBox
+                comboBoxPilihSiswa.ValueMember = "IdSiswa";    // Nilai yang disimpan di balik layar
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal mengambil data siswa: " + ex.Message);
+            }
+
+
         }
 
         private void buttonDownloadRaport_Click(object sender, EventArgs e)
         {
             try
-            {                               
-                if(FormUtama.current_user.Role.NamaRole.ToString() == "Siswa")
+            {
+                if (FormUtama.current_user.Role.NamaRole == "Siswa" ||
+                    FormUtama.current_user.Role.NamaRole == "Guru" ||
+                    FormUtama.current_user.Role.NamaRole == "Admin")
                 {
-                    string namaSiswa = FormUtama.siswa.Nama.ToString();
-                    int idSiswa = FormUtama.siswa.IdSiswa;
-                    string namaFile = "[RAPOT] " + namaSiswa;
-
-                    Penilaian.Cetak(namaFile, new Font("Poppins", 12), idSiswa);
-                }         
+                    if(comboBoxPilihSiswa.SelectedItem is Siswa selectedSiswa)
+                    {
+                        string namaFile = "[RAPOT] " + selectedSiswa.Nama;
+                        Penilaian.Cetak(namaFile, new Font("Poppins", 12), selectedSiswa.IdSiswa);
+                    }
+                }
                 else
                 {
-                    MessageBox.Show("[DEV]: FEATURE IN PROGRESS, PLEASE DOWNLOAD AS SISWA");
+                    MessageBox.Show("Role tidak dikenali");
                 }
             }
             catch(Exception ex)
@@ -41,6 +57,11 @@ namespace ProjectISA_uuuISA.User_Control
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void comboBoxPilihSemester_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

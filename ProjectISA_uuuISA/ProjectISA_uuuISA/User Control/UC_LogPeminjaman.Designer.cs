@@ -55,6 +55,7 @@
             this.dataGridViewLogPeminjaman.RowTemplate.Height = 28;
             this.dataGridViewLogPeminjaman.Size = new System.Drawing.Size(961, 569);
             this.dataGridViewLogPeminjaman.TabIndex = 50;
+            this.dataGridViewLogPeminjaman.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLogPeminjaman_CellContentClick);
             // 
             // UC_LogPeminjaman
             // 
@@ -64,6 +65,7 @@
             this.Controls.Add(this.labelTitle);
             this.Name = "UC_LogPeminjaman";
             this.Size = new System.Drawing.Size(1026, 720);
+            this.Load += new System.EventHandler(this.UC_LogPeminjaman_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLogPeminjaman)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -286,5 +286,10 @@ namespace ProjectISA_uuuISA.User_Control
             UC_UploadTTD uc = new UC_UploadTTD();
             panelMain.Controls.Add(uc);
         }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

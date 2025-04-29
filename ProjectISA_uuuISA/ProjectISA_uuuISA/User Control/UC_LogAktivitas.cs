@@ -22,5 +22,10 @@ namespace ProjectISA_uuuISA.User_Control
             List<RiwayatAktivitas> listRiwayat = RiwayatAktivitas.BacaData();
             dataGridViewLogAktivitas.DataSource = listRiwayat;
         }
+
+        private void dataGridViewLogAktivitas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

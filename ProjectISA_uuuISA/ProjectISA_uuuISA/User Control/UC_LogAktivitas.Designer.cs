@@ -55,6 +55,7 @@
             this.dataGridViewLogAktivitas.RowTemplate.Height = 28;
             this.dataGridViewLogAktivitas.Size = new System.Drawing.Size(961, 569);
             this.dataGridViewLogAktivitas.TabIndex = 51;
+            this.dataGridViewLogAktivitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLogAktivitas_CellContentClick);
             // 
             // UC_LogAktivitas
             // 

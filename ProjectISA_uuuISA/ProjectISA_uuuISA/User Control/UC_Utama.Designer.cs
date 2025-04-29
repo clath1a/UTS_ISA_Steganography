@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelNavigation = new System.Windows.Forms.Panel();
+            this.buttonUploadTTD = new System.Windows.Forms.Button();
             this.panelButton4 = new System.Windows.Forms.Panel();
             this.labelContent4 = new System.Windows.Forms.Label();
             this.panelButton3 = new System.Windows.Forms.Panel();
@@ -39,7 +40,6 @@
             this.labelRole = new System.Windows.Forms.Label();
             this.labelUsername = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.buttonUploadTTD = new System.Windows.Forms.Button();
             this.panelNavigation.SuspendLayout();
             this.panelButton4.SuspendLayout();
             this.panelButton3.SuspendLayout();
@@ -59,6 +59,22 @@
             this.panelNavigation.Name = "panelNavigation";
             this.panelNavigation.Size = new System.Drawing.Size(216, 720);
             this.panelNavigation.TabIndex = 0;
+            // 
+            // buttonUploadTTD
+            // 
+            this.buttonUploadTTD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonUploadTTD.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonUploadTTD.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonUploadTTD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUploadTTD.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonUploadTTD.Location = new System.Drawing.Point(10, 667);
+            this.buttonUploadTTD.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUploadTTD.Name = "buttonUploadTTD";
+            this.buttonUploadTTD.Size = new System.Drawing.Size(189, 40);
+            this.buttonUploadTTD.TabIndex = 65;
+            this.buttonUploadTTD.Text = "Upload TTD";
+            this.buttonUploadTTD.UseVisualStyleBackColor = false;
+            this.buttonUploadTTD.Click += new System.EventHandler(this.buttonUploadTTD_Click);
             // 
             // panelButton4
             // 
@@ -175,22 +191,7 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1026, 720);
             this.panelMain.TabIndex = 1;
-            // 
-            // buttonUploadTTD
-            // 
-            this.buttonUploadTTD.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonUploadTTD.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonUploadTTD.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonUploadTTD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUploadTTD.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.buttonUploadTTD.Location = new System.Drawing.Point(10, 667);
-            this.buttonUploadTTD.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonUploadTTD.Name = "buttonUploadTTD";
-            this.buttonUploadTTD.Size = new System.Drawing.Size(189, 40);
-            this.buttonUploadTTD.TabIndex = 65;
-            this.buttonUploadTTD.Text = "Upload TTD";
-            this.buttonUploadTTD.UseVisualStyleBackColor = false;
-            this.buttonUploadTTD.Click += new System.EventHandler(this.buttonUploadTTD_Click);
+            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
             // UC_Utama
             // 

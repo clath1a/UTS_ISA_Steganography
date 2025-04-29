@@ -30,10 +30,17 @@ namespace ProjectISA_uuuISA
             this.EmailSekolah = emailSekolah;                      
         }
 
+        public Siswa(int idSiswa, string nama)
+        {
+            this.IdSiswa = idSiswa;
+            this.Nama = nama;
+        }
+
         public Siswa()
         {
 
         }
+
         #endregion
 
         #region PROPERTIES
@@ -88,6 +95,29 @@ namespace ProjectISA_uuuISA
             //untuk merandom kelas secara acak (sementara)
             Random rand = new Random();
             return rand.Next(1, 4);
+        }
+
+        public static List<Siswa> BacaSemuaData()
+        {
+            List<Siswa> listSiswa = new List<Siswa>();
+            string perintah = "SELECT s.idsiswa, s.nama FROM siswa s;";
+            MySqlDataReader dr = Koneksi.JalankanPerintahSelect(perintah);
+
+            while (dr.Read())
+            {
+                int idSiswa = int.Parse(dr.GetValue(0).ToString());
+                string nama = dr.GetValue(1).ToString();
+
+                listSiswa.Add(new Siswa(idSiswa, nama)); // Pastikan kamu punya constructor minimal 2 parameter ini
+            }
+
+            return listSiswa;
+        }
+
+
+        public override string ToString()
+        {
+            return Nama; // Supaya saat ditampilkan di ComboBox, yang muncul adalah nama
         }
         #endregion
     }

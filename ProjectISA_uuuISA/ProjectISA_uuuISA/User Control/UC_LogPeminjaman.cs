@@ -16,5 +16,16 @@ namespace ProjectISA_uuuISA.User_Control
         {
             InitializeComponent();
         }
+
+        private void dataGridViewLogPeminjaman_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void UC_LogPeminjaman_Load(object sender, EventArgs e)
+        {
+            List<RiwayatPeminjaman> listRiwayat = RiwayatPeminjaman.BacaData();
+            dataGridViewLogPeminjaman.DataSource = listRiwayat;
+        }
     }
 }
