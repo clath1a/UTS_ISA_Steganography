@@ -90,9 +90,9 @@ namespace uuuISA_Class
             while (hasil.Read())
             {
                 int idKelas = int.Parse(hasil.GetValue(0).ToString());
-                string namaKelas = hasil.GetValue(1).ToString();
-                string namaMataPelajaran = hasil.GetValue(2).ToString();
-                string namaGuru = hasil.GetValue(3).ToString();
+                string namaKelas = hasil.GetValue(2).ToString();
+                string namaMataPelajaran = hasil.GetValue(3).ToString();
+                string namaGuru = hasil.GetValue(1).ToString();
 
                 Guru = new Guru_MataPelajaran(idKelas, namaKelas, namaMataPelajaran, namaGuru);
                 ListGuruPengajar.Add(Guru);

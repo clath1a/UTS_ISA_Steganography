@@ -38,7 +38,7 @@ namespace ProjectISA_uuuISA.User_Control
         {
             try
             {
-                string username = textBoxUsername.Text;
+                string username = textBoxId.Text;
                 string password = textBoxPassword.Text;
                 int idRole;
                 if (rdoSiswa.Checked)

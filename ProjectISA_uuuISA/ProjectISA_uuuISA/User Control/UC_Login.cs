@@ -24,7 +24,7 @@ namespace ProjectISA_uuuISA.User_Control
         {
             try
             {
-                int idAkun = int.Parse(textBoxUsername.Text);
+                int idAkun = int.Parse(textBoxId.Text);
                 string password = textBoxPassword.Text;
                 Console.WriteLine(idAkun + ": " + password);
 

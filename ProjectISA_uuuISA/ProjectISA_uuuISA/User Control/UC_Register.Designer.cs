@@ -33,7 +33,7 @@
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelId = new System.Windows.Forms.Label();
-            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.textBoxId = new System.Windows.Forms.TextBox();
             this.groupBoxRole = new System.Windows.Forms.GroupBox();
             this.rdoPustakawan = new System.Windows.Forms.RadioButton();
             this.rdoGuru = new System.Windows.Forms.RadioButton();
@@ -110,17 +110,17 @@
             this.labelId.TabIndex = 48;
             this.labelId.Text = "Id :";
             // 
-            // textBoxUsername
+            // textBoxId
             // 
-            this.textBoxUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxUsername.BackColor = System.Drawing.Color.White;
-            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.textBoxUsername.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxUsername.Location = new System.Drawing.Point(357, 209);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(535, 39);
-            this.textBoxUsername.TabIndex = 47;
+            this.textBoxId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxId.BackColor = System.Drawing.Color.White;
+            this.textBoxId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.textBoxId.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBoxId.Location = new System.Drawing.Point(357, 209);
+            this.textBoxId.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxId.Name = "textBoxId";
+            this.textBoxId.Size = new System.Drawing.Size(535, 39);
+            this.textBoxId.TabIndex = 47;
             // 
             // groupBoxRole
             // 
@@ -214,7 +214,7 @@
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelId);
-            this.Controls.Add(this.textBoxUsername);
+            this.Controls.Add(this.textBoxId);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_Register";
             this.Size = new System.Drawing.Size(1242, 720);
@@ -235,7 +235,7 @@
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Label labelId;
-        private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.GroupBox groupBoxRole;
         private System.Windows.Forms.RadioButton rdoPustakawan;
         private System.Windows.Forms.RadioButton rdoGuru;

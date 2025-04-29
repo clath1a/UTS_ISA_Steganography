@@ -49,5 +49,10 @@ namespace ProjectISA_uuuISA.User_Control
         {
 
         }
+
+        private void dataGridNilai_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
