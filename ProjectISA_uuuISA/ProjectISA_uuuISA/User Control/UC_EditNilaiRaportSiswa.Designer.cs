@@ -55,6 +55,7 @@
             this.dataGridNilai.RowTemplate.Height = 28;
             this.dataGridNilai.Size = new System.Drawing.Size(961, 569);
             this.dataGridNilai.TabIndex = 54;
+            this.dataGridNilai.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridNilai_CellContentClick_1);
             // 
             // UC_EditNilaiRaportSiswa
             // 

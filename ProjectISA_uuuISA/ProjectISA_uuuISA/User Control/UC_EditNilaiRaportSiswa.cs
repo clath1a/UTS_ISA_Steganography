@@ -49,5 +49,26 @@ namespace ProjectISA_uuuISA.User_Control
         {
 
         }
+
+        private void dataGridNilai_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int idRapot = (int)(dataGridNilai.CurrentRow.Cells["idRapot"].Value);
+                int idMataPelajaran = (int)(dataGridNilai.CurrentRow.Cells["idMapel"].Value);
+                if (e.ColumnIndex == dataGridNilai.Columns["btnEditNilai"].Index)
+                {
+                    uc_Utama.panelMain.Controls.Clear();
+
+                    UC_UpdateNilai uc = new UC_UpdateNilai(this, idRapot, idMataPelajaran);
+                    uc_Utama.panelMain.Controls.Remove(this);
+                    uc_Utama.panelMain.Controls.Add(uc);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

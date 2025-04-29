@@ -281,7 +281,7 @@ namespace ProjectISA_uuuISA.User_Control
 
         private void buttonUploadTTD_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("[DEV]: FEATURE IN PROGRESS");
+            MessageBox.Show("[DEV]: FEATURE IN PROGRESSS");
             panelMain.Controls.Clear();
             UC_UploadTTD uc = new UC_UploadTTD();
             panelMain.Controls.Add(uc);

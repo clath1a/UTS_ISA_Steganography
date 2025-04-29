@@ -34,6 +34,16 @@
             this.panelLogin = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelDataPribadi = new System.Windows.Forms.Panel();
+            this.textBoxData5 = new System.Windows.Forms.TextBox();
+            this.labelData5 = new System.Windows.Forms.Label();
+            this.dateTimePickerTglLahir = new System.Windows.Forms.DateTimePicker();
+            this.textBoxData4 = new System.Windows.Forms.TextBox();
+            this.textBoxData3 = new System.Windows.Forms.TextBox();
+            this.textBoxData1 = new System.Windows.Forms.TextBox();
+            this.labelData2 = new System.Windows.Forms.Label();
+            this.labelData3 = new System.Windows.Forms.Label();
+            this.labelData4 = new System.Windows.Forms.Label();
+            this.labelData1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBoxRole = new System.Windows.Forms.GroupBox();
             this.rdoPustakawan = new System.Windows.Forms.RadioButton();
@@ -42,18 +52,8 @@
             this.labeLTitle = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
-            this.labelId = new System.Windows.Forms.Label();
+            this.labelUsername = new System.Windows.Forms.Label();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
-            this.labelData1 = new System.Windows.Forms.Label();
-            this.labelData4 = new System.Windows.Forms.Label();
-            this.labelData3 = new System.Windows.Forms.Label();
-            this.labelData2 = new System.Windows.Forms.Label();
-            this.textBoxData1 = new System.Windows.Forms.TextBox();
-            this.textBoxData3 = new System.Windows.Forms.TextBox();
-            this.textBoxData4 = new System.Windows.Forms.TextBox();
-            this.dateTimePickerTglLahir = new System.Windows.Forms.DateTimePicker();
-            this.textBoxData5 = new System.Windows.Forms.TextBox();
-            this.labelData5 = new System.Windows.Forms.Label();
             this.panelLogin.SuspendLayout();
             this.panelDataPribadi.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -137,13 +137,128 @@
             this.panelDataPribadi.Size = new System.Drawing.Size(661, 409);
             this.panelDataPribadi.TabIndex = 59;
             // 
+            // textBoxData5
+            // 
+            this.textBoxData5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxData5.BackColor = System.Drawing.Color.White;
+            this.textBoxData5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.textBoxData5.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBoxData5.Location = new System.Drawing.Point(150, 307);
+            this.textBoxData5.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxData5.Name = "textBoxData5";
+            this.textBoxData5.Size = new System.Drawing.Size(484, 39);
+            this.textBoxData5.TabIndex = 76;
+            // 
+            // labelData5
+            // 
+            this.labelData5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelData5.AutoSize = true;
+            this.labelData5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelData5.Location = new System.Drawing.Point(28, 320);
+            this.labelData5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelData5.Name = "labelData5";
+            this.labelData5.Size = new System.Drawing.Size(57, 20);
+            this.labelData5.TabIndex = 75;
+            this.labelData5.Text = "Data 5";
+            // 
+            // dateTimePickerTglLahir
+            // 
+            this.dateTimePickerTglLahir.Location = new System.Drawing.Point(150, 97);
+            this.dateTimePickerTglLahir.Name = "dateTimePickerTglLahir";
+            this.dateTimePickerTglLahir.Size = new System.Drawing.Size(484, 26);
+            this.dateTimePickerTglLahir.TabIndex = 74;
+            // 
+            // textBoxData4
+            // 
+            this.textBoxData4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxData4.BackColor = System.Drawing.Color.White;
+            this.textBoxData4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.textBoxData4.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBoxData4.Location = new System.Drawing.Point(150, 235);
+            this.textBoxData4.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxData4.Name = "textBoxData4";
+            this.textBoxData4.Size = new System.Drawing.Size(484, 39);
+            this.textBoxData4.TabIndex = 70;
+            // 
+            // textBoxData3
+            // 
+            this.textBoxData3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxData3.BackColor = System.Drawing.Color.White;
+            this.textBoxData3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.textBoxData3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBoxData3.Location = new System.Drawing.Point(150, 158);
+            this.textBoxData3.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxData3.Name = "textBoxData3";
+            this.textBoxData3.Size = new System.Drawing.Size(484, 39);
+            this.textBoxData3.TabIndex = 69;
+            // 
+            // textBoxData1
+            // 
+            this.textBoxData1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxData1.BackColor = System.Drawing.Color.White;
+            this.textBoxData1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.textBoxData1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBoxData1.Location = new System.Drawing.Point(150, 26);
+            this.textBoxData1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxData1.Name = "textBoxData1";
+            this.textBoxData1.Size = new System.Drawing.Size(484, 39);
+            this.textBoxData1.TabIndex = 68;
+            // 
+            // labelData2
+            // 
+            this.labelData2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelData2.AutoSize = true;
+            this.labelData2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelData2.Location = new System.Drawing.Point(28, 103);
+            this.labelData2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelData2.Name = "labelData2";
+            this.labelData2.Size = new System.Drawing.Size(57, 20);
+            this.labelData2.TabIndex = 66;
+            this.labelData2.Text = "Data 2";
+            // 
+            // labelData3
+            // 
+            this.labelData3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelData3.AutoSize = true;
+            this.labelData3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelData3.Location = new System.Drawing.Point(28, 171);
+            this.labelData3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelData3.Name = "labelData3";
+            this.labelData3.Size = new System.Drawing.Size(57, 20);
+            this.labelData3.TabIndex = 65;
+            this.labelData3.Text = "Data 3";
+            // 
+            // labelData4
+            // 
+            this.labelData4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelData4.AutoSize = true;
+            this.labelData4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelData4.Location = new System.Drawing.Point(28, 248);
+            this.labelData4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelData4.Name = "labelData4";
+            this.labelData4.Size = new System.Drawing.Size(57, 20);
+            this.labelData4.TabIndex = 63;
+            this.labelData4.Text = "Data 4";
+            // 
+            // labelData1
+            // 
+            this.labelData1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelData1.AutoSize = true;
+            this.labelData1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelData1.Location = new System.Drawing.Point(28, 39);
+            this.labelData1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelData1.Name = "labelData1";
+            this.labelData1.Size = new System.Drawing.Size(57, 20);
+            this.labelData1.TabIndex = 60;
+            this.labelData1.Text = "Data 1";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.groupBoxRole);
             this.panel1.Controls.Add(this.labeLTitle);
             this.panel1.Controls.Add(this.textBoxPassword);
             this.panel1.Controls.Add(this.labelPassword);
-            this.panel1.Controls.Add(this.labelId);
+            this.panel1.Controls.Add(this.labelUsername);
             this.panel1.Controls.Add(this.textBoxUsername);
             this.panel1.Location = new System.Drawing.Point(38, 27);
             this.panel1.Name = "panel1";
@@ -235,21 +350,21 @@
             this.labelPassword.Location = new System.Drawing.Point(27, 227);
             this.labelPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(160, 32);
+            this.labelPassword.Size = new System.Drawing.Size(153, 32);
             this.labelPassword.TabIndex = 56;
-            this.labelPassword.Text = "Password : ";
+            this.labelPassword.Text = "Password: ";
             // 
-            // labelId
+            // labelUsername
             // 
-            this.labelId.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelId.AutoSize = true;
-            this.labelId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.labelId.Location = new System.Drawing.Point(27, 121);
-            this.labelId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelId.Name = "labelId";
-            this.labelId.Size = new System.Drawing.Size(52, 32);
-            this.labelId.TabIndex = 55;
-            this.labelId.Text = "Id :";
+            this.labelUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelUsername.AutoSize = true;
+            this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.labelUsername.Location = new System.Drawing.Point(27, 121);
+            this.labelUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelUsername.Name = "labelUsername";
+            this.labelUsername.Size = new System.Drawing.Size(152, 32);
+            this.labelUsername.TabIndex = 55;
+            this.labelUsername.Text = "Username:";
             // 
             // textBoxUsername
             // 
@@ -262,121 +377,6 @@
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(396, 39);
             this.textBoxUsername.TabIndex = 54;
-            // 
-            // labelData1
-            // 
-            this.labelData1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelData1.AutoSize = true;
-            this.labelData1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelData1.Location = new System.Drawing.Point(28, 39);
-            this.labelData1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelData1.Name = "labelData1";
-            this.labelData1.Size = new System.Drawing.Size(57, 20);
-            this.labelData1.TabIndex = 60;
-            this.labelData1.Text = "Data 1";
-            // 
-            // labelData4
-            // 
-            this.labelData4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelData4.AutoSize = true;
-            this.labelData4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelData4.Location = new System.Drawing.Point(28, 248);
-            this.labelData4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelData4.Name = "labelData4";
-            this.labelData4.Size = new System.Drawing.Size(57, 20);
-            this.labelData4.TabIndex = 63;
-            this.labelData4.Text = "Data 4";
-            // 
-            // labelData3
-            // 
-            this.labelData3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelData3.AutoSize = true;
-            this.labelData3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelData3.Location = new System.Drawing.Point(28, 171);
-            this.labelData3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelData3.Name = "labelData3";
-            this.labelData3.Size = new System.Drawing.Size(57, 20);
-            this.labelData3.TabIndex = 65;
-            this.labelData3.Text = "Data 3";
-            // 
-            // labelData2
-            // 
-            this.labelData2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelData2.AutoSize = true;
-            this.labelData2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelData2.Location = new System.Drawing.Point(28, 103);
-            this.labelData2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelData2.Name = "labelData2";
-            this.labelData2.Size = new System.Drawing.Size(57, 20);
-            this.labelData2.TabIndex = 66;
-            this.labelData2.Text = "Data 2";
-            // 
-            // textBoxData1
-            // 
-            this.textBoxData1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxData1.BackColor = System.Drawing.Color.White;
-            this.textBoxData1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.textBoxData1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxData1.Location = new System.Drawing.Point(150, 26);
-            this.textBoxData1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxData1.Name = "textBoxData1";
-            this.textBoxData1.Size = new System.Drawing.Size(484, 39);
-            this.textBoxData1.TabIndex = 68;
-            // 
-            // textBoxData3
-            // 
-            this.textBoxData3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxData3.BackColor = System.Drawing.Color.White;
-            this.textBoxData3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.textBoxData3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxData3.Location = new System.Drawing.Point(150, 158);
-            this.textBoxData3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxData3.Name = "textBoxData3";
-            this.textBoxData3.Size = new System.Drawing.Size(484, 39);
-            this.textBoxData3.TabIndex = 69;
-            // 
-            // textBoxData4
-            // 
-            this.textBoxData4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxData4.BackColor = System.Drawing.Color.White;
-            this.textBoxData4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.textBoxData4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxData4.Location = new System.Drawing.Point(150, 235);
-            this.textBoxData4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxData4.Name = "textBoxData4";
-            this.textBoxData4.Size = new System.Drawing.Size(484, 39);
-            this.textBoxData4.TabIndex = 70;
-            // 
-            // dateTimePickerTglLahir
-            // 
-            this.dateTimePickerTglLahir.Location = new System.Drawing.Point(150, 97);
-            this.dateTimePickerTglLahir.Name = "dateTimePickerTglLahir";
-            this.dateTimePickerTglLahir.Size = new System.Drawing.Size(484, 26);
-            this.dateTimePickerTglLahir.TabIndex = 74;
-            // 
-            // textBoxData5
-            // 
-            this.textBoxData5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxData5.BackColor = System.Drawing.Color.White;
-            this.textBoxData5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.textBoxData5.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxData5.Location = new System.Drawing.Point(150, 307);
-            this.textBoxData5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxData5.Name = "textBoxData5";
-            this.textBoxData5.Size = new System.Drawing.Size(484, 39);
-            this.textBoxData5.TabIndex = 76;
-            // 
-            // labelData5
-            // 
-            this.labelData5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelData5.AutoSize = true;
-            this.labelData5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelData5.Location = new System.Drawing.Point(28, 320);
-            this.labelData5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelData5.Name = "labelData5";
-            this.labelData5.Size = new System.Drawing.Size(57, 20);
-            this.labelData5.TabIndex = 75;
-            this.labelData5.Text = "Data 5";
             // 
             // UC_Register
             // 
@@ -426,7 +426,7 @@
         private System.Windows.Forms.Label labeLTitle;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelPassword;
-        private System.Windows.Forms.Label labelId;
+        private System.Windows.Forms.Label labelUsername;
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.DateTimePicker dateTimePickerTglLahir;
         private System.Windows.Forms.TextBox textBoxData5;

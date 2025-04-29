@@ -19,5 +19,10 @@ namespace uuuISA_Class
 
         public int IdStatus { get => idStatus; set => idStatus = value; }
         public string Name { get => name; set => name = value; }
+
+        public override string ToString()
+        {
+            return name;
+        }
     }
 }
