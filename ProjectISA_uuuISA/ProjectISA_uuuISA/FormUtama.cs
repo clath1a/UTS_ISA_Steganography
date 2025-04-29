@@ -9,15 +9,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using class_uuuISA;
+using System.Diagnostics;
 
 namespace ProjectISA_uuuISA
 {
     public partial class FormUtama : Form
     {
+        
         public static Akun current_user = new Akun();
         public static Siswa siswa = new Siswa();
         public static Pustakawan pustakawan = new Pustakawan();
         public static Guru guru = new Guru();
+
+        #region LOGIN DURATION
+        public Stopwatch stopwatch = new Stopwatch();
+        public static DateTime waktu_masuk;
+        public static DateTime waktu_keluar;
+        public static int idRiwayat_aktivitas;
+        #endregion
+
         public FormUtama()
         {
             InitializeComponent();
@@ -39,7 +49,7 @@ namespace ProjectISA_uuuISA
             catch (Exception ex)
             {
                 MessageBox.Show("Koneksi Gagal. Pesan Kesalahan: " + ex);
-            }
+            }            
             this.Visible = true;
         }
 
@@ -54,6 +64,16 @@ namespace ProjectISA_uuuISA
         private void panelUtama_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void FormUtama_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            stopwatch.Stop();
+            TimeSpan durasi = stopwatch.Elapsed;
+            string waktu = durasi.ToString(@"hh\:mm\:ss"); 
+
+            RiwayatAktivitas.Update_LogoutTimt(DateTime.Now, waktu, idRiwayat_aktivitas);
+            Console.WriteLine("DURASI LOGIN: "+waktu);
         }
     }
 }

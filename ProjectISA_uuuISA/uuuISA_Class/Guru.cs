@@ -81,5 +81,13 @@ namespace ProjectISA_uuuISA
             }
             return guru;
         }
+
+        public static bool Insert_Guru(string nama, string emailSekolah, string nomorTlp, DateTime tglLahir, string pendidikanTerakhir)
+        {                        
+            string perintah = "INSERT INTO guru (nama, email, nomorTlp, tanggalLahir, pendidikanTerakhir, akun_idakun) SELECT '" + nama + "', '" + emailSekolah + "', '" + nomorTlp + "', '" + tglLahir.ToString("yyyy-MM-dd") + "', '" + pendidikanTerakhir + "', idakun FROM akun ORDER BY idakun DESC LIMIT 1;";
+
+            int hasil = Koneksi.JalankanPerintahDML(perintah);
+            return hasil > 0;
+        }
     }
 }

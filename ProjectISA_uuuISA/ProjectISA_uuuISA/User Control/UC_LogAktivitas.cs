@@ -16,5 +16,11 @@ namespace ProjectISA_uuuISA.User_Control
         {
             InitializeComponent();
         }
+
+        private void UC_LogAktivitas_Load(object sender, EventArgs e)
+        {
+            List<RiwayatAktivitas> listRiwayat = RiwayatAktivitas.BacaData();
+            dataGridViewLogAktivitas.DataSource = listRiwayat;
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,8 @@ namespace ProjectISA_uuuISA.User_Control
                 Console.WriteLine("Current user: " + FormUtama.current_user.Username);
                 MessageBox.Show("LOGIN BERHASIL");
 
+                Start_StopWatch();                
+
                 LoadRoleData(idAkun);
 
                 Load_UC_Utama();
@@ -60,7 +63,7 @@ namespace ProjectISA_uuuISA.User_Control
             }
             else if (FormUtama.current_user.Role.NamaRole.ToString() == "Admin")
             {
-
+                MessageBox.Show("login sebagai admin");
             }
             else if (FormUtama.current_user.Role.NamaRole.ToString() == "Pustakawan")
             {
@@ -73,6 +76,13 @@ namespace ProjectISA_uuuISA.User_Control
             formUtama.panelUtama.Controls.Remove(this);
             UC_Utama uC_Utama = new UC_Utama(formUtama);
             formUtama.panelUtama.Controls.Add(uC_Utama);
+        }
+
+        private void Start_StopWatch()
+        {
+            formUtama.stopwatch.Start();            
+            RiwayatAktivitas.Insert_LoginTime(DateTime.Now, DateTime.Now, "00:00:00", FormUtama.current_user.IdAkun);
+            FormUtama.idRiwayat_aktivitas = RiwayatAktivitas.Select_Latest_IdRiwayat_Aktivitas();
         }
         #endregion
 

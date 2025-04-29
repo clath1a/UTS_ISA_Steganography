@@ -21,11 +21,26 @@ namespace ProjectISA_uuuISA.User_Control
 
         private void buttonDownloadRaport_Click(object sender, EventArgs e)
         {
-            string namaSiswa = FormUtama.siswa.Nama.ToString();
-            int idSiswa = FormUtama.siswa.IdSiswa;
-            string namaFile = "[RAPOT] " + namaSiswa;
+            try
+            {                               
+                if(FormUtama.current_user.Role.NamaRole.ToString() == "Siswa")
+                {
+                    string namaSiswa = FormUtama.siswa.Nama.ToString();
+                    int idSiswa = FormUtama.siswa.IdSiswa;
+                    string namaFile = "[RAPOT] " + namaSiswa;
 
-            Penilaian.Cetak(namaFile, new Font("Poppins", 12), idSiswa);
+                    Penilaian.Cetak(namaFile, new Font("Poppins", 12), idSiswa);
+                }         
+                else
+                {
+                    MessageBox.Show("[DEV]: FEATURE IN PROGRESS, PLEASE DOWNLOAD AS SISWA");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

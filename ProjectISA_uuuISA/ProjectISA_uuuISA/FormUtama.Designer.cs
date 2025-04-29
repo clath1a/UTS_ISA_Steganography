@@ -52,6 +52,7 @@
             this.Controls.Add(this.panelUtama);
             this.Name = "FormUtama";
             this.Text = "FormUtama";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormUtama_FormClosing);
             this.Load += new System.EventHandler(this.FormUtama_Load);
             this.ResumeLayout(false);
 
