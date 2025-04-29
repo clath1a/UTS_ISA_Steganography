@@ -72,6 +72,9 @@ namespace ProjectISA_uuuISA.User_Control
             
         }
 
-        
+        private void UC_Register_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

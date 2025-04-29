@@ -206,3 +206,12 @@ C:\Users\megan\Documents\ISA PROJECT\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA
 C:\Users\megan\Documents\ISA PROJECT\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\obj\Debug\ProjectI.18A9B5B4.Up2Date
 C:\Users\megan\Documents\ISA PROJECT\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\obj\Debug\ProjectISA_uuuISA.exe
 C:\Users\megan\Documents\ISA PROJECT\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\obj\Debug\ProjectISA_uuuISA.pdb
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\PdfSharpCore.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\SixLabors.Fonts.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\SixLabors.ImageSharp.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\ICSharpCode.SharpZipLib.pdb
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\ICSharpCode.SharpZipLib.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\SixLabors.Fonts.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\SixLabors.ImageSharp.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\de\PdfSharpCore.resources.dll
