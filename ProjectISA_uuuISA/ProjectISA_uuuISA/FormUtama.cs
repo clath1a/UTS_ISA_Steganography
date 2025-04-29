@@ -28,6 +28,12 @@ namespace ProjectISA_uuuISA
         public static int idRiwayat_aktivitas;
         #endregion
 
+        #region AUTO LOGOUT DURATION
+        private DateTime lastActivity;
+        private Timer idleTimer = new Timer();
+        private int idleLimitSeconds = 600;
+        #endregion
+
         public FormUtama()
         {
             InitializeComponent();
@@ -51,6 +57,14 @@ namespace ProjectISA_uuuISA
                 MessageBox.Show("Koneksi Gagal. Pesan Kesalahan: " + ex);
             }            
             this.Visible = true;
+
+            lastActivity = DateTime.Now;
+            RegisterActivityEvents();
+
+            idleTimer.Interval = 1000; // 1 detik
+            idleTimer.Tick += IdleTimer_Tick;
+            idleTimer.Start();
+            stopwatch.Start();
         }
 
         public void AddUserControl(UserControl userControl)
@@ -75,5 +89,56 @@ namespace ProjectISA_uuuISA
             RiwayatAktivitas.Update_LogoutTimt(DateTime.Now, waktu, idRiwayat_aktivitas);
             Console.WriteLine("DURASI LOGIN: "+waktu);
         }
+        #region METHOD AUTO LOGOUT
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_MOUSEMOVE = 0x0200;
+            const int WM_KEYDOWN = 0x0100;
+
+            if (m.Msg == WM_MOUSEMOVE || m.Msg == WM_KEYDOWN)
+            {
+                lastActivity = DateTime.Now;
+            }
+
+            base.WndProc(ref m);
+        }
+
+        private void IdleTimer_Tick(object sender, EventArgs e)
+        {
+            TimeSpan idleTime = DateTime.Now - lastActivity;
+
+            if (idleTime.TotalSeconds >= idleLimitSeconds)
+            {
+                idleTimer.Stop(); // hentikan timer
+
+                stopwatch.Stop();
+                TimeSpan durasi = stopwatch.Elapsed;
+                string waktu = durasi.ToString(@"hh\:mm\:ss");
+
+                // update ke database
+                RiwayatAktivitas.Update_LogoutTimt(DateTime.Now, waktu, idRiwayat_aktivitas);
+                MessageBox.Show("Anda telah logout otomatis karena tidak ada aktivitas selama 10 menit.");
+
+                this.Close(); // keluar dari form utama
+            }
+        }
+
+        private void RegisterActivityEvents()
+        {
+            this.MouseMove += AnyActivity;
+            this.KeyDown += AnyActivity;
+            foreach (Control ctrl in this.Controls)
+            {
+                ctrl.MouseMove += AnyActivity;
+                ctrl.KeyDown += AnyActivity;
+            }
+        }
+
+        private void AnyActivity(object sender, EventArgs e)
+        {
+            lastActivity = DateTime.Now;
+        }
+        #endregion
+
     }
 }
