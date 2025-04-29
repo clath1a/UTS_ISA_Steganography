@@ -44,6 +44,7 @@ namespace ProjectISA_uuuISA.User_Control
                 if (rdoSiswa.Checked)
                 {
                     idRole = 3;
+
                 }
                 else if (rdoGuru.Checked)
                 {
@@ -59,6 +60,7 @@ namespace ProjectISA_uuuISA.User_Control
                 }
 
 
+                
                 Akun.Register_Account(username, password, idRole);
                 MessageBox.Show("Berhasil membuat akun dengan username: " + username);
 

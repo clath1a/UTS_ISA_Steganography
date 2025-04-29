@@ -89,5 +89,10 @@ namespace ProjectISA_uuuISA.User_Control
             formUtama.panelUtama.Controls.Remove(this);
             formUtama.panelUtama.Controls.Add(uC_Register);
         }
+
+        private void UC_Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
