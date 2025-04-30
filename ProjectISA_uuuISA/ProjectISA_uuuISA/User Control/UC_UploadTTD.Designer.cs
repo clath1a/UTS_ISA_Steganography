@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.labelTitle = new System.Windows.Forms.Label();
-            this.buttonUploadTTD = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblHiddenMessage = new System.Windows.Forms.Label();
             this.labelUploadFoto = new System.Windows.Forms.Label();
             this.pictureBoxTTD = new System.Windows.Forms.PictureBox();
             this.btnSimpanTTD = new System.Windows.Forms.Button();
+            this.btnUpploadFoto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTTD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,22 +49,6 @@
             this.labelTitle.Size = new System.Drawing.Size(523, 55);
             this.labelTitle.TabIndex = 49;
             this.labelTitle.Text = "Upload Tanda Tangan";
-            // 
-            // buttonUploadTTD
-            // 
-            this.buttonUploadTTD.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonUploadTTD.BackColor = System.Drawing.SystemColors.Highlight;
-            this.buttonUploadTTD.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonUploadTTD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUploadTTD.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonUploadTTD.Location = new System.Drawing.Point(335, 514);
-            this.buttonUploadTTD.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonUploadTTD.Name = "buttonUploadTTD";
-            this.buttonUploadTTD.Size = new System.Drawing.Size(336, 39);
-            this.buttonUploadTTD.TabIndex = 64;
-            this.buttonUploadTTD.Text = "Upload Foto";
-            this.buttonUploadTTD.UseVisualStyleBackColor = false;
-            this.buttonUploadTTD.Click += new System.EventHandler(this.buttonUploadTTD_Click);
             // 
             // textBox1
             // 
@@ -116,16 +100,32 @@
             this.btnSimpanTTD.UseVisualStyleBackColor = false;
             this.btnSimpanTTD.Click += new System.EventHandler(this.btnSimpanTTD_Click);
             // 
+            // btnUpploadFoto
+            // 
+            this.btnUpploadFoto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpploadFoto.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnUpploadFoto.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnUpploadFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpploadFoto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnUpploadFoto.Location = new System.Drawing.Point(335, 508);
+            this.btnUpploadFoto.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpploadFoto.Name = "btnUpploadFoto";
+            this.btnUpploadFoto.Size = new System.Drawing.Size(336, 39);
+            this.btnUpploadFoto.TabIndex = 71;
+            this.btnUpploadFoto.Text = "Upload Foto";
+            this.btnUpploadFoto.UseVisualStyleBackColor = false;
+            this.btnUpploadFoto.Click += new System.EventHandler(this.btnUpploadFoto_Click);
+            // 
             // UC_UploadTTD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnUpploadFoto);
             this.Controls.Add(this.btnSimpanTTD);
             this.Controls.Add(this.pictureBoxTTD);
             this.Controls.Add(this.labelUploadFoto);
             this.Controls.Add(this.lblHiddenMessage);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.buttonUploadTTD);
             this.Controls.Add(this.labelTitle);
             this.Name = "UC_UploadTTD";
             this.Size = new System.Drawing.Size(1026, 720);
@@ -139,11 +139,11 @@
         #endregion
 
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.Button buttonUploadTTD;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblHiddenMessage;
         private System.Windows.Forms.Label labelUploadFoto;
         private System.Windows.Forms.PictureBox pictureBoxTTD;
         private System.Windows.Forms.Button btnSimpanTTD;
+        private System.Windows.Forms.Button btnUpploadFoto;
     }
 }

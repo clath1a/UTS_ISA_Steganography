@@ -14,9 +14,24 @@ namespace ProjectISA_uuuISA
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormUtama());
+            try
+            {
+                // Initialize any required static resources
+                // For example, if you need FormUtama.guru to be initialized:
+                // FormUtama.InitializeStaticResources();
+
+                // Create and run the main form
+                FormUtama mainForm = new FormUtama();
+                Application.Run(mainForm);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error starting application: " + ex.Message,
+                                "Application Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
         }
     }
 }

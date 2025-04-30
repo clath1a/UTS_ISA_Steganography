@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ namespace ProjectISA_uuuISA.User_Control
     {
         OpenFileDialog fileDialog;
         Bitmap uploadedImage;
+        private const string SecretMessage = "Ini pesan rahasia dari aplikasi.";
         public UC_UploadTTD()
         {
             InitializeComponent();
@@ -26,123 +28,125 @@ namespace ProjectISA_uuuISA.User_Control
 
         private void UC_UploadTTD_Load(object sender, EventArgs e)
         {
-
+            //pictureBoxTTD.Image = null;
         }
 
         private void buttonUploadTTD_Click(object sender, EventArgs e)
         {
-            string pesan = "Ini pesan rahasia dari aplikasi.";
-
-            try
+            OpenFileDialog openDialog = new OpenFileDialog();
+            openDialog.Filter = "Image Files (*.png, *.jpg) | *.png; *.jpg";
+            openDialog.InitialDirectory = @"C:\Users\metech\Desktop";
+            if (openDialog.ShowDialog() == DialogResult.OK)
             {
-                OpenFileDialog dialog = new OpenFileDialog();
-                dialog.Title = "Select a File";
-                dialog.Filter = "PNG Image|*.png";
-                dialog.Multiselect = false;
-
-                if (dialog.ShowDialog() == DialogResult.OK)
+                textBox1.Text  = openDialog.FileName.ToString();
+                pictureBoxTTD.ImageLocation = textBox1.Text;
+            }
+            /*try
+            {
+                using (OpenFileDialog dialog = new OpenFileDialog())
                 {
-                    string selectedFilePath = dialog.FileName;
-                    string fileExtension = System.IO.Path.GetExtension(selectedFilePath).ToLower();
+                    dialog.Title = "Pilih Gambar TTD";
+                    dialog.Filter = "PNG Image|*.png";
+                    dialog.Multiselect = false;
 
-                    pictureBoxTTD.ImageLocation = selectedFilePath;
-                    SimpanPathKeDatabase(FormUtama.guru.IdGuru, selectedFilePath);
-                    MessageBox.Show("Gambar berhasil di upload");
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        // Dispose previous image if exists
+                        if (uploadedImage != null)
+                        {
+                            uploadedImage.Dispose();
+                        }
+
+                        if (uploadedImage == null || uploadedImage.Width == 0 || uploadedImage.Height == 0)
+                        {
+                            MessageBox.Show("Invalid image. Please upload again.");
+                            return;
+                        }
+
+                        string selectedFilePath = dialog.FileName;
+                        uploadedImage = new Bitmap(selectedFilePath);
+                        pictureBoxTTD.Image = uploadedImage;
+
+                        MessageBox.Show("Gambar berhasil diunggah.");
+                    }
                 }
-
-
-                //Bitmap hasilEmbed = Steganography_Raport.EmbedText(pesan, uploadedImage);
-
-                //SaveFileDialog saveDialog = new SaveFileDialog();
-                //saveDialog.Filter = "PNG Image|*.png";
-                //saveDialog.Title = "Simpan gambar dengan pesan tersembunyi";
-                //saveDialog.FileName = "hasil_embed.png";
-
-
-
-                //if (saveDialog.ShowDialog() == DialogResult.OK)
-                //{
-                //    string savedPath = saveDialog.FileName;
-                //    hasilEmbed.Save(savedPath, ImageFormat.Png);
-                //    MessageBox.Show("Pesan berhasil disisipkan dan gambar disimpan.");
-
-                //    // Simpan ke database
-                //    SimpanPathKeDatabase(FormUtama.guru.IdGuru, selectedFilePath);// pastikan kamu punya idGuru
-                //}
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Gagal menyisipkan pesan: " + ex.Message);
-            }
-
+                MessageBox.Show("Gagal mengunggah gambar: " + ex.Message);
+            }*/
 
         }
 
         private void btnSimpanTTD_Click(object sender, EventArgs e)
         {
+            ProcessAndSaveSignature("TTD");
+
+        }
+
+        private void btnUpploadFoto_Click(object sender, EventArgs e)
+        {
+            ProcessAndSaveSignature("Foto");
+
+        }
+
+        private void ProcessAndSaveSignature(string signatureType)
+        {
             if (uploadedImage == null)
             {
-                MessageBox.Show("Silakan upload gambar terlebih dahulu.");
+                MessageBox.Show($"Silakan upload gambar {signatureType} terlebih dahulu.");
                 return;
             }
 
-            string pesan = "Ini pesan rahasia dari aplikasi.";
-
             try
             {
-                Bitmap hasilEmbed = Steganography_Raport.EmbedText(pesan, uploadedImage);
+                Bitmap hasilEmbed = Steganography_Raport.EmbedText(SecretMessage, uploadedImage);
 
-
-                SaveFileDialog saveDialog = new SaveFileDialog();
-                saveDialog.Filter = "PNG Image|*.png";
-                saveDialog.Title = "Simpan gambar dengan pesan tersembunyi";
-                saveDialog.FileName = "hasil_embed.png";
-
-                if (saveDialog.ShowDialog() == DialogResult.OK)
+                using (SaveFileDialog saveDialog = new SaveFileDialog())
                 {
-                    hasilEmbed.Save(saveDialog.FileName, ImageFormat.Png);
-                    MessageBox.Show("Pesan berhasil disisipkan dan gambar disimpan.");
+                    saveDialog.Filter = "PNG Image|*.png";
+                    saveDialog.Title = $"Simpan gambar {signatureType} dengan pesan tersembunyi";
+                    saveDialog.FileName = $"hasil_embed_{signatureType.ToLower()}.png";
+
+                    if (saveDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string savedPath = saveDialog.FileName;
+                        hasilEmbed.Save(savedPath, ImageFormat.Png);
+                        MessageBox.Show("Pesan berhasil disisipkan dan gambar disimpan.");
+
+                        // Save path to database
+                        FormUtama.guru.Ttd = savedPath;
+                        bool berhasil = FormUtama.guru.SimpanTTDKeDatabase();
+
+                        MessageBox.Show(berhasil
+                            ? $"Path {signatureType} berhasil disimpan ke database."
+                            : $"Gagal menyimpan path {signatureType} ke database.");
+                    }
                 }
+
+                // Properly dispose the embedded image
+                hasilEmbed.Dispose();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Gagal menyisipkan pesan: " + ex.Message);
+                MessageBox.Show($"Gagal menyisipkan pesan pada {signatureType}: " + ex.Message);
             }
         }
 
-        private void SimpanPathKeDatabase(int idGuru, string pathTTD)
+        // Dispose pattern implementation
+        protected override void Dispose(bool disposing)
         {
-            string connectionString = "server=localhost;user=root;password=;database=namadatabase;";
-
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            if (disposing)
             {
-                try
+                if (uploadedImage != null)
                 {
-                    conn.Open();
-                    string query = "UPDATE guru SET ttd = @path WHERE id_guru = @id";
-
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@path", pathTTD);
-                        cmd.Parameters.AddWithValue("@id", idGuru);
-
-                        int rows = cmd.ExecuteNonQuery();
-                        if (rows > 0)
-                        {
-                            MessageBox.Show("Path TTD berhasil disimpan ke database.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Gagal menyimpan ke database. ID tidak ditemukan.");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Database Error: " + ex.Message);
+                    uploadedImage.Dispose();
+                    uploadedImage = null;
                 }
             }
+            base.Dispose(disposing);
         }
+
 
     }
 }

@@ -11,13 +11,31 @@ public static class Steganography_Raport
 {
     public static Bitmap EmbedText(string text, Bitmap image)//ngehidden msg
     {
+        if (text == null) throw new ArgumentNullException(nameof(text), "Text cannot be null");
+        if (image == null) throw new ArgumentNullException(nameof(image), "Image cannot be null");
+
         byte[] compressed = Compress(text); //calling compress method
         BitArray bits = new BitArray(compressed);
 
         int bitIndex = 0;
         int totalBits = bits.Length;
 
-        Bitmap newImage = new Bitmap(image);
+        // Create a defensive copy of the image
+        Bitmap newImage = null;
+        try
+        {
+            // Use a more robust way to copy the bitmap
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, ImageFormat.Png);
+                ms.Position = 0;
+                newImage = new Bitmap(ms);
+            }
+        }
+        catch (Exception ex)
+        {
+            throw new ArgumentException("Failed to create a copy of the image", nameof(image), ex);
+        }
 
         for (int y = 0; y < newImage.Height; y++) //panjang gambar
         {

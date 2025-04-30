@@ -45,6 +45,18 @@ namespace ProjectISA_uuuISA
         {
 
         }
+
+        public Guru(int idGuru, string nama, string email, string nomorTelp, DateTime tglLahir, string pendidikanTerakhir, int idAkun, string ttd)
+        {
+            this.idGuru = idGuru;
+            this.nama = nama;
+            this.email = email;
+            this.nomorTelp = nomorTelp;
+            this.tglLahir = tglLahir;
+            this.pendidikanTerakhir = pendidikanTerakhir;
+            this.idAkun = idAkun;
+            this.Ttd = ttd;
+        }
         #endregion
 
         #region PROPERTIES
@@ -55,6 +67,7 @@ namespace ProjectISA_uuuISA
         public DateTime TglLahir { get => tglLahir; set => tglLahir = value; }
         public string PendidikanTerakhir { get => pendidikanTerakhir; set => pendidikanTerakhir = value; }
         public int IdAkun { get => idAkun; set => idAkun = value; }
+        public string Ttd { get => ttd; set => ttd = value; }
         #endregion
 
         public static Guru Select_DataGuru(int idAkun)
@@ -89,6 +102,30 @@ namespace ProjectISA_uuuISA
 
             int hasil = Koneksi.JalankanPerintahDML(perintah);
             return hasil > 0;
+        }
+
+        public bool SimpanTTDKeDatabase()
+        {
+            string connectionString = "server=localhost;user=root;password=;database=namadatabase;";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "UPDATE guru SET ttd = @ttd WHERE id_guru = @id";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ttd", this.Ttd);
+                        cmd.Parameters.AddWithValue("@id", this.IdGuru);
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
         }
     }
 }
