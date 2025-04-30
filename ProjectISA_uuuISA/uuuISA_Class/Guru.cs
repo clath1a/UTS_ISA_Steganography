@@ -18,6 +18,7 @@ namespace ProjectISA_uuuISA
         DateTime tglLahir;
         string pendidikanTerakhir;
         int idAkun;
+        string ttd;
 
         public Guru(int idGuru, string nama, string email, string nomorTelp, DateTime tglLahir, string pendidikanTerakhir)
         {

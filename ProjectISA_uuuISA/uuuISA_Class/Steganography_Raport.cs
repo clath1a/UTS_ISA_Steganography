@@ -9,7 +9,7 @@ using System.Text;
 
 public static class Steganography_Raport
 {
-    public static Bitmap EmbedText(string text, Bitmap image)
+    public static Bitmap EmbedText(string text, Bitmap image)//ngehidden msg
     {
         byte[] compressed = Compress(text); //calling compress method
         BitArray bits = new BitArray(compressed);

@@ -37,8 +37,12 @@ namespace ProjectISA_uuuISA.User_Control
         {
             try
             {
-                if (FormUtama.current_user.Role.NamaRole == "Siswa" ||
-                    FormUtama.current_user.Role.NamaRole == "Guru" ||
+                if(FormUtama.current_user.Role.NamaRole == "Siswa")
+                {
+                    string namaFile = "[RAPOT] " + FormUtama.siswa.IdSiswa;
+                    Penilaian.Cetak(namaFile, new Font("Poppins", 12), FormUtama.siswa.IdSiswa);
+                }
+                if (FormUtama.current_user.Role.NamaRole == "Guru" ||
                     FormUtama.current_user.Role.NamaRole == "Admin")
                 {
                     if(comboBoxPilihSiswa.SelectedItem is Siswa selectedSiswa)
