@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using uuuISA_Class;
 
 namespace ProjectISA_uuuISA
@@ -163,10 +164,15 @@ namespace ProjectISA_uuuISA
                     fileCetak.WriteLine(@"\line {\pict\pngblip\picw1000\pich1000 " + hexImage + "}");
                     fileCetak.WriteLine(@"}");
                 }
+                string simpanPathRTF = SimpanRTF(listRapot);
+                string simpanPathPDF = SimpanPDF(listRapot);
+
+                RtfToPdf converter = new RtfToPdf(simpanPathRTF);
+                converter.SaveAsPdf(simpanPathPDF);
 
                 // Proses mencetak ke printer
-                CustomPrint p = new CustomPrint(pTipeFont, pNamaFile, 100, 50, 50, 50);
-                p.KirimKePrinter();
+                //CustomPrint p = new CustomPrint(pTipeFont, pNamaFile, 100, 50, 50, 50);
+                //p.KirimKePrinter();
             }
             else
             {
@@ -182,6 +188,45 @@ namespace ProjectISA_uuuISA
                 hex.Append(b.ToString("X2"));  // uppercase hex, e.g., "0A", "FF"
             }
             return hex.ToString();
+        }
+
+        public static string SimpanRTF(List<DownloadRapot> listRapot)
+        {
+            string savedPath;
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            {
+                saveDialog.Filter = "Rich Text File|*.rtf";
+                saveDialog.Title = "Simpan Document RTF";
+                saveDialog.FileName = "[RAPOT]_" + listRapot[0].NamaSiswa + ".rtf";
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    savedPath = saveDialog.FileName;
+                    MessageBox.Show("RTF berhasil disimpan.\n" + savedPath);
+                    return savedPath;
+                }
+                throw new Exception("RTF gagal disimpan");
+            }
+        }
+
+        public static string SimpanPDF(List<DownloadRapot> listRapot)
+        {
+            string savedPath;
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            {
+                saveDialog.Filter = "PDF File|*.pdf";
+                saveDialog.Title = "Simpan Document PDF";
+                saveDialog.FileName = "[RAPOT]_" + listRapot[0].NamaSiswa + ".pdf";
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    savedPath = saveDialog.FileName;
+                    MessageBox.Show("PDF berhasil disimpan.\n" + savedPath);
+                    return savedPath;
+                }
+                throw new Exception("PDF gagal disimpan");
+            }
+
         }
         #endregion
     }

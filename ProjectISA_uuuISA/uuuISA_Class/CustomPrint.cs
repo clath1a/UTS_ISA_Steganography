@@ -78,18 +78,5 @@ namespace uuuISA_Class
 
             NamaFile.Close();
         }
-
-        public void KirimKePrinterRTF()
-        {
-            //proses mencetak ke printer
-            PrintDocument p = new PrintDocument();
-            p.PrinterSettings.PrinterName = "Microsoft Print to RTF";
-
-            //menulis kke memory untuk tiap halaman
-            p.PrintPage += new PrintPageEventHandler(Cetak);
-            p.Print();
-
-            NamaFile.Close();
-        }
     }
 }

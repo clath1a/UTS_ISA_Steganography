@@ -33,7 +33,6 @@ namespace ProjectISA_uuuISA.User_Control
         private void btnSimpanTTD_Click(object sender, EventArgs e)
         {
             ProcessAndSaveSignature("TTD");
-
         }
 
         private void btnUpploadFoto_Click(object sender, EventArgs e)
@@ -108,21 +107,5 @@ namespace ProjectISA_uuuISA.User_Control
                 MessageBox.Show($"Gagal menyisipkan pesan pada {signatureType}: " + ex.Message);
             }
         }
-
-        // Dispose pattern implementation
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        if (uploadedImage != null)
-        //        {
-        //            uploadedImage.Dispose();
-        //            uploadedImage = null;
-        //        }
-        //    }
-        //    base.Dispose(disposing);
-        //}
-
-
     }
 }
