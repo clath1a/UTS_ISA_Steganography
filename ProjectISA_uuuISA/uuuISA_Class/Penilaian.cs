@@ -8,7 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 using uuuISA_Class;
+using MySqlX.XDevAPI.Relational;
 
 namespace ProjectISA_uuuISA
 {
@@ -74,43 +77,92 @@ namespace ProjectISA_uuuISA
             return false;
         }
 
-        public static void Cetak(string pNamaFile, Font pTipeFont, int idSiswa)
+        public static void Cetak(string pNamaFile, System.Drawing.Font pTipeFont, int idSiswa)
         {            
             List<DownloadRapot> listRapot = DownloadRapot.BacaData(idSiswa);
             if (listRapot.Count != 0)
             {
-                //proses menulis filetext
-                StreamWriter fileCetak = new StreamWriter(pNamaFile);
-                fileCetak.WriteLine("RAPOT");
-                fileCetak.WriteLine("Laporan Rapot");
-                fileCetak.WriteLine("Nama Siswa: " + listRapot[0].NamaSiswa.ToUpper());
-                fileCetak.WriteLine("Kelas: " + listRapot[0].Kelas.ToUpper());
-                fileCetak.WriteLine("Guru: " + listRapot[0].WaliKelas.ToUpper());
-                fileCetak.WriteLine("-----------------------------------------------------------------------------------");
-                fileCetak.WriteLine("");
-                fileCetak.WriteLine("Tahun Ajaran\t|\tSemester\t|\tMata Pelajaran\t|\tGuru Pengampu\t|\tNilai\t|\tNisbi");
-
-                for (int i = 0; i < listRapot.Count; i++)
+                using (SaveFileDialog saveDialog = new SaveFileDialog() { Filter = "PDF File|*.pdf", ValidateNames = true })
                 {
-                    fileCetak.WriteLine("  " + listRapot[i].TahunAjaran + "\t|\t" +
-                        listRapot[i].Semester + "\t|\t" +
-                        listRapot[i].NamaMataPelajaran + "\t|\t" +
-                        listRapot[i].NamaGuruMataPelajaran + "\t|\t" +
-                        listRapot[i].Nilai.ToString() + "\t|\t" +
-                        listRapot[i].Nisbi
-                    );
+                    iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4);
+                    if (saveDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            //proses menulis filetext
+                            PdfWriter.GetInstance(doc, new FileStream(saveDialog.FileName, FileMode.Create));
+                            doc.Open();
+                            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+                            iTextSharp.text.Font fontNormal = new iTextSharp.text.Font(bf, 12);
+                            iTextSharp.text.Font fontHeader1 = new iTextSharp.text.Font(bf, 20); 
+                            iTextSharp.text.Font fontHeader2 = new iTextSharp.text.Font(bf, 18);
+
+                            Paragraph heading = new Paragraph("RAPOT", fontHeader1);
+                            Paragraph heading2 = new Paragraph("Laporan Rapot", fontHeader2);
+                            Paragraph pembatas = new Paragraph("==================================================================================", fontNormal);
+                            heading.Alignment = Element.ALIGN_CENTER;
+                            heading2.Alignment = Element.ALIGN_CENTER;
+                            pembatas.Alignment = Element.ALIGN_CENTER;
+
+                            doc.Add(new Paragraph(heading));
+                            doc.Add(new Paragraph(heading2));
+
+                            doc.Add(new Paragraph(pembatas));
+                            doc.Add(new Paragraph("Nama Siswa: " + listRapot[0].NamaSiswa.ToUpper(), fontNormal));
+                            doc.Add(new Paragraph("Kelas: " + listRapot[0].Kelas.ToUpper(), fontNormal));
+                            doc.Add(new Paragraph("Guru: " + listRapot[0].WaliKelas.ToUpper(), fontNormal));
+
+                            doc.Add(new Paragraph(pembatas));
+                            doc.Add(new Paragraph(""));
+
+                            PdfPTable tabel = new PdfPTable(6);
+                            tabel.WidthPercentage = 100;
+                            string[] headers = { "Tahun Ajaran", "Semester", "Mata Pelajaran", "Guru Pengampu", "Nilai", "Nisbi" };
+                            foreach(string header in headers)
+                            {
+                                PdfPCell cell = new PdfPCell(new Phrase(header));
+                                cell.BackgroundColor = BaseColor.LIGHT_GRAY;
+                                tabel.AddCell(cell);
+                            }
+
+                            foreach (var rapot in listRapot)
+                            {
+                                tabel.AddCell(rapot.TahunAjaran.ToString());
+                                tabel.AddCell(rapot.Semester);
+                                tabel.AddCell(rapot.NamaMataPelajaran);
+                                tabel.AddCell(rapot.NamaGuruMataPelajaran);
+                                tabel.AddCell(rapot.Nilai.ToString());
+                                tabel.AddCell(rapot.Nisbi);
+                            }
+                            doc.Add(tabel);
+
+                            doc.Add(new Paragraph(""));
+                            doc.Add(new Paragraph(pembatas));
+                            doc.Add(new Paragraph(""));
+                            doc.Add(new Paragraph("Deskripsi: " + listRapot[0].Deskripsi));
+                            doc.Add(new Paragraph(pembatas));
+                            doc.Add(new Paragraph(""));
+                            doc.Add(new Paragraph(listRapot[0].WaliKelas.ToUpper()));
+
+                            #region Gambar TTD
+                            System.Drawing.Image ttdWaliKelas = System.Drawing.Image.FromFile(listRapot[0].TtdWaliKelas);
+                            iTextSharp.text.Image imgTTD = iTextSharp.text.Image.GetInstance(ttdWaliKelas, System.Drawing.Imaging.ImageFormat.Png);
+
+                            imgTTD.Alignment = Element.ALIGN_LEFT;
+                            doc.Add(imgTTD);
+                            doc.Add(new Paragraph(""));
+                            #endregion
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                        finally
+                        {
+                            doc.Close();
+                        }
+                    }
                 }
-
-                fileCetak.WriteLine();
-                fileCetak.WriteLine("-----------------------------------------------------------------------------------");
-                fileCetak.WriteLine("");
-                fileCetak.WriteLine("Deskripsi: " + listRapot[0].Deskripsi);
-                fileCetak.WriteLine("-----------------------------------------------------------------------------------");
-                fileCetak.WriteLine("");
-                fileCetak.WriteLine(listRapot[0].WaliKelas.ToUpper());
-                //Gambarnya TTD yang sudah di stegano
-                fileCetak.Close();
-
                 //proses mencetak ke printer
                 CustomPrint p = new CustomPrint(pTipeFont, pNamaFile, 100, 50, 50, 50);
                 p.KirimKePrinter();
@@ -121,113 +173,6 @@ namespace ProjectISA_uuuISA
             }
         }
 
-        public static void CetakRTF(string pNamaFile, Font pTipeFont, int idSiswa)
-        {
-            List<DownloadRapot> listRapot = DownloadRapot.BacaData(idSiswa);
-            if (listRapot.Count != 0)
-            {
-                byte[] imageBytes = File.ReadAllBytes(listRapot[0].TtdWaliKelas);
-                string hexImage = ConvertBytesToHex(imageBytes);
-                using (StreamWriter fileCetak = new StreamWriter(pNamaFile))
-                {
-                    // Header RTF
-                    fileCetak.WriteLine(@"{\rtf1\ansi\deff0{\fonttbl{\f0 " + pTipeFont.Name + ";}}");
-                    fileCetak.WriteLine(@"\b RAPOT \b0");
-                    fileCetak.WriteLine(@"\line Laporan Rapot");
-                    fileCetak.WriteLine(@"\line Nama Siswa: " + listRapot[0].NamaSiswa.ToUpper());
-                    fileCetak.WriteLine(@"\line Kelas: " + listRapot[0].Kelas.ToUpper());
-                    fileCetak.WriteLine(@"\line Guru: " + listRapot[0].WaliKelas.ToUpper());
-                    fileCetak.WriteLine(@"\line -------------------------------------------------------------------------------");
-                    fileCetak.WriteLine(@"\line ");
-                    fileCetak.WriteLine(@"\b Tahun Ajaran\t Semester\t Mata Pelajaran\t Guru Pengampu\t Nilai\t Nisbi \b0");
-
-                    // Isi data rapot
-                    foreach (var rapot in listRapot)
-                    {
-                        fileCetak.WriteLine(@"\line   " + rapot.TahunAjaran + "\t " +
-                                            rapot.Semester + "\t " +
-                                            rapot.NamaMataPelajaran + "\t " +
-                                            rapot.NamaGuruMataPelajaran + "\t " +
-                                            rapot.Nilai.ToString() + "\t " +
-                                            rapot.Nisbi);
-                    }
-
-                    // Deskripsi dan footer
-                    fileCetak.WriteLine(@"\line ");
-                    fileCetak.WriteLine(@"\line -------------------------------------------------------------------------------");
-                    fileCetak.WriteLine(@"\line ");
-                    fileCetak.WriteLine(@"\line Deskripsi: " + listRapot[0].Deskripsi);
-                    fileCetak.WriteLine(@"\line -------------------------------------------------------------------------------");
-                    fileCetak.WriteLine(@"\line ");
-                    fileCetak.WriteLine(@"\line " + listRapot[0].WaliKelas.ToUpper());
-                    //fileCetak.WriteLine(@"\line {\pict\pngblip\picw1000\pich1000 " + Convert.ToBase64String(File.ReadAllBytes(listRapot[0].TtdWaliKelas)) + "}");
-                    fileCetak.WriteLine(@"\line {\pict\pngblip\picw1000\pich1000 " + hexImage + "}");
-                    fileCetak.WriteLine(@"}");
-                }
-                string simpanPathRTF = SimpanRTF(listRapot);
-                string simpanPathPDF = SimpanPDF(listRapot);
-
-                RtfToPdf converter = new RtfToPdf(simpanPathRTF);
-                converter.SaveAsPdf(simpanPathPDF);
-
-                // Proses mencetak ke printer
-                //CustomPrint p = new CustomPrint(pTipeFont, pNamaFile, 100, 50, 50, 50);
-                //p.KirimKePrinter();
-            }
-            else
-            {
-                throw new Exception("Belum ada data rapot");
-            }   
-        }
-
-        public static string ConvertBytesToHex(byte[] bytes)
-        {
-            StringBuilder hex = new StringBuilder(bytes.Length * 2);
-            foreach (byte b in bytes)
-            {
-                hex.Append(b.ToString("X2"));  // uppercase hex, e.g., "0A", "FF"
-            }
-            return hex.ToString();
-        }
-
-        public static string SimpanRTF(List<DownloadRapot> listRapot)
-        {
-            string savedPath;
-            using (SaveFileDialog saveDialog = new SaveFileDialog())
-            {
-                saveDialog.Filter = "Rich Text File|*.rtf";
-                saveDialog.Title = "Simpan Document RTF";
-                saveDialog.FileName = "[RAPOT]_" + listRapot[0].NamaSiswa + ".rtf";
-
-                if (saveDialog.ShowDialog() == DialogResult.OK)
-                {
-                    savedPath = saveDialog.FileName;
-                    MessageBox.Show("RTF berhasil disimpan.\n" + savedPath);
-                    return savedPath;
-                }
-                throw new Exception("RTF gagal disimpan");
-            }
-        }
-
-        public static string SimpanPDF(List<DownloadRapot> listRapot)
-        {
-            string savedPath;
-            using (SaveFileDialog saveDialog = new SaveFileDialog())
-            {
-                saveDialog.Filter = "PDF File|*.pdf";
-                saveDialog.Title = "Simpan Document PDF";
-                saveDialog.FileName = "[RAPOT]_" + listRapot[0].NamaSiswa + ".pdf";
-
-                if (saveDialog.ShowDialog() == DialogResult.OK)
-                {
-                    savedPath = saveDialog.FileName;
-                    MessageBox.Show("PDF berhasil disimpan.\n" + savedPath);
-                    return savedPath;
-                }
-                throw new Exception("PDF gagal disimpan");
-            }
-
-        }
         #endregion
     }
 }
