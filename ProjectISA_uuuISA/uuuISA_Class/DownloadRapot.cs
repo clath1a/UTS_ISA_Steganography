@@ -61,17 +61,17 @@ namespace uuuISA_Class
         public static List<DownloadRapot> BacaData(int idSiswa)
         {
             string perintah = "";
-            perintah = "select r.idRapot, s.nama AS nama_siswa, mp.namaMataPelajaran, p.nilai, p.semester, p.tahun_ajaran, p.deskripsi_penilaian, n.nama AS nisbi, k.namaKelas, g.nama AS guru_pengampu, wg.nama AS wali_kelas, wg.ttd AS ttd_wali_kelas, k.jenjang " +
-                        "FROM siswa s " +
-                        "INNER JOIN Rapot r ON s.idsiswa = r.siswa_idsiswa " +
-                        "INNER JOIN penilaian p ON r.idRapot = p.idRapot " + 
-                        "INNER JOIN matapelajaran mp ON p.idmataPelajaran = mp.idmataPelajaran " +
-                        "INNER JOIN nisbi n ON p.nisbi_idnisbi = n.idnisbi " +
-                        "INNER JOIN kelas k ON s.kelas_idkelas = k.idkelas " +
-                        "INNER JOIN kelas_has_guru kg ON k.idkelas = kg.kelas_idkelas " +
-                        " INNER JOIN guru g ON kg.guru_idGuru = g.idGuru " +
-                        "LEFT JOIN guru wg ON k.walikelas = wg.idGuru " +
-                        "WHERE s.idsiswa = "+idSiswa+";" ;
+            perintah = "SELECT \r\n    r.idRapot, \r\n    s.nama AS nama_siswa, \r\n    mp.namaMataPelajaran, \r\n    p.nilai, \r\n    p.semester, \r\n    p.tahun_ajaran, \r\n    p.deskripsi_penilaian, \r\n    n.nama AS nisbi, \r\n    k.namaKelas, \r\n    g.nama AS guru_pengampu,\r\n    wg.ttd AS ttd_wali_kelas " +
+                "FROM siswa s " +
+                "INNER JOIN Rapot r ON s.idsiswa = r.siswa_idsiswa " +
+                "INNER JOIN penilaian p ON r.idRapot = p.idRapot " +
+                "INNER JOIN matapelajaran mp ON p.idmataPelajaran = mp.idmataPelajaran " +
+                "INNER JOIN nisbi n ON p.nisbi_idnisbi = n.idnisbi " +
+                "INNER JOIN kelas k ON s.kelas_idkelas = k.idkelas " +
+                "INNER JOIN kelas_has_guru kg ON k.idkelas = kg.kelas_idkelas " +
+                "INNER JOIN guru g ON kg.guru_idGuru = g.idGuru " +
+                "LEFT JOIN guru wg ON k.idGuru_waliKelas = wg.idGuru " +
+                "where s.idsiswa = "+idSiswa+";";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
             List<DownloadRapot> listRapot = new List<DownloadRapot>();
