@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using class_uuuISA;
 using MySql.Data.MySqlClient;
+using uuuISA_Class;
 
 namespace ProjectISA_uuuISA
 {
@@ -85,51 +86,37 @@ namespace ProjectISA_uuuISA
         public static Akun User_Login(int idAkun, string password)
         {
             string perintah = "SELECT * FROM akun a INNER JOIN role r ON a.role_idrole = r.idrole " +
-                      "WHERE a.idAkun = '" + idAkun + "';"; //pengecekan dilakukan setelah membaca isi akun
-
+                      "WHERE a.idAkun = '" + idAkun + "';";
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
 
-            Akun akun;
             if (hasil.Read())
             {
-                // Data akun
-                int id = int.Parse(hasil.GetValue(0).ToString());
-                string username = hasil.GetValue(1).ToString();
-                string encryptedPassword = hasil.GetValue(2).ToString(); //encrypted password
-
-                // Data role
-                int idRole = int.Parse(hasil.GetValue(4).ToString());  // FIXED
-                string namaRole = hasil.GetValue(5).ToString();        // FIXED
-
-                // Buat objek role
-                Role role = new Role(idRole, namaRole);
-                Console.WriteLine("NAMA ROLE: " + namaRole);
-
-                string decryptedPassword = AES.Decrypt(encryptedPassword);
-
-                if (decryptedPassword != password)
+                string storedHash = hasil.GetValue(2).ToString();
+                bool isValid = Hashing.VerifyPassword(password, storedHash);
+                if (isValid)
                 {
-                    throw new Exception("Password salah!");
+                    int id = int.Parse(hasil.GetValue(0).ToString());
+                    string username = hasil.GetValue(1).ToString();
+                    string pw = hasil.GetValue(2).ToString();
+
+                    // Menyimpan Role
+                    int idRole = int.Parse(hasil.GetValue(4).ToString());  // FIXED
+                    string namaRole = hasil.GetValue(5).ToString();        // FIXED
+
+                    // Buat objek role
+                    Role role = new Role(idRole, namaRole);
+
+                    return new Akun(id, username, pw, role);
                 }
-
-                // Buat objek akun
-                akun = new Akun(id, username, encryptedPassword, role);
-
-                Console.WriteLine("DATA PENGGUNA BERHASIL DIAMBIL");
             }
-            else
-            {
-                throw new Exception("User password or username is incorrect, or does not exists.");
-            }
-            return akun;
+            return null; // Return null jika login gagal
         }
 
         public static bool Register_Account(string username, string password, int idRole)
         {
-            string encryptedPassword = AES.Encrypt(password);
-            System.Diagnostics.Debug.WriteLine("[DEBUG] Encrypted Password: " + encryptedPassword);
-
-            string perintah = "INSERT INTO `uuuisa`.`akun` (`username`, `password`, `role_idrole`) VALUES ('" + username + "', '" + encryptedPassword + "', '" + idRole + "');";
+            string hashed = Hashing.HashPassword(password);
+            System.Diagnostics.Debug.WriteLine("[DEBUG] Encrypted Password: " + hashed);
+            string perintah = "INSERT INTO `uuuisa`.`akun` (`username`, `password`, `role_idrole`) VALUES ('" + username + "', '" + hashed + "', '" + idRole + "');";
             System.Diagnostics.Debug.WriteLine("[DEBUG] Perintah SQL: " + perintah);
 
             int hasil = Koneksi.JalankanPerintahDML(perintah);

@@ -103,6 +103,7 @@
     <Compile Include="DownloadRapot.cs" />
     <Compile Include="Guru.cs" />
     <Compile Include="Guru_MataPelajaran.cs" />
+    <Compile Include="Hashing.cs" />
     <Compile Include="Kelas.cs" />
     <Compile Include="Koneksi.cs" />
     <Compile Include="MataPelajaran.cs" />

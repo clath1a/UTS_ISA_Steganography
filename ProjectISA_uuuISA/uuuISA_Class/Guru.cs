@@ -37,7 +37,7 @@ namespace ProjectISA_uuuISA
             Email = email;
             NomorTelp = nomorTelp;
             TglLahir = tglLahir;
-            PendidikanTerakhir = pendidikanTerakhir;     
+            PendidikanTerakhir = pendidikanTerakhir;
             IdAkun = idAkun;
         }
 
@@ -78,16 +78,16 @@ namespace ProjectISA_uuuISA
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
             Guru guru;
 
-            if(hasil.Read())
+            if (hasil.Read())
             {
                 int idGuru = int.Parse(hasil.GetValue(0).ToString());
                 string nama = hasil.GetValue(1).ToString();
-                string email = hasil.GetValue(2).ToString();
-                string nomorTelp = hasil.GetValue(3).ToString();
+                string email = AES.Decrypt(hasil.GetValue(2).ToString());
+                string nomorTelp = AES.Decrypt(hasil.GetValue(3).ToString());
                 DateTime tglLahir = DateTime.Parse(hasil.GetValue(4).ToString());
-                string pendidikanTerakhir = hasil.GetValue(5).ToString();
+                string pendidikanTerakhir = AES.Decrypt(hasil.GetValue(5).ToString());
 
-                guru = new Guru(idGuru, nama, email,nomorTelp,tglLahir,pendidikanTerakhir);
+                guru = new Guru(idGuru, nama, email, nomorTelp, tglLahir, pendidikanTerakhir);
             }
             else
             {
@@ -97,8 +97,11 @@ namespace ProjectISA_uuuISA
         }
 
         public static bool Insert_Guru(string nama, string emailSekolah, string nomorTlp, DateTime tglLahir, string pendidikanTerakhir)
-        {                        
-            string perintah = "INSERT INTO guru (nama, email, nomorTlp, tanggalLahir, pendidikanTerakhir, akun_idakun) SELECT '" + nama + "', '" + emailSekolah + "', '" + nomorTlp + "', '" + tglLahir.ToString("yyyy-MM-dd") + "', '" + pendidikanTerakhir + "', idakun FROM akun ORDER BY idakun DESC LIMIT 1;";
+        {
+            string encrypted_emailSekolah = AES.Encrypt(emailSekolah);
+            string encrypted_nomorTelp = AES.Encrypt(nomorTlp);
+            string encrypted_pendidikanTerakhir = AES.Encrypt(pendidikanTerakhir);
+            string perintah = "INSERT INTO guru (nama, email, nomorTlp, tanggalLahir, pendidikanTerakhir, akun_idakun) SELECT '" + nama + "', '" + encrypted_emailSekolah + "', '" + encrypted_nomorTelp + "', '" + tglLahir.ToString("yyyy-MM-dd") + "', '" + encrypted_pendidikanTerakhir + "', idakun FROM akun ORDER BY idakun DESC LIMIT 1;";
 
             int hasil = Koneksi.JalankanPerintahDML(perintah);
             return hasil > 0;
@@ -126,6 +129,7 @@ namespace ProjectISA_uuuISA
                     return false;
                 }
             }
+
         }
     }
 }
