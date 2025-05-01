@@ -476,8 +476,14 @@
         <member name="F:Org.BouncyCastle.Asn1.BC.BCObjectIdentifiers.pqc_kem_saber">
             SABER
         </member>
+        <member name="F:Org.BouncyCastle.Asn1.BC.BCObjectIdentifiers.pqc_kem_sike">
+            SIKE
+        </member>
         <member name="F:Org.BouncyCastle.Asn1.BC.BCObjectIdentifiers.pqc_kem_ntru">
             NTRU
+        </member>
+        <member name="F:Org.BouncyCastle.Asn1.BC.BCObjectIdentifiers.pqc_kem_kyber">
+            Kyber
         </member>
         <member name="F:Org.BouncyCastle.Asn1.BC.BCObjectIdentifiers.pqc_kem_ntruprime">
             NTRUPrime
@@ -611,16 +617,15 @@
             @return a basic ASN.1 object representation.
         </member>
         <member name="M:Org.BouncyCastle.Asn1.Cmp.CertifiedKeyPair.ToAsn1Object">
-            		 * RFC 9480
-            		 * <pre>
-            		 * CertifiedKeyPair ::= SEQUENCE {
-                     *     certOrEncCert       CertOrEncCert,
-                     *     privateKey      [0] EncryptedKey        OPTIONAL,
-                     *     -- See [RFC4211] for comments on encoding.
-                     *     publicationInfo [1] PKIPublicationInfo  OPTIONAL
-                     * }
-            		 * </pre>
-            		 * @return a basic ASN.1 object representation.
+            <pre>
+            CertifiedKeyPair ::= SEQUENCE {
+                                             certOrEncCert       CertOrEncCert,
+                                             privateKey      [0] EncryptedValue      OPTIONAL,
+                                             -- see [CRMF] for comment on encoding
+                                             publicationInfo [1] PKIPublicationInfo  OPTIONAL
+                  }
+            </pre>
+            @return a basic ASN.1 object representation.
         </member>
         <member name="M:Org.BouncyCastle.Asn1.Cmp.CertOrEncCert.ToAsn1Object">
             <pre>
@@ -754,9 +759,6 @@
         <member name="F:Org.BouncyCastle.Asn1.Cmp.CmpObjectIdentifiers.passwordBasedMac">
             id-PasswordBasedMac OBJECT IDENTIFIER ::= {1 2 840 113533 7 66 13}
         </member>
-        <member name="F:Org.BouncyCastle.Asn1.Cmp.CmpObjectIdentifiers.kemBasedMac">
-            id-KemBasedMac OBJECT IDENTIFIER ::= {1 2 840 113533 7 66 16}
-        </member>
         <member name="F:Org.BouncyCastle.Asn1.Cmp.CmpObjectIdentifiers.dhBasedMac">
             id-DHBasedMac OBJECT IDENTIFIER ::= {1 2 840 113533 7 66 30}
         </member>
@@ -856,16 +858,6 @@
             From RFC4210:
             id-regCtrl-altCertTemplate OBJECT IDENTIFIER ::= {id-regCtrl 7}; 1.3.6.1.5.5.7.1.7
         </member>
-        <member name="F:Org.BouncyCastle.Asn1.Cmp.CmpObjectIdentifiers.id_regCtrl_algId">
-            id-regCtrl-algId OBJECT IDENTIFIER ::= { iso(1)
-            identified-organization(3) dod(6) internet(1) security(5)
-            mechanisms(5) pkix(7) pkip(5) regCtrl(1) 11 }
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Cmp.CmpObjectIdentifiers.id_regCtrl_rsaKeyLen">
-            id-regCtrl-rsaKeyLen OBJECT IDENTIFIER ::= { iso(1)
-            identified-organization(3) dod(6) internet(1) security(5)
-            mechanisms(5) pkix(7) pkip(5) regCtrl(1) 12 }
-        </member>
         <member name="F:Org.BouncyCastle.Asn1.Cmp.CmpObjectIdentifiers.regInfo_utf8Pairs">
             RFC 4211: it-regInfo-utf8Pairs: 1.3.6.1.5.5.7.5.2.1
         </member>
@@ -879,6 +871,16 @@
             </p><p>
             id-ct-encKeyWithID OBJECT IDENTIFIER ::= {id-ct 21}
             </p>
+        </member>
+        <member name="F:Org.BouncyCastle.Asn1.Cmp.CmpObjectIdentifiers.id_regCtrl_algId">
+            id-regCtrl-algId OBJECT IDENTIFIER ::= { iso(1)
+            identified-organization(3) dod(6) internet(1) security(5)
+            mechanisms(5) pkix(7) pkip(5) regCtrl(1) 11 }
+        </member>
+        <member name="F:Org.BouncyCastle.Asn1.Cmp.CmpObjectIdentifiers.id_regCtrl_rsaKeyLen">
+            id-regCtrl-rsaKeyLen OBJECT IDENTIFIER ::= { iso(1)
+            identified-organization(3) dod(6) internet(1) security(5)
+            mechanisms(5) pkix(7) pkip(5) regCtrl(1) 12 }
         </member>
         <member name="M:Org.BouncyCastle.Asn1.Cmp.CrlAnnContent.ToAsn1Object">
             <pre>
@@ -1681,10 +1683,6 @@
         <member name="F:Org.BouncyCastle.Asn1.Cms.CmsObjectIdentifiers.id_ori">
             OtherRecipientInfo types
         </member>
-        <member name="F:Org.BouncyCastle.Asn1.Cms.CmsObjectIdentifiers.id_alg_cek_hkdf_sha256">
-            id-alg-cek-hkdf-sha256 OBJECT IDENTIFIER ::= { iso(1) member-body(2)
-                us(840) rsadsi(113549) pkcs(1) pkcs-9(9) smime(16) alg(3) 31 }
-        </member>
         <member name="T:Org.BouncyCastle.Asn1.Cms.CompressedData">
             RFC 3274 - CMS Compressed Data.
             <pre>
@@ -1710,7 +1708,8 @@
             <pre>
             ContentInfo ::= Sequence {
                      contentType ContentType,
-                     content [0] EXPLICIT ANY DEFINED BY contentType OPTIONAL }
+                     content
+                     [0] EXPLICIT ANY DEFINED BY contentType OPTIONAL }
             </pre>
         </member>
         <member name="T:Org.BouncyCastle.Asn1.Cms.ContentInfoParser">
@@ -3152,6 +3151,9 @@
             </code>
             </remarks>
         </member>
+        <member name="M:Org.BouncyCastle.Asn1.Ess.ContentHints.#ctor(Org.BouncyCastle.Asn1.Asn1Sequence)">
+            constructor
+        </member>
         <member name="M:Org.BouncyCastle.Asn1.Ess.ContentHints.ToAsn1Object">
             <pre>
             ContentHints ::= SEQUENCE {
@@ -3173,6 +3175,9 @@
             id-aa-contentIdentifier OBJECT IDENTIFIER ::= { iso(1)
              member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs9(9)
              smime(16) id-aa(2) 7 }
+        </member>
+        <member name="M:Org.BouncyCastle.Asn1.Ess.EssCertID.#ctor(Org.BouncyCastle.Asn1.Asn1Sequence)">
+            constructor
         </member>
         <member name="M:Org.BouncyCastle.Asn1.Ess.EssCertID.ToAsn1Object">
             <pre>
@@ -3197,6 +3202,9 @@
                  serialNumber   CertificateSerialNumber
              }
              </pre>
+        </member>
+        <member name="M:Org.BouncyCastle.Asn1.Ess.SigningCertificate.#ctor(Org.BouncyCastle.Asn1.Asn1Sequence)">
+            constructors
         </member>
         <member name="M:Org.BouncyCastle.Asn1.Ess.SigningCertificate.ToAsn1Object">
             The definition of SigningCertificate is
@@ -3604,7 +3612,7 @@
         <member name="M:Org.BouncyCastle.Asn1.IsisMtt.X509.AdditionalInformationSyntax.#ctor(System.String)">
              Constructor from a given details.
             
-             @param information The description of the information.
+             @param information The describtion of the information.
         </member>
         <member name="M:Org.BouncyCastle.Asn1.IsisMtt.X509.AdditionalInformationSyntax.ToAsn1Object">
              Produce an object suitable for an Asn1OutputStream.
@@ -3865,6 +3873,12 @@
             
              @return an Asn1Object
         </member>
+        <member name="P:Org.BouncyCastle.Asn1.IsisMtt.X509.AdmissionSyntax.AdmissionAuthority">
+            @return Returns the admissionAuthority if present, null otherwise.
+        </member>
+        <member name="M:Org.BouncyCastle.Asn1.IsisMtt.X509.AdmissionSyntax.GetContentsOfAdmissions">
+            @return Returns the contentsOfAdmissions.
+        </member>
         <member name="T:Org.BouncyCastle.Asn1.IsisMtt.X509.DeclarationOfMajority">
             A declaration of majority.
             <p/>
@@ -3883,9 +3897,6 @@
             <p/>
             fullAgeAtCountry indicates the majority of the owner with respect to the laws
             of a specific country.
-        </member>
-        <member name="P:Org.BouncyCastle.Asn1.IsisMtt.X509.DeclarationOfMajority.NotYoungerThan">
-            @return notYoungerThan if that's what we are, -1 otherwise
         </member>
         <member name="M:Org.BouncyCastle.Asn1.IsisMtt.X509.DeclarationOfMajority.ToAsn1Object">
              Produce an object suitable for an Asn1OutputStream.
@@ -3906,6 +3917,9 @@
              </pre>
             
              @return an Asn1Object
+        </member>
+        <member name="P:Org.BouncyCastle.Asn1.IsisMtt.X509.DeclarationOfMajority.NotYoungerThan">
+            @return notYoungerThan if that's what we are, -1 otherwise
         </member>
         <member name="T:Org.BouncyCastle.Asn1.IsisMtt.X509.MonetaryLimit">
             Monetary limit for transactions. The QcEuMonetaryLimit QC statement MUST be
@@ -4228,21 +4242,6 @@
              @param registrationNumber Registration number.
              @param addProfessionInfo  Additional infos in encoded form.
         </member>
-        <member name="P:Org.BouncyCastle.Asn1.IsisMtt.X509.ProfessionInfo.AddProfessionInfo">
-            @return Returns the addProfessionInfo.
-        </member>
-        <member name="P:Org.BouncyCastle.Asn1.IsisMtt.X509.ProfessionInfo.NamingAuthority">
-            @return Returns the namingAuthority.
-        </member>
-        <member name="M:Org.BouncyCastle.Asn1.IsisMtt.X509.ProfessionInfo.GetProfessionItems">
-            @return Returns the professionItems.
-        </member>
-        <member name="M:Org.BouncyCastle.Asn1.IsisMtt.X509.ProfessionInfo.GetProfessionOids">
-            @return Returns the professionOids.
-        </member>
-        <member name="P:Org.BouncyCastle.Asn1.IsisMtt.X509.ProfessionInfo.RegistrationNumber">
-            @return Returns the registrationNumber.
-        </member>
         <member name="M:Org.BouncyCastle.Asn1.IsisMtt.X509.ProfessionInfo.ToAsn1Object">
              Produce an object suitable for an Asn1OutputStream.
              <p/>
@@ -4260,6 +4259,21 @@
              </pre>
             
              @return an Asn1Object
+        </member>
+        <member name="P:Org.BouncyCastle.Asn1.IsisMtt.X509.ProfessionInfo.AddProfessionInfo">
+            @return Returns the addProfessionInfo.
+        </member>
+        <member name="P:Org.BouncyCastle.Asn1.IsisMtt.X509.ProfessionInfo.NamingAuthority">
+            @return Returns the namingAuthority.
+        </member>
+        <member name="M:Org.BouncyCastle.Asn1.IsisMtt.X509.ProfessionInfo.GetProfessionItems">
+            @return Returns the professionItems.
+        </member>
+        <member name="M:Org.BouncyCastle.Asn1.IsisMtt.X509.ProfessionInfo.GetProfessionOids">
+            @return Returns the professionOids.
+        </member>
+        <member name="P:Org.BouncyCastle.Asn1.IsisMtt.X509.ProfessionInfo.RegistrationNumber">
+            @return Returns the registrationNumber.
         </member>
         <member name="T:Org.BouncyCastle.Asn1.IsisMtt.X509.Restriction">
             Some other restriction regarding the usage of this certificate.
@@ -4424,315 +4438,6 @@
         <member name="P:Org.BouncyCastle.Asn1.Nist.NistNamedCurves.Names">
             <summary>Enumerate the available curve names in this registry.</summary>
         </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.NistAlgorithm">
-            <summary> 2.16.840.1.101.3.4 -- algorithms </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.HashAlgs">
-            <summary> 2.16.840.1.101.3.4.2 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdSha256">
-            <summary> 2.16.840.1.101.3.4.2.1 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdSha384">
-            <summary> 2.16.840.1.101.3.4.2.2 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdSha512">
-            <summary> 2.16.840.1.101.3.4.2.3 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdSha224">
-            <summary> 2.16.840.1.101.3.4.2.4 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdSha512_224">
-            <summary> 2.16.840.1.101.3.4.2.5 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdSha512_256">
-            <summary> 2.16.840.1.101.3.4.2.6 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdSha3_224">
-            <summary> 2.16.840.1.101.3.4.2.7 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdSha3_256">
-            <summary> 2.16.840.1.101.3.4.2.8 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdSha3_384">
-            <summary> 2.16.840.1.101.3.4.2.9 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdSha3_512">
-            <summary> 2.16.840.1.101.3.4.2.10 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdShake128">
-            <summary> 2.16.840.1.101.3.4.2.11 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdShake256">
-            <summary> 2.16.840.1.101.3.4.2.12 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdHMacWithSha3_224">
-            <summary> 2.16.840.1.101.3.4.2.13 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdHMacWithSha3_256">
-            <summary> 2.16.840.1.101.3.4.2.14 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdHMacWithSha3_384">
-            <summary> 2.16.840.1.101.3.4.2.15 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdHMacWithSha3_512">
-            <summary> 2.16.840.1.101.3.4.2.16 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdShake128Len">
-            <summary> 2.16.840.1.101.3.4.2.17 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdShake256Len">
-            <summary> 2.16.840.1.101.3.4.2.18 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdKmacWithShake128">
-            <summary> 2.16.840.1.101.3.4.2.19 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdKmacWithShake256">
-            <summary> 2.16.840.1.101.3.4.2.20  </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdKmac128">
-            <summary> 2.16.840.1.101.3.4.2.21 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdKmac256">
-            <summary> 2.16.840.1.101.3.4.2.22  </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.Aes">
-            <summary> 2.16.840.1.101.3.4.1 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes128Ecb">
-            <summary> 2.16.840.1.101.3.4.1.1 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes128Cbc">
-            <summary> 2.16.840.1.101.3.4.1.2 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes128Ofb">
-            <summary> 2.16.840.1.101.3.4.1.3 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes128Cfb">
-            <summary> 2.16.840.1.101.3.4.1.4 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes128Wrap">
-            <summary> 2.16.840.1.101.3.4.1.5 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes128Gcm">
-            <summary> 2.16.840.1.101.3.4.1.6 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes128Ccm">
-            <summary> 2.16.840.1.101.3.4.1.7 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes128WrapPad">
-            <summary> 2.16.840.1.101.3.4.1.8 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes128GMac">
-            <summary> 2.16.840.1.101.3.4.1.9 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes192Ecb">
-            <summary> 2.16.840.1.101.3.4.1.21 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes192Cbc">
-            <summary> 2.16.840.1.101.3.4.1.22 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes192Ofb">
-            <summary> 2.16.840.1.101.3.4.1.23 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes192Cfb">
-            <summary> 2.16.840.1.101.3.4.1.24 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes192Wrap">
-            <summary> 2.16.840.1.101.3.4.1.25 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes192Gcm">
-            <summary> 2.16.840.1.101.3.4.1.26 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes192Ccm">
-            <summary> 2.16.840.1.101.3.4.1.27 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes192WrapPad">
-            <summary> 2.16.840.1.101.3.4.1.28 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes192GMac">
-            <summary> 2.16.840.1.101.3.4.1.29 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes256Ecb">
-            <summary> 2.16.840.1.101.3.4.1.41 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes256Cbc">
-            <summary> 2.16.840.1.101.3.4.1.42 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes256Ofb">
-            <summary> 2.16.840.1.101.3.4.1.43 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes256Cfb">
-            <summary> 2.16.840.1.101.3.4.1.44 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes256Wrap">
-            <summary> 2.16.840.1.101.3.4.1.45 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes256Gcm">
-            <summary> 2.16.840.1.101.3.4.1.46 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes256Ccm">
-            <summary> 2.16.840.1.101.3.4.1.47 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes256WrapPad">
-            <summary> 2.16.840.1.101.3.4.1.48 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdAes256GMac">
-            <summary> 2.16.840.1.101.3.4.1.49 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.SigAlgs">
-            <summary> 2.16.840.1.101.3.4.3 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.DsaWithSha224">
-            <summary> 2.16.840.1.101.3.4.3.1 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.DsaWithSha256">
-            <summary> 2.16.840.1.101.3.4.3.2 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.DsaWithSha384">
-            <summary> 2.16.840.1.101.3.4.3.3 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.DsaWithSha512">
-            <summary> 2.16.840.1.101.3.4.3.4 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdDsaWithSha3_224">
-            <summary> 2.16.840.1.101.3.4.3.5 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdDsaWithSha3_256">
-            <summary> 2.16.840.1.101.3.4.3.6 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdDsaWithSha3_384">
-            <summary> 2.16.840.1.101.3.4.3.7 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdDsaWithSha3_512">
-            <summary> 2.16.840.1.101.3.4.3.8 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdEcdsaWithSha3_224">
-            <summary> 2.16.840.1.101.3.4.3.9 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdEcdsaWithSha3_256">
-            <summary> 2.16.840.1.101.3.4.3.10 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdEcdsaWithSha3_384">
-            <summary> 2.16.840.1.101.3.4.3.11 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdEcdsaWithSha3_512">
-            <summary> 2.16.840.1.101.3.4.3.12 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdRsassaPkcs1V15WithSha3_224">
-            <summary> 2.16.840.1.101.3.4.3.13 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdRsassaPkcs1V15WithSha3_256">
-            <summary> 2.16.840.1.101.3.4.3.14 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdRsassaPkcs1V15WithSha3_384">
-            <summary> 2.16.840.1.101.3.4.3.15 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.IdRsassaPkcs1V15WithSha3_512">
-            <summary> 2.16.840.1.101.3.4.3.16 </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_ml_dsa_44">
-            2.16.840.1.101.3.4.3.17 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_ml_dsa_65">
-            2.16.840.1.101.3.4.3.18 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_ml_dsa_87">
-            2.16.840.1.101.3.4.3.19 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_hash_ml_dsa_44_with_sha512">
-            2.16.840.1.101.3.4.3.32 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_hash_ml_dsa_65_with_sha512">
-            2.16.840.1.101.3.4.3.33 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_hash_ml_dsa_87_with_sha512">
-            2.16.840.1.101.3.4.3.34 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_slh_dsa_sha2_128s">
-            2.16.840.1.101.3.4.3.20 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_slh_dsa_sha2_128f">
-            2.16.840.1.101.3.4.3.21 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_slh_dsa_sha2_192s">
-            2.16.840.1.101.3.4.3.22 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_slh_dsa_sha2_192f">
-            2.16.840.1.101.3.4.3.23 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_slh_dsa_sha2_256s">
-            2.16.840.1.101.3.4.3.24 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_slh_dsa_sha2_256f">
-            2.16.840.1.101.3.4.3.25 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_slh_dsa_shake_128s">
-            2.16.840.1.101.3.4.3.26 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_slh_dsa_shake_128f">
-            2.16.840.1.101.3.4.3.27 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_slh_dsa_shake_192s">
-            2.16.840.1.101.3.4.3.28 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_slh_dsa_shake_192f">
-            2.16.840.1.101.3.4.3.29 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_slh_dsa_shake_256s">
-            2.16.840.1.101.3.4.3.30 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_slh_dsa_shake_256f">
-            2.16.840.1.101.3.4.3.31 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_hash_slh_dsa_sha2_128s_with_sha256">
-            2.16.840.1.101.3.4.3.35 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_hash_slh_dsa_sha2_128f_with_sha256">
-            2.16.840.1.101.3.4.3.36 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_hash_slh_dsa_sha2_192s_with_sha512">
-            2.16.840.1.101.3.4.3.37 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_hash_slh_dsa_sha2_192f_with_sha512">
-            2.16.840.1.101.3.4.3.38 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_hash_slh_dsa_sha2_256s_with_sha512">
-            2.16.840.1.101.3.4.3.39 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_hash_slh_dsa_sha2_256f_with_sha512">
-            2.16.840.1.101.3.4.3.40 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_hash_slh_dsa_shake_128s_with_shake128">
-            2.16.840.1.101.3.4.3.41 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_hash_slh_dsa_shake_128f_with_shake128">
-            2.16.840.1.101.3.4.3.42 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_hash_slh_dsa_shake_192s_with_shake256">
-            2.16.840.1.101.3.4.3.43 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_hash_slh_dsa_shake_192f_with_shake256">
-            2.16.840.1.101.3.4.3.44 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_hash_slh_dsa_shake_256s_with_shake256">
-            2.16.840.1.101.3.4.3.45 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_hash_slh_dsa_shake_256f_with_shake256">
-            2.16.840.1.101.3.4.3.46 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.kems">
-            2.16.840.1.101.3.4.4
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_alg_ml_kem_512">
-            2.16.840.1.101.3.4.4.1 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_alg_ml_kem_768">
-            2.16.840.1.101.3.4.4.2 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Nist.NistObjectIdentifiers.id_alg_ml_kem_1024">
-            2.16.840.1.101.3.4.4.3 
-        </member>
         <member name="T:Org.BouncyCastle.Asn1.Ntt.NttObjectIdentifiers">
             <summary>From RFC 3657</summary>
         </member>
@@ -4894,6 +4599,12 @@
             lightweight Java environment don't support classes like
             StringTokenizer.
         </member>
+        <member name="M:Org.BouncyCastle.Asn1.Pkcs.AttributePkcs.GetInstance(System.Object)">
+             return an Attribute object from the given object.
+            
+             @param o the object we want converted.
+             @exception ArgumentException if the object cannot be converted.
+        </member>
         <member name="M:Org.BouncyCastle.Asn1.Pkcs.AttributePkcs.ToAsn1Object">
             Produce an object suitable for an Asn1OutputStream.
             <pre>
@@ -4936,7 +4647,8 @@
             <pre>
             ContentInfo ::= Sequence {
                      contentType ContentType,
-                     content [0] EXPLICIT ANY DEFINED BY contentType OPTIONAL }
+                     content
+                     [0] EXPLICIT ANY DEFINED BY contentType OPTIONAL }
             </pre>
         </member>
         <member name="T:Org.BouncyCastle.Asn1.Pkcs.EncryptedData">
@@ -4983,15 +4695,6 @@
             </pre>
             @return the basic DERObject construction.
         </member>
-        <member name="T:Org.BouncyCastle.Asn1.Pkcs.Pbmac1Params">
-             From https://datatracker.ietf.org/doc/html/rfc8018
-            
-             <pre>
-             PBMAC1-params ::= SEQUENCE {
-                 keyDerivationFunc AlgorithmIdentifier {{PBMAC1-KDFs}},
-                 messageAuthScheme AlgorithmIdentifier {{PBMAC1-MACs}} }
-             </pre>
-        </member>
         <member name="T:Org.BouncyCastle.Asn1.Pkcs.Pfx">
             the infamous Pfx from Pkcs12
         </member>
@@ -5003,12 +4706,8 @@
         </member>
         <member name="F:Org.BouncyCastle.Asn1.Pkcs.PkcsObjectIdentifiers.id_aa_cmsAlgorithmProtect">
             RFC 6211 -  id-aa-cmsAlgorithmProtect OBJECT IDENTIFIER ::= {
-            iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs9(9) 52 } 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Pkcs.PkcsObjectIdentifiers.IdAlgHssLmsHashsig">
-            id-alg-hss-lms-hashsig OBJECT IDENTIFIER ::= { iso(1)
-                member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs9(9)
-               smime(16) alg(3) 17 }
+            iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
+            pkcs9(9) 52 }  
         </member>
         <member name="F:Org.BouncyCastle.Asn1.Pkcs.PkcsObjectIdentifiers.IdAlgAeadChaCha20Poly1305">
              <pre>
@@ -5019,26 +4718,10 @@
              AEADChaCha20Poly1305Nonce ::= OCTET STRING (SIZE(12))
              </pre>
         </member>
-        <member name="F:Org.BouncyCastle.Asn1.Pkcs.PkcsObjectIdentifiers.IdAlgHkdfWithSha256">
-            <pre>
-               id-alg-hkdf-with-sha256 OBJECT IDENTIFIER ::= { iso(1) member-body(2)
-                   us(840) rsadsi(113549) pkcs(1) pkcs-9(9) smime(16) alg(3) 28 }
-            </pre>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Pkcs.PkcsObjectIdentifiers.IdAlgHkdfWithSha384">
-            <pre>
-               id-alg-hkdf-with-sha384 OBJECT IDENTIFIER ::= { iso(1) member-body(2)
-                   us(840) rsadsi(113549) pkcs(1) pkcs-9(9) smime(16) alg(3) 29 }
-            </pre>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Pkcs.PkcsObjectIdentifiers.IdAlgHkdfWithSha512">
-            <pre>
-               id-alg-hkdf-with-sha512 OBJECT IDENTIFIER ::= { iso(1) member-body(2)
-                   us(840) rsadsi(113549) pkcs(1) pkcs-9(9) smime(16) alg(3) 30 }
-            </pre>
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.Pkcs.PkcsObjectIdentifiers.IdAAReceiptRequest">
-            PKCS#9: 1.2.840.113549.1.9.16.2.1 -- smime attribute receiptRequest 
+        <member name="F:Org.BouncyCastle.Asn1.Pkcs.PkcsObjectIdentifiers.IdAlgHssLmsHashsig">
+            id-alg-hss-lms-hashsig OBJECT IDENTIFIER ::= { iso(1)
+                member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs9(9)
+               smime(16) alg(3) 17 }
         </member>
         <member name="F:Org.BouncyCastle.Asn1.Pkcs.PkcsObjectIdentifiers.IdAADecryptKeyID">
             PKCS#9: 1.2.840.113549.1.9.16.2.37 - <a href="https://tools.ietf.org/html/rfc4108#section-2.2.5">RFC 4108</a> 
@@ -5283,6 +4966,12 @@
         <member name="F:Org.BouncyCastle.Asn1.Smime.SmimeCapabilities.Aes256Cbc">
             encryption algorithms preferences
         </member>
+        <member name="M:Org.BouncyCastle.Asn1.Smime.SmimeCapabilities.GetInstance(System.Object)">
+             return an Attr object from the given object.
+            
+             @param o the object we want converted.
+             @exception ArgumentException if the object cannot be converted.
+        </member>
         <member name="M:Org.BouncyCastle.Asn1.Smime.SmimeCapabilities.GetCapabilitiesForOid(Org.BouncyCastle.Asn1.DerObjectIdentifier)">
             returns an ArrayList with 0 or more objects of all the capabilities
             matching the passed in capability Oid. If the Oid passed is null the
@@ -5390,6 +5079,13 @@
             PartialHashtree ::= SEQUENCE OF OCTET STRING
             <p/>
             Attributes ::= SET SIZE (1..MAX) OF Attribute
+        </member>
+        <member name="M:Org.BouncyCastle.Asn1.Tsp.ArchiveTimeStamp.GetInstance(System.Object)">
+             Return an ArchiveTimestamp from the given object.
+            
+             @param obj the object we want converted.
+             @return an ArchiveTimestamp instance, or null.
+             @throws IllegalArgumentException if the object cannot be converted.
         </member>
         <member name="M:Org.BouncyCastle.Asn1.Tsp.ArchiveTimeStamp.DigestAlgorithm">
              Return the contents of the digestAlgorithm field - null if not set.
@@ -5803,6 +5499,14 @@
         <member name="M:Org.BouncyCastle.Asn1.X509.AccessDescription.#ctor(Org.BouncyCastle.Asn1.DerObjectIdentifier,Org.BouncyCastle.Asn1.X509.GeneralName)">
             create an AccessDescription with the oid and location provided.
         </member>
+        <member name="P:Org.BouncyCastle.Asn1.X509.AccessDescription.AccessMethod">
+            
+             @return the access method.
+        </member>
+        <member name="P:Org.BouncyCastle.Asn1.X509.AccessDescription.AccessLocation">
+            
+             @return the access location
+        </member>
         <member name="P:Org.BouncyCastle.Asn1.X509.AlgorithmIdentifier.Algorithm">
             <summary>
             Return the OID in the Algorithm entry of this identifier.
@@ -5893,6 +5597,12 @@
                   notAfterTime   GeneralizedTime
              }
             </pre>
+        </member>
+        <member name="M:Org.BouncyCastle.Asn1.X509.AttributeX509.GetInstance(System.Object)">
+             return an Attr object from the given object.
+            
+             @param o the object we want converted.
+             @exception ArgumentException if the object cannot be converted.
         </member>
         <member name="M:Org.BouncyCastle.Asn1.X509.AttributeX509.ToAsn1Object">
             Produce an object suitable for an Asn1OutputStream.
@@ -6146,20 +5856,6 @@
              removeFromCRL           (8),
              privilegeWithdrawn      (9),
              aACompromise           (10)
-            }
-            </pre>
-        </member>
-        <member name="T:Org.BouncyCastle.Asn1.X509.DeltaCertificateDescriptor">
-            <pre>
-            DeltaCertificateDescriptor ::= SEQUENCE {
-              serialNumber          CertificateSerialNumber,
-              signature             [0] EXPLICIT AlgorithmIdentifier {SIGNATURE_ALGORITHM, {...}} OPTIONAL,
-              issuer                [1] EXPLICIT Name OPTIONAL,
-              validity              [2] EXPLICIT Validity OPTIONAL,
-              subject               [3] EXPLICIT Name OPTIONAL,
-              subjectPublicKeyInfo  SubjectPublicKeyInfo,
-              extensions            [4] EXPLICIT Extensions{CertExtensions} OPTIONAL,
-              signatureValue        BIT STRING
             }
             </pre>
         </member>
@@ -6488,6 +6184,9 @@
         <member name="T:Org.BouncyCastle.Asn1.X509.IetfAttrSyntax">
             Implementation of <code>IetfAttrSyntax</code> as specified by RFC3281.
         </member>
+        <member name="M:Org.BouncyCastle.Asn1.X509.IetfAttrSyntax.#ctor(Org.BouncyCastle.Asn1.Asn1Sequence)">
+            
+        </member>
         <member name="M:Org.BouncyCastle.Asn1.X509.IetfAttrSyntax.ToAsn1Object">
             
              <pre>
@@ -6609,15 +6308,6 @@
              @see PolicyQualifierInfo
              @see PolicyInformation
         </member>
-        <member name="M:Org.BouncyCastle.Asn1.X509.NoticeReference.#ctor(Org.BouncyCastle.Asn1.Asn1Sequence)">
-             Creates a new <code>NoticeReference</code> instance.
-             <p>Useful for reconstructing a <code>NoticeReference</code>
-             instance from its encodable/encoded form.</p>
-            
-             @param as an <code>Asn1Sequence</code> value obtained from either
-             calling @{link ToAsn1Object()} for a <code>NoticeReference</code>
-             instance or from parsing it from a Der-encoded stream.
-        </member>
         <member name="M:Org.BouncyCastle.Asn1.X509.NoticeReference.#ctor(System.String,System.Collections.Generic.IList{System.Object})">
              Creates a new <code>NoticeReference</code> instance.
             
@@ -6635,6 +6325,15 @@
             
              @param organization displayText
              @param noticeNumbers an <code>ASN1EncodableVector</code> value
+        </member>
+        <member name="M:Org.BouncyCastle.Asn1.X509.NoticeReference.#ctor(Org.BouncyCastle.Asn1.Asn1Sequence)">
+             Creates a new <code>NoticeReference</code> instance.
+             <p>Useful for reconstructing a <code>NoticeReference</code>
+             instance from its encodable/encoded form.</p>
+            
+             @param as an <code>Asn1Sequence</code> value obtained from either
+             calling @{link ToAsn1Object()} for a <code>NoticeReference</code>
+             instance or from parsing it from a Der-encoded stream.
         </member>
         <member name="M:Org.BouncyCastle.Asn1.X509.NoticeReference.ToAsn1Object">
              Describe <code>ToAsn1Object</code> method here.
@@ -6771,12 +6470,6 @@
                    qualifier          ANY DEFINED BY policyQualifierId }
              </pre>
         </member>
-        <member name="M:Org.BouncyCastle.Asn1.X509.PolicyQualifierInfo.#ctor(Org.BouncyCastle.Asn1.Asn1Sequence)">
-             Creates a new <code>PolicyQualifierInfo</code> instance.
-            
-             @param as <code>PolicyQualifierInfo</code> X509 structure
-             encoded as an Asn1Sequence.
-        </member>
         <member name="M:Org.BouncyCastle.Asn1.X509.PolicyQualifierInfo.#ctor(Org.BouncyCastle.Asn1.DerObjectIdentifier,Org.BouncyCastle.Asn1.Asn1Encodable)">
              Creates a new <code>PolicyQualifierInfo</code> instance.
             
@@ -6789,6 +6482,12 @@
             
              @param cps the CPS (certification practice statement) uri as a
              <code>string</code>.
+        </member>
+        <member name="M:Org.BouncyCastle.Asn1.X509.PolicyQualifierInfo.#ctor(Org.BouncyCastle.Asn1.Asn1Sequence)">
+             Creates a new <code>PolicyQualifierInfo</code> instance.
+            
+             @param as <code>PolicyQualifierInfo</code> X509 structure
+             encoded as an Asn1Sequence.
         </member>
         <member name="M:Org.BouncyCastle.Asn1.X509.PolicyQualifierInfo.ToAsn1Object">
              Returns a Der-encodable representation of this instance.
@@ -6908,13 +6607,6 @@
             to the factory is not an instance of <code>RoleSyntax</code> or
             <code>Asn1Sequence</code>.
         </member>
-        <member name="M:Org.BouncyCastle.Asn1.X509.RoleSyntax.#ctor(Org.BouncyCastle.Asn1.Asn1Sequence)">
-            Constructor that builds an instance of <code>RoleSyntax</code> by
-            extracting the encoded elements from the <code>Asn1Sequence</code>
-            object supplied.
-            @param seq    an instance of <code>Asn1Sequence</code> that holds
-            the encoded elements used to build this <code>RoleSyntax</code>.
-        </member>
         <member name="M:Org.BouncyCastle.Asn1.X509.RoleSyntax.#ctor(Org.BouncyCastle.Asn1.X509.GeneralNames,Org.BouncyCastle.Asn1.X509.GeneralName)">
             Constructor.
             @param roleAuthority the role authority of this RoleSyntax.
@@ -6930,6 +6622,13 @@
             the role name, builds a <code>GeneralName</code> to hold the role name
             and calls the constructor that takes a <code>GeneralName</code>.
             @param roleName
+        </member>
+        <member name="M:Org.BouncyCastle.Asn1.X509.RoleSyntax.#ctor(Org.BouncyCastle.Asn1.Asn1Sequence)">
+            Constructor that builds an instance of <code>RoleSyntax</code> by
+            extracting the encoded elements from the <code>Asn1Sequence</code>
+            object supplied.
+            @param seq    an instance of <code>Asn1Sequence</code> that holds
+            the encoded elements used to build this <code>RoleSyntax</code>.
         </member>
         <member name="P:Org.BouncyCastle.Asn1.X509.RoleSyntax.RoleAuthority">
             Gets the role authority of this RoleSyntax.
@@ -7654,13 +7353,6 @@
              </pre>
             
         </member>
-        <member name="M:Org.BouncyCastle.Asn1.X509.Validity.ToAsn1Object">
-            <pre>
-            Validity ::= SEQUENCE {
-              notBefore      Time,
-              notAfter       Time  }
-            </pre>
-        </member>
         <member name="T:Org.BouncyCastle.Asn1.X509.X509CertificateStructure">
             an X509Certificate structure.
             <pre>
@@ -7764,6 +7456,12 @@
         <member name="F:Org.BouncyCastle.Asn1.X509.X509Extensions.AuthorityInfoAccess">
             Authority Info Access
         </member>
+        <member name="F:Org.BouncyCastle.Asn1.X509.X509Extensions.SubjectInfoAccess">
+            Subject Info Access
+        </member>
+        <member name="F:Org.BouncyCastle.Asn1.X509.X509Extensions.LogoType">
+            Logo Type
+        </member>
         <member name="F:Org.BouncyCastle.Asn1.X509.X509Extensions.BiometricInfo">
             BiometricInfo
         </member>
@@ -7772,12 +7470,6 @@
         </member>
         <member name="F:Org.BouncyCastle.Asn1.X509.X509Extensions.AuditIdentity">
             Audit identity extension in attribute certificates.
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.X509.X509Extensions.SubjectInfoAccess">
-            Subject Info Access
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.X509.X509Extensions.LogoType">
-            Logo Type
         </member>
         <member name="F:Org.BouncyCastle.Asn1.X509.X509Extensions.NoRevAvail">
             NoRevAvail extension in attribute certificates.
@@ -7789,16 +7481,13 @@
             Expired Certificates on CRL extension
         </member>
         <member name="F:Org.BouncyCastle.Asn1.X509.X509Extensions.SubjectAltPublicKeyInfo">
-            the subject�s alternative public key information
+            the subject’s alternative public key information
         </member>
         <member name="F:Org.BouncyCastle.Asn1.X509.X509Extensions.AltSignatureAlgorithm">
             the algorithm identifier for the alternative digital signature algorithm.
         </member>
         <member name="F:Org.BouncyCastle.Asn1.X509.X509Extensions.AltSignatureValue">
             alternative signature shall be created by the issuer using its alternative private key.
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.X509.X509Extensions.DRAFT_DeltaCertificateDescriptor">
-            delta certificate extension - prototype value will change!
         </member>
         <member name="M:Org.BouncyCastle.Asn1.X509.X509Extensions.#ctor(Org.BouncyCastle.Asn1.Asn1Sequence)">
              Constructor from Asn1Sequence.
@@ -7849,6 +7538,9 @@
         <member name="T:Org.BouncyCastle.Asn1.X509.X509ExtensionsGenerator">
             <remarks>Generator for X.509 extensions</remarks>
         </member>
+        <member name="M:Org.BouncyCastle.Asn1.X509.X509ExtensionsGenerator.Reset">
+            <summary>Reset the generator</summary>
+        </member>
         <member name="M:Org.BouncyCastle.Asn1.X509.X509ExtensionsGenerator.AddExtension(Org.BouncyCastle.Asn1.DerObjectIdentifier,System.Boolean,Org.BouncyCastle.Asn1.Asn1Encodable)">
             <summary>
             Add an extension with the given oid and the passed in value to be included
@@ -7867,16 +7559,13 @@
             <param name="critical">True if critical, false otherwise.</param>
             <param name="extValue">The byte array to be wrapped.</param>
         </member>
-        <member name="M:Org.BouncyCastle.Asn1.X509.X509ExtensionsGenerator.Generate">
-            <summary>Generate an X509Extensions object based on the current state of the generator.</summary>
-            <returns>An <c>X509Extensions</c> object</returns>
-        </member>
         <member name="P:Org.BouncyCastle.Asn1.X509.X509ExtensionsGenerator.IsEmpty">
             <summary>Return true if there are no extension present in this generator.</summary>
             <returns>True if empty, false otherwise</returns>
         </member>
-        <member name="M:Org.BouncyCastle.Asn1.X509.X509ExtensionsGenerator.Reset">
-            <summary>Reset the generator</summary>
+        <member name="M:Org.BouncyCastle.Asn1.X509.X509ExtensionsGenerator.Generate">
+            <summary>Generate an X509Extensions object based on the current state of the generator.</summary>
+            <returns>An <c>X509Extensions</c> object</returns>
         </member>
         <member name="T:Org.BouncyCastle.Asn1.X509.X509Name">
              <pre>
@@ -7979,15 +7668,6 @@
         </member>
         <member name="F:Org.BouncyCastle.Asn1.X509.X509Name.UID">
             LDAP User id.
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.X509.X509Name.JurisdictionC">
-            CA/Browser Forum https://cabforum.org/uploads/CA-Browser-Forum-BR-v2.0.0.pdf, Table 78
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.X509.X509Name.JurisdictionST">
-            CA/Browser Forum https://cabforum.org/uploads/CA-Browser-Forum-BR-v2.0.0.pdf, Table 78
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.X509.X509Name.JurisdictionL">
-            CA/Browser Forum https://cabforum.org/uploads/CA-Browser-Forum-BR-v2.0.0.pdf, Table 78
         </member>
         <member name="P:Org.BouncyCastle.Asn1.X509.X509Name.DefaultReverse">
             determines whether or not strings should be processed and printed
@@ -8192,29 +7872,6 @@
             java.util.StringTokenizer. We need this class as some of the
             lightweight Java environment don't support classes like
             StringTokenizer.
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.X509.X509ObjectIdentifiers.pkix_algorithms">
-            1.3.6.1.5.5.7.6 
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.X509.X509ObjectIdentifiers.id_RSASSA_PSS_SHAKE128">
-            id-RSASSA-PSS-SHAKE128  OBJECT IDENTIFIER  ::=  { iso(1)
-                     identified-organization(3) dod(6) internet(1)
-                     security(5) mechanisms(5) pkix(7) algorithms(6) 30 }
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.X509.X509ObjectIdentifiers.id_RSASSA_PSS_SHAKE256">
-            id-RSASSA-PSS-SHAKE256  OBJECT IDENTIFIER  ::=  { iso(1)
-                     identified-organization(3) dod(6) internet(1)
-                     security(5) mechanisms(5) pkix(7) algorithms(6) 31 }
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.X509.X509ObjectIdentifiers.id_ecdsa_with_shake128">
-            id-ecdsa-with-shake128 OBJECT IDENTIFIER  ::=  { iso(1)
-                   identified-organization(3) dod(6) internet(1)
-                   security(5) mechanisms(5) pkix(7) algorithms(6) 32 }
-        </member>
-        <member name="F:Org.BouncyCastle.Asn1.X509.X509ObjectIdentifiers.id_ecdsa_with_shake256">
-            id-ecdsa-with-shake256 OBJECT IDENTIFIER  ::=  { iso(1)
-                    identified-organization(3) dod(6) internet(1)
-                    security(5) mechanisms(5) pkix(7) algorithms(6) 33 }
         </member>
         <member name="T:Org.BouncyCastle.Asn1.X9.ECNamedCurveTable">
             <summary>A unified elliptic curve registry of the various standard-specific registries.</summary>
@@ -13433,18 +13090,6 @@
             In general this exception will get thrown rather than an <see cref="T:System.IndexOutOfRangeException"/>.
             </remarks>
         </member>
-        <member name="T:Org.BouncyCastle.Crypto.Digests.AsconCXof128">
-            <summary>
-            Ascon-CXOF128 was introduced in NIST Special Publication (SP) 800-232 (Initial Public Draft).
-            </summary>
-            <remarks>
-            Additional details and the specification can be found in:
-            <a href="https://csrc.nist.gov/pubs/sp/800/232/ipd">NIST SP 800-232 (Initial Public Draft)</a>.
-            For reference source code and implementation details, please see:
-            <a href="https://github.com/ascon/ascon-c">Reference, highly optimized, masked C and
-            ASM implementations of Ascon (NIST SP 800-232)</a>.
-            </remarks>
-        </member>
         <member name="T:Org.BouncyCastle.Crypto.Digests.AsconDigest">
             <summary>ASCON v1.2 Hash, https://ascon.iaik.tugraz.at/ .</summary>
             <remarks>
@@ -13452,35 +13097,11 @@
             ASCON v1.2 Hash with reference to C Reference Impl from: https://github.com/ascon/ascon-c .
             </remarks>
         </member>
-        <member name="T:Org.BouncyCastle.Crypto.Digests.AsconHash256">
-            <summary>
-            Ascon-Hash256 was introduced in NIST Special Publication (SP) 800-232 (Initial Public Draft).
-            </summary>
-            <remarks>
-            Additional details and the specification can be found in:
-            <a href="https://csrc.nist.gov/pubs/sp/800/232/ipd">NIST SP 800-232 (Initial Public Draft)</a>.
-            For reference source code and implementation details, please see:
-            <a href="https://github.com/ascon/ascon-c">Reference, highly optimized, masked C and
-            ASM implementations of Ascon (NIST SP 800-232)</a>.
-            </remarks>
-        </member>
         <member name="T:Org.BouncyCastle.Crypto.Digests.AsconXof">
             <summary>ASCON v1.2 XOF, https://ascon.iaik.tugraz.at/ .</summary>
             <remarks>
             https://csrc.nist.gov/CSRC/media/Projects/lightweight-cryptography/documents/finalist-round/updated-spec-doc/ascon-spec-final.pdf<br/>
             ASCON v1.2 XOF with reference to C Reference Impl from: https://github.com/ascon/ascon-c .
-            </remarks>
-        </member>
-        <member name="T:Org.BouncyCastle.Crypto.Digests.AsconXof128">
-            <summary>
-            Ascon-XOF128 was introduced in NIST Special Publication (SP) 800-232 (Initial Public Draft).
-            </summary>
-            <remarks>
-            Additional details and the specification can be found in:
-            <a href="https://csrc.nist.gov/pubs/sp/800/232/ipd">NIST SP 800-232 (Initial Public Draft)</a>.
-            For reference source code and implementation details, please see:
-            <a href="https://github.com/ascon/ascon-c">Reference, highly optimized, masked C and
-            ASM implementations of Ascon (NIST SP 800-232)</a>.
             </remarks>
         </member>
         <member name="T:Org.BouncyCastle.Crypto.Digests.Blake2bDigest">
@@ -16338,26 +15959,6 @@
             <param name="forEncryption">true if initialising for encryption, false otherwise.</param>  
             <param name="parameters ">the key and other parameters to use to set the engine up.</param>  
         </member>
-        <member name="M:Org.BouncyCastle.Crypto.Generators.Argon2BytesGenerator.#ctor(System.Threading.Tasks.TaskFactory)">
-            <summary>
-            Initializes a new <see cref="T:Org.BouncyCastle.Crypto.Generators.Argon2BytesGenerator"/> with an optional <see cref="T:System.Threading.Tasks.TaskFactory"/>.
-            </summary>
-            <param name="taskFactory">
-            The <see cref="T:System.Threading.Tasks.TaskFactory"/> that (if not null) will be used for parallel execution when parallelism > 1.
-            </param>
-        </member>
-        <member name="M:Org.BouncyCastle.Crypto.Generators.Argon2BytesGenerator.Init(Org.BouncyCastle.Crypto.Parameters.Argon2Parameters)">
-             Initialise the Argon2BytesGenerator from the parameters.
-            
-             @param parameters Argon2 configuration.
-        </member>
-        <member name="M:Org.BouncyCastle.Crypto.Generators.Argon2BytesGenerator.Hash(System.Byte[],System.Byte[],System.Int32,System.Int32)">
-            H' - hash - variable length hash function
-        </member>
-        <member name="M:Org.BouncyCastle.Crypto.Generators.Argon2BytesGenerator.FillFirstBlocks(System.Byte[],System.Byte[])">
-            (H0 || 0 || i) 72 byte -> 1024 byte
-            (H0 || 1 || i) 72 byte -> 1024 byte
-        </member>
         <member name="T:Org.BouncyCastle.Crypto.Generators.BaseKdfBytesGenerator">
             Basic KDF generator for derived keys and ivs as defined by IEEE P1363a/ISO 18033
             <br/>
@@ -16729,7 +16330,7 @@
             as a BigInteger of length (b.Length * 8) bits. The result is
             modulo 2^b.Length in case of overflow.
         </member>
-        <member name="M:Org.BouncyCastle.Crypto.Generators.Pkcs12ParametersGenerator.GenerateDerivedKey(System.Byte,System.Byte[])">
+        <member name="M:Org.BouncyCastle.Crypto.Generators.Pkcs12ParametersGenerator.GenerateDerivedKey(System.Int32,System.Int32)">
             generation of a derived key ala Pkcs12 V1.0.
         </member>
         <member name="M:Org.BouncyCastle.Crypto.Generators.Pkcs12ParametersGenerator.GenerateDerivedMacParameters(System.Int32)">
@@ -17017,19 +16618,6 @@
             Reset the cipher. After resetting the cipher is in the same state
             as it was after the last init (if there was one).
             </summary>
-        </member>
-        <member name="T:Org.BouncyCastle.Crypto.ICharToByteConverter">
-            <summary>
-            Interface for a converter that produces a byte encoding for a char array.
-            </summary>
-        </member>
-        <member name="P:Org.BouncyCastle.Crypto.ICharToByteConverter.Name">
-            <summary>The name of the conversion.</summary>
-        </member>
-        <member name="M:Org.BouncyCastle.Crypto.ICharToByteConverter.Convert(System.Char[])">
-            <summary>Return a byte encoded representation of the passed in password.</summary>
-            <param name="password">the characters to encode.</param>
-            <return>a byte encoding of password.</return>
         </member>
         <member name="T:Org.BouncyCastle.Crypto.ICipher">
             <summary>
@@ -18013,21 +17601,6 @@
             bytes enciphered.
             </summary>
         </member>
-        <member name="T:Org.BouncyCastle.Crypto.Modes.AsconAead128">
-            <summary>
-            Ascon-AEAD128 was introduced as part of the NIST Lightweight Cryptography
-            competition and descriLEd in the NIST Special Publication SP 800-232 (Initial
-            Public Draft).
-            </summary>
-            <remarks>
-            For additional details, see:
-            <list type="bullet">
-            <item><a href="https://csrc.nist.gov/pubs/sp/800/232/ipd">NIST SP 800-232 (Initial Public Draft)</a>.</item>
-            <item><a href="https://github.com/ascon/ascon-c">Reference, highly optimized, masked C and ASM implementations
-            of Ascon (NIST SP 800-232)</a>.</item>
-            </list>
-            </remarks>
-        </member>
         <member name="T:Org.BouncyCastle.Crypto.Modes.CbcBlockCipher">
             implements Cipher-Block-Chaining (CBC) mode on top of a simple cipher.
         </member>
@@ -18760,6 +18333,10 @@
             
              @return the underlying block cipher that we are wrapping.
         </member>
+        <member name="M:Org.BouncyCastle.Crypto.Operators.X509Utilities.GetDigestAlgName(Org.BouncyCastle.Asn1.DerObjectIdentifier)">
+            Return the digest algorithm using one of the standard JCA string
+            representations rather than the algorithm identifier (if possible).
+        </member>
         <member name="T:Org.BouncyCastle.Crypto.Operators.Asn1SignatureFactory">
             <summary>
             Calculator factory class for signature generation in ASN.1 based profiles that use an AlgorithmIdentifier to preserve
@@ -19391,28 +18968,14 @@
             </summary>
             <value>The tweak to use, or <code>null</code> to use the current tweak.</value>
         </member>
-        <member name="T:Org.BouncyCastle.Crypto.PasswordConverter">
-            <summary>
-            Standard char[] to byte[] converters for password based derivation algorithms.
-            </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Crypto.PasswordConverter.Ascii">
-            <summary>Do a straight char[] to 8 bit conversion.</summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Crypto.PasswordConverter.Utf8">
-            <summary>Do a char[] conversion by producing UTF-8 data.</summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Crypto.PasswordConverter.Pkcs12">
-            <summary>Do char[] to BMP conversion (i.e. 2 bytes per character).</summary>
-        </member>
         <member name="T:Org.BouncyCastle.Crypto.PbeParametersGenerator">
-            base class for all Password Based Encyrption (PBE) parameter generator classes.
+            super class for all Password Based Encyrption (Pbe) parameter generator classes.
         </member>
         <member name="M:Org.BouncyCastle.Crypto.PbeParametersGenerator.#ctor">
             base constructor.
         </member>
         <member name="M:Org.BouncyCastle.Crypto.PbeParametersGenerator.Init(System.Byte[],System.Byte[],System.Int32)">
-             initialise the PBE generator.
+             initialise the Pbe generator.
             
              @param password the password converted into bytes (see below).
              @param salt the salt to be mixed with the password.
@@ -19988,7 +19551,7 @@
         </member>
         <member name="M:Org.BouncyCastle.Crypto.Signers.Iso9796d2PssSigner.#ctor(Org.BouncyCastle.Crypto.IAsymmetricBlockCipher,Org.BouncyCastle.Crypto.IDigest,System.Int32,System.Boolean)">
             <summary>
-            Generate a signer with either implicit or explicit trailer for ISO9796-2, scheme 2 or 3.
+            Generate a signer with either implicit or explicit trailers for ISO9796-2, scheme 2 or 3.
             </summary>
             <param name="cipher">base cipher to use for signature creation/verification</param>
             <param name="digest">digest to use.</param>
@@ -19996,12 +19559,15 @@
             <param name="isImplicit">whether or not the trailer is implicit or gives the hash.</param>
         </member>
         <member name="M:Org.BouncyCastle.Crypto.Signers.Iso9796d2PssSigner.#ctor(Org.BouncyCastle.Crypto.IAsymmetricBlockCipher,Org.BouncyCastle.Crypto.IDigest,System.Int32)">
-            <summary>
-            Generate a signer with explicit trailer for ISO9796-2, scheme 2 or 3.
-            </summary>
-            <param name="cipher">base cipher to use for signature creation/verification</param>
-            <param name="digest">digest to use.</param>
-            <param name="saltLength">length of salt in bytes.</param>
+             <summary> Constructor for a signer with an explicit digest trailer.
+            
+             </summary>
+             <param name="cipher">cipher to use.
+             </param>
+             <param name="digest">digest to sign with.
+             </param>
+             <param name="saltLength">length of salt in bytes.
+             </param>
         </member>
         <member name="M:Org.BouncyCastle.Crypto.Signers.Iso9796d2PssSigner.Init(System.Boolean,Org.BouncyCastle.Crypto.ICipherParameters)">
             <summary>Initialise the signer.</summary>
@@ -20043,6 +19609,13 @@
             </summary>
             <returns>true on full message recovery, false otherwise, or if not sure.</returns>
             <seealso cref="M:Org.BouncyCastle.Crypto.ISignerWithRecovery.HasFullMessage"/>
+        </member>
+        <member name="M:Org.BouncyCastle.Crypto.Signers.Iso9796d2PssSigner.ItoOSP(System.Int32,System.Byte[])">
+            <summary> int to octet string.</summary>
+            <summary> int to octet string.</summary>
+        </member>
+        <member name="M:Org.BouncyCastle.Crypto.Signers.Iso9796d2PssSigner.LtoOSP(System.Int64,System.Byte[])">
+            <summary> long to octet string.</summary>
         </member>
         <member name="M:Org.BouncyCastle.Crypto.Signers.Iso9796d2PssSigner.MaskGeneratorFunction1(System.Byte[],System.Int32,System.Int32,System.Int32)">
             <summary> mask generator function, as described in Pkcs1v2.</summary>
@@ -20400,31 +19973,17 @@
         </member>
         <member name="M:Org.BouncyCastle.Operators.Utilities.IDigestAlgorithmFinder.Find(Org.BouncyCastle.Asn1.DerObjectIdentifier)">
             <summary>
-            Find the digest algorithm identifier that matches with the passed in digest OID.
+            Find the digest algorithm identifier that matches with the passed in digest name.
             </summary>
             <param name="digestOid">the OID of the digest algorithm of interest.</param>
-            <returns>an algorithm identifier for the digest OID.</returns>
+            <returns>an algorithm identifier for the digest signature.</returns>
         </member>
         <member name="M:Org.BouncyCastle.Operators.Utilities.IDigestAlgorithmFinder.Find(System.String)">
             <summary>
             Find the digest algorithm identifier that matches with the passed in digest name.
             </summary>
             <param name="digestName">the name of the digest algorithm of interest.</param>
-            <returns>an algorithm identifier for the digest name.</returns>
-        </member>
-        <member name="M:Org.BouncyCastle.Operators.Utilities.IMacAlgorithmFinder.Find(System.String)">
-            <summary>
-            Find the MAC algorithm identifier that matches with the passed in MAC name.
-            </summary>
-            <param name="macName">the name of the MAC algorithm of interest.</param>
-            <returns>an algorithm identifier for the MAC name.</returns>
-        </member>
-        <member name="M:Org.BouncyCastle.Operators.Utilities.ISignatureAlgorithmFinder.Find(System.String)">
-            <summary>
-            Find the signature algorithm identifier that matches with the passed in signature name.
-            </summary>
-            <param name="signatureName">the name of the signature algorithm of interest.</param>
-            <returns>an algorithm identifier for the signature name.</returns>
+            <returns>an algorithm identifier for the digest signature.</returns>
         </member>
         <member name="M:Org.BouncyCastle.Math.BigInteger.AddMagnitudes(System.UInt32[],System.UInt32[])">
             return a = a + b - b preserved.
@@ -21797,19 +21356,9 @@
              </summary>
             <param name="signatureAlgorithm">Name of Sig Alg.</param>
              <param name="subject">X509Name of subject eg OU="My unit." O="My Organisatioin" C="au" </param>
-             <param name="publicKey">Public key to be included in cert request.</param>
-             <param name="attributes">Asn1Set of Attributes.</param>
-             <param name="signingKey">Matching private key for nominated (above) public key to be used to sign the request.</param>
-        </member>
-        <member name="M:Org.BouncyCastle.Pkcs.Pkcs10CertificationRequest.#ctor(System.String,Org.BouncyCastle.Asn1.X509.X509Name,Org.BouncyCastle.Asn1.X509.SubjectPublicKeyInfo,Org.BouncyCastle.Asn1.Asn1Set,Org.BouncyCastle.Crypto.AsymmetricKeyParameter)">
-             <summary>
-             Instantiate a Pkcs10CertificationRequest object with the necessary credentials.
-             </summary>
-            <param name="signatureAlgorithm">Name of Sig Alg.</param>
-             <param name="subject">X509Name of subject eg OU="My unit." O="My Organisatioin" C="au" </param>
-             <param name="pubInfo">SubjectPublicKeyInfo to be included in cert request.</param>
-             <param name="attributes">Asn1Set of Attributes.</param>
-             <param name="signingKey">Matching private key for nominated (above) public key to be used to sign the request.</param>
+             <param name="publicKey">Public Key to be included in cert reqest.</param>
+             <param name="attributes">ASN1Set of Attributes.</param>
+             <param name="signingKey">Matching Private key for nominated (above) public key to be used to sign the request.</param>
         </member>
         <member name="M:Org.BouncyCastle.Pkcs.Pkcs10CertificationRequest.#ctor(Org.BouncyCastle.Crypto.ISignatureFactory,Org.BouncyCastle.Asn1.X509.X509Name,Org.BouncyCastle.Crypto.AsymmetricKeyParameter,Org.BouncyCastle.Asn1.Asn1Set)">
              <summary>
@@ -21817,17 +21366,8 @@
              </summary>
             <param name="signatureFactory">The factory for signature calculators to sign the PKCS#10 request with.</param>
              <param name="subject">X509Name of subject eg OU="My unit." O="My Organisatioin" C="au" </param>
-             <param name="publicKey">Public key to be included in cert request.</param>
-             <param name="attributes">Asn1Set of Attributes.</param>
-        </member>
-        <member name="M:Org.BouncyCastle.Pkcs.Pkcs10CertificationRequest.#ctor(Org.BouncyCastle.Crypto.ISignatureFactory,Org.BouncyCastle.Asn1.X509.X509Name,Org.BouncyCastle.Asn1.X509.SubjectPublicKeyInfo,Org.BouncyCastle.Asn1.Asn1Set)">
-             <summary>
-             Instantiate a Pkcs10CertificationRequest object with the necessary credentials.
-             </summary>
-            <param name="signatureFactory">The factory for signature calculators to sign the PKCS#10 request with.</param>
-             <param name="subject">X509Name of subject eg OU="My unit." O="My Organisatioin" C="au" </param>
-             <param name="pubInfo">SubjectPublicKeyInfo to be included in cert request.</param>
-             <param name="attributes">Asn1Set of Attributes.</param>
+             <param name="publicKey">Public Key to be included in cert reqest.</param>
+             <param name="attributes">ASN1Set of Attributes.</param>
         </member>
         <member name="M:Org.BouncyCastle.Pkcs.Pkcs10CertificationRequest.GetPublicKey">
             <summary>
@@ -21884,21 +21424,8 @@
             </summary>
             <param name="signatureAlgorithm">Name of Sig Alg.</param>
             <param name="subject">X509Name of subject eg OU="My unit." O="My Organisatioin" C="au" </param>
-            <param name="publicKey">Public key to be included in cert request.</param>
-            <param name="attributes">Asn1Set of Attributes.</param>
-            <remarks>
-            After the object is constructed use the <see cref="M:Org.BouncyCastle.Pkcs.Pkcs10CertificationRequestDelaySigned.GetDataToSign"/> and finally the
-            SignRequest methods to finalize the request.
-            </remarks>
-        </member>
-        <member name="M:Org.BouncyCastle.Pkcs.Pkcs10CertificationRequestDelaySigned.#ctor(System.String,Org.BouncyCastle.Asn1.X509.X509Name,Org.BouncyCastle.Asn1.X509.SubjectPublicKeyInfo,Org.BouncyCastle.Asn1.Asn1Set)">
-            <summary>
-            Instantiate a Pkcs10CertificationRequest object with the necessary credentials.
-            </summary>
-            <param name="signatureAlgorithm">Name of Sig Alg.</param>
-            <param name="subject">X509Name of subject eg OU="My unit." O="My Organisatioin" C="au" </param>
-            <param name="pubInfo">SubjectPublicKeyInfo to be included in cert request.</param>
-            <param name="attributes">Asn1Set of Attributes.</param>
+            <param name="publicKey">Public Key to be included in cert reqest.</param>
+            <param name="attributes">ASN1Set of Attributes.</param>
             <remarks>
             After the object is constructed use the <see cref="M:Org.BouncyCastle.Pkcs.Pkcs10CertificationRequestDelaySigned.GetDataToSign"/> and finally the
             SignRequest methods to finalize the request.
@@ -23424,6 +22951,30 @@
             </summary>
             <returns>a formatted string describing the <code>TrustAnchor</code></returns>
         </member>
+        <member name="T:Org.BouncyCastle.Pqc.Asn1.KyberPrivateKey">
+            Crystal Kyber Private Key Format.
+            See https://www.ietf.org/archive/id/draft-uni-qsckeys-kyber-00.html for details.
+            <pre>
+                KyberPrivateKey ::= SEQUENCE {
+                version     INTEGER {v0(0)}   -- version (round 3)
+                s           OCTET STRING,     -- EMPTY
+                hpk         OCTET STRING      -- EMPTY
+                nonce       OCTET STRING,     -- d
+                publicKey   [0] IMPLICIT KyberPublicKey OPTIONAL,
+                                              -- see next section
+                }
+            </pre>
+        </member>
+        <member name="T:Org.BouncyCastle.Pqc.Asn1.KyberPublicKey">
+            Crystal Kyber Public Key Format.
+            See https://www.ietf.org/archive/id/draft-uni-qsckeys-kyber-00.html for details.
+            <pre>
+                KyberPublicKey ::= SEQUENCE {
+                 t           OCTET STRING,
+                 rho         OCTET STRING
+             }
+            </pre>
+        </member>
         <member name="F:Org.BouncyCastle.Pqc.Asn1.PqcObjectIdentifiers.rainbow">
             1.3.6.1.4.1.8301.3.1.3.5.3.2 
         </member>
@@ -23692,41 +23243,6 @@
              <seealso cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.NtruKemExtractor"/>
              <seealso href="https://ntru.org/">NTRU website</seealso>
         </member>
-        <member name="T:Org.BouncyCastle.Pqc.Crypto.Ntru.NtruParameters">
-            <summary>
-            NTRU cipher parameter sets
-            </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Pqc.Crypto.Ntru.NtruParameters.NtruHps2048509">
-            <summary>
-            NTRU-HPS parameter set with n = 509 and q = 2048.
-            </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Pqc.Crypto.Ntru.NtruParameters.NtruHps2048677">
-            <summary>
-            NTRU-HPS parameter set with n = 677 and q = 2048.
-            </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Pqc.Crypto.Ntru.NtruParameters.NtruHps4096821">
-            <summary>
-            NTRU-HPS parameter set with n = 821 and q = 4096.
-            </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Pqc.Crypto.Ntru.NtruParameters.NtruHps40961229">
-            <summary>
-            NTRU-HPS parameter set with n = 1229 and q = 4096.
-            </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Pqc.Crypto.Ntru.NtruParameters.NtruHrss701">
-            <summary>
-            NTRU-HRSS parameter set with n = 701.
-            </summary>
-        </member>
-        <member name="F:Org.BouncyCastle.Pqc.Crypto.Ntru.NtruParameters.NtruHrss1373">
-            <summary>
-            NTRU-HRSS parameter set with n = 1373.
-            </summary>
-        </member>
         <member name="T:Org.BouncyCastle.Pqc.Crypto.Ntru.NtruSampling">
              <summary>
              NTRU sampling.
@@ -23799,139 +23315,6 @@
             <param name="ciphertext"></param>
             <param name="privateKey"></param>
             <returns>an instance of <see cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.Owcpa.OwcpaDecryptResult"/> containing <c>packed_rm</c> an  fail flag</returns>
-        </member>
-        <member name="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHps2048509">
-            <summary>
-            NTRU-HPS parameter set with n = 509 and q = 2048.
-            </summary>
-            <seealso cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHpsParameterSet"/>
-        </member>
-        <member name="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHps2048677">
-            <summary>
-            NTRU-HPS parameter set with n = 677 and q = 2048.
-            </summary>
-            <seealso cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHpsParameterSet"/>
-        </member>
-        <member name="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHps40961229">
-            <summary>
-            NTRU-HPS parameter set with n = 1229 and q = 4096.
-            </summary>
-            <seealso cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHpsParameterSet"/>
-        </member>
-        <member name="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHps4096821">
-            <summary>
-            NTRU-HPS parameter set with n = 821 and q = 4096.
-            </summary>
-            <seealso cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHpsParameterSet"/>
-        </member>
-        <member name="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHpsParameterSet">
-            <summary>
-            Abstract class for NTRU-HPS parameter classes.
-            <para/>
-            The naming convention for the classes is <c>NTRUHPS[q][n]</c>. e.g. <see cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHps2048509"/> has n = 509 and q = 2048.
-            </summary>
-            <remarks><a href="https://ntru.org/f/ntru-20190330.pdf">NTRU specification document section 1.3.2</a>.</remarks>
-            <seealso cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHps2048509"></seealso>
-            <seealso cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHps2048677"></seealso>
-            <seealso cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHps4096821"></seealso>
-        </member>
-        <member name="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHrss1373">
-            <summary>
-            NTRU-HRSS parameter set with n = 1373.
-            </summary>
-            <seealso cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHrssParameterSet"></seealso>
-        </member>
-        <member name="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHrss701">
-            <summary>
-            NTRU-HRSS parameter set with n = 701.
-            </summary>
-            <seealso cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHrssParameterSet"/>
-        </member>
-        <member name="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHrssParameterSet">
-            <summary>
-            Abstract class for NTRU-HRSS parameter classes.
-            <para/>
-            The naming convention for the classes is {@codeNtruhrss[n]"/>. e.g. <see cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHrss701"/> has n = 701.
-            </summary>
-            <remarks><a href="https://ntru.org/f/ntru-20190330.pdf">NTRU specification document section 1.3.3</a>.</remarks>
-            <seealso cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHrss701"></seealso>
-        </member>
-        <member name="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruParameterSet">
-            <summary>
-            Abstract class for all NTRU parameter sets.
-            </summary>
-            <remarks><a href="https://ntru.org/f/ntru-20190330.pdf">NTRU specification document</a>.</remarks>
-            <seealso cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHpsParameterSet"></seealso>
-            <seealso cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruHrssParameterSet"></seealso>
-        </member>
-        <member name="P:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruParameterSet.N">
-            <summary>
-            n
-            </summary>
-            <returns> n is a prime and both 2 and 3 are of order n − 1 in (Z/n)×</returns>
-        </member>
-        <member name="P:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruParameterSet.LogQ">
-            <summary>
-            logq
-            </summary>
-            <returns> log2(q)</returns>
-        </member>
-        <member name="P:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruParameterSet.SeedBytes">
-            <summary>
-            The number of random bytes consumed by keygen.
-            </summary>
-        </member>
-        <member name="P:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruParameterSet.PrfKeyBytes">
-            <summary>
-            The number of bytes used to key the implicit rejection mechanism.
-            </summary>
-        </member>
-        <member name="M:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruParameterSet.CreatePolynomial">
-            <summary>
-            Creates a polynomial based on this parameter set.
-            </summary>
-            <returns> an instance of <see cref="T:Org.BouncyCastle.Pqc.Crypto.Ntru.Polynomials.Polynomial"/></returns>
-        </member>
-        <member name="M:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruParameterSet.Q">
-            <summary>
-            q
-            </summary>
-            <returns> q is a power of two</returns>
-        </member>
-        <member name="M:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruParameterSet.OwcpaMsgBytes">
-            <summary>
-            The number of bytes in a plaintext for the DPKE.
-            </summary>
-        </member>
-        <member name="M:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruParameterSet.OwcpaPublicKeyBytes">
-            <summary>
-            The number of bytes in a public key for the DPKE.
-            </summary>
-        </member>
-        <member name="M:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruParameterSet.OwcpaSecretKeyBytes">
-            <summary>
-            The number of bytes in a private key for the DPKE.
-            </summary>
-        </member>
-        <member name="M:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruParameterSet.OwcpaBytes">
-            <summary>
-            The number of bytes in a ciphertext for the DPKE.
-            </summary>
-        </member>
-        <member name="M:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruParameterSet.NtruPublicKeyBytes">
-            <summary>
-            The number of bytes in a public key for the KEM.
-            </summary>
-        </member>
-        <member name="M:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruParameterSet.NtruSecretKeyBytes">
-            <summary>
-            The number of bytes in a private key for the KEM.
-            </summary>
-        </member>
-        <member name="M:Org.BouncyCastle.Pqc.Crypto.Ntru.ParameterSets.NtruParameterSet.NtruCiphertextBytes">
-            <summary>
-            The number of bytes in a ciphertext for the KEM.
-            </summary>
         </member>
         <member name="M:Org.BouncyCastle.Pqc.Crypto.Picnic.LowmcConstants.GET_MAT(Org.BouncyCastle.Pqc.Crypto.Picnic.KMatrices,System.Int32)">
             <summary>Return a pointer to the r-th matrix.</summary>
@@ -24034,6 +23417,15 @@
             parameters
         </member>
         <member name="F:Org.BouncyCastle.Pqc.Crypto.Picnic.PicnicEngine.transform">
+            
+        </member>
+        <member name="F:Org.BouncyCastle.Pqc.Crypto.Sike.Internal.ph2_T">
+            Compressed Dlogs
+        </member>
+        <member name="M:Org.BouncyCastle.Pqc.Crypto.Sike.SidhCompressed.solve_dlog(System.UInt64[][],System.Int32[],System.UInt64[],System.UInt32)">
+            DLOG
+        </member>
+        <member name="F:Org.BouncyCastle.Pqc.Crypto.Sike.SidhCompressed.t_points">
             
         </member>
         <member name="M:Org.BouncyCastle.Pqc.Crypto.SphincsPlus.Fors.GetMessageIdx(System.Byte[],System.Int32,System.Int32)">
@@ -25388,10 +24780,6 @@
             <param name="cryptoHashAlgorithm">the algorithm of interest.</param>
             <returns>true if HKDF is supported with cryptoHashAlgorithm, false otherwise.</returns>
         </member>
-        <member name="M:Org.BouncyCastle.Tls.Crypto.TlsCrypto.HasKemAgreement">
-            <summary>Return true if this TlsCrypto can support KEM key agreement.</summary>
-            <returns>true if this instance can support KEM key agreement, false otherwise.</returns>
-        </member>
         <member name="M:Org.BouncyCastle.Tls.Crypto.TlsCrypto.HasMacAlgorithm(System.Int32)">
             <summary>Return true if this TlsCrypto can support the passed in MAC algorithm.</summary>
             <param name="macAlgorithm">the algorithm of interest.</param>
@@ -25474,11 +24862,6 @@
             <summary>Create a domain object supporting the domain parameters described in ecConfig.</summary>
             <param name="ecConfig">the config describing the EC parameters to use.</param>
             <returns>a TlsECDomain supporting the parameters in ecConfig.</returns>
-        </member>
-        <member name="M:Org.BouncyCastle.Tls.Crypto.TlsCrypto.CreateKemDomain(Org.BouncyCastle.Tls.Crypto.TlsKemConfig)">
-            <summary>Create a domain object supporting the domain parameters described in kemConfig.</summary>
-            <param name="kemConfig">the config describing the KEM parameters to use.</param>
-            <returns>a TlsKemDomain supporting the parameters in kemConfig.</returns>
         </member>
         <member name="M:Org.BouncyCastle.Tls.Crypto.TlsCrypto.AdoptSecret(Org.BouncyCastle.Tls.Crypto.TlsSecret)">
             <summary>Adopt the passed in secret, creating a new copy of it.</summary>
@@ -29177,12 +28560,6 @@
             <summary>Return any principal objects inside the attribute certificate issuer object.</summary>
             <returns>An array of IPrincipal objects (usually X509Principal).</returns>
         </member>
-        <member name="T:Org.BouncyCastle.X509.DeltaCertificateTool">
-            <summary>
-            General tool for handling the extension described in:
-            https://datatracker.ietf.org/doc/draft-bonnell-lamps-chameleon-certs/
-            </summary>
-        </member>
         <member name="T:Org.BouncyCastle.X509.Extension.AuthorityKeyIdentifierStructure">
             <remarks>A high level authority key identifier.</remarks>
         </member>
@@ -29903,7 +29280,7 @@
              allowed uses for the key.
              e.g. (X509KeyUsage.keyEncipherment | X509KeyUsage.dataEncipherment)
         </member>
-        <member name="M:Org.BouncyCastle.X509.X509SignatureUtilities.GetDigestName(Org.BouncyCastle.Asn1.DerObjectIdentifier)">
+        <member name="M:Org.BouncyCastle.X509.X509SignatureUtilities.GetDigestAlgName(Org.BouncyCastle.Asn1.DerObjectIdentifier)">
             Return the digest algorithm using one of the standard JCA string
             representations rather than the algorithm identifier (if possible).
         </member>
@@ -30172,29 +29549,13 @@
         </member>
         <member name="M:Org.BouncyCastle.X509.X509V3CertificateGenerator.AddExtension(System.String,System.Boolean,Org.BouncyCastle.Asn1.Asn1Encodable)">
             <summary>
-            Add an extension using a string with a dotted decimal OID.
+            Add a given extension field for the standard extensions tag (tag 3).
             </summary>
             <param name="oid">string containing a dotted decimal Object Identifier.</param>
             <param name="critical">Is it critical.</param>
             <param name="extensionValue">The value.</param>
         </member>
         <member name="M:Org.BouncyCastle.X509.X509V3CertificateGenerator.AddExtension(Org.BouncyCastle.Asn1.DerObjectIdentifier,System.Boolean,Org.BouncyCastle.Asn1.Asn1Encodable)">
-            <summary>
-            Add an extension to this certificate.
-            </summary>
-            <param name="oid">Its Object Identifier.</param>
-            <param name="critical">Is it critical.</param>
-            <param name="extensionValue">The value.</param>
-        </member>
-        <member name="M:Org.BouncyCastle.X509.X509V3CertificateGenerator.AddExtension(System.String,System.Boolean,Org.BouncyCastle.Asn1.IAsn1Convertible)">
-            <summary>
-            Add an extension using a string with a dotted decimal OID.
-            </summary>
-            <param name="oid">string containing a dotted decimal Object Identifier.</param>
-            <param name="critical">Is it critical.</param>
-            <param name="extensionValue">The value.</param>
-        </member>
-        <member name="M:Org.BouncyCastle.X509.X509V3CertificateGenerator.AddExtension(Org.BouncyCastle.Asn1.DerObjectIdentifier,System.Boolean,Org.BouncyCastle.Asn1.IAsn1Convertible)">
             <summary>
             Add an extension to this certificate.
             </summary>
