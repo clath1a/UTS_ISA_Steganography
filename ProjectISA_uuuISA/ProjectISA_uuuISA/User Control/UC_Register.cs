@@ -115,6 +115,9 @@ namespace ProjectISA_uuuISA.User_Control
             labelData5.Visible = false;
 
             textBoxData5.Visible = false;
+
+            dateTimePickerTglLahir.Visible = true;
+            dateTimePickerTglLahir.Enabled = true;
         }
 
         private void AturLabelGuru()
@@ -137,6 +140,9 @@ namespace ProjectISA_uuuISA.User_Control
             labelData3.Visible = true;
             labelData4.Visible = true;
             labelData5.Visible = true;
+
+            dateTimePickerTglLahir.Visible = true;
+            dateTimePickerTglLahir.Enabled = true;
         }
 
         private void AturLabelPustakawan()
@@ -171,5 +177,10 @@ namespace ProjectISA_uuuISA.User_Control
             AturLabelPustakawan();
         }
         #endregion
+
+        private void dateTimePickerTglLahir_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

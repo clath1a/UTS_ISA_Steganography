@@ -167,6 +167,7 @@
             this.dateTimePickerTglLahir.Name = "dateTimePickerTglLahir";
             this.dateTimePickerTglLahir.Size = new System.Drawing.Size(484, 26);
             this.dateTimePickerTglLahir.TabIndex = 74;
+            this.dateTimePickerTglLahir.ValueChanged += new System.EventHandler(this.dateTimePickerTglLahir_ValueChanged);
             // 
             // textBoxData4
             // 
