@@ -118,3 +118,5 @@ D:\BKA\Tugas Kampus\Semester 4\Information Security and Assurance\Project\UTS\UT
 D:\BKA\Tugas Kampus\Semester 4\Information Security and Assurance\Project\UTS\UTS_ISA\ProjectISA_uuuISA\uuuISA_Class\obj\Debug\uuuISA_Class.csproj.CopyComplete
 D:\BKA\Tugas Kampus\Semester 4\Information Security and Assurance\Project\UTS\UTS_ISA\ProjectISA_uuuISA\uuuISA_Class\obj\Debug\uuuISA_Class.dll
 D:\BKA\Tugas Kampus\Semester 4\Information Security and Assurance\Project\UTS\UTS_ISA\ProjectISA_uuuISA\uuuISA_Class\obj\Debug\uuuISA_Class.pdb
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\uuuISA_Class\bin\Debug\itextsharp.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\uuuISA_Class\bin\Debug\itextsharp.xml

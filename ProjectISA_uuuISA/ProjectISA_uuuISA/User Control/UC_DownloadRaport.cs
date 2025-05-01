@@ -37,42 +37,30 @@ namespace ProjectISA_uuuISA.User_Control
 
         private void buttonDownloadRaport_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog saveDialog = new SaveFileDialog() { Filter = "PDF File|*.pdf", ValidateNames = true })
+            try
             {
-                iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4);
-                if (saveDialog.ShowDialog() == DialogResult.OK)
+                if (FormUtama.current_user.Role.NamaRole == "Siswa")
                 {
-                    try
+                    string namaFile = "[RAPOT] " + FormUtama.siswa.IdSiswa;
+                    Penilaian.Cetak(namaFile, new System.Drawing.Font("Poppins", 12), FormUtama.siswa.IdSiswa);
+                }
+                else if (FormUtama.current_user.Role.NamaRole == "Guru" || FormUtama.current_user.Role.NamaRole == "Admin")
+                {
+                    if (comboBoxPilihSiswa.SelectedItem is Siswa selectedSiswa)
                     {
-                        if (FormUtama.current_user.Role.NamaRole == "Siswa")
-                        {
-                            string namaFile = "[RAPOT] " + FormUtama.siswa.IdSiswa;
-                            Penilaian.Cetak(namaFile, new System.Drawing.Font("Poppins", 12), FormUtama.siswa.IdSiswa);
-                        }
-                        if (FormUtama.current_user.Role.NamaRole == "Guru" ||
-                            FormUtama.current_user.Role.NamaRole == "Admin")
-                        {
-                            if (comboBoxPilihSiswa.SelectedItem is Siswa selectedSiswa)
-                            {
-                                string namaFile = "[RAPOT] " + selectedSiswa.Nama;
-                                Penilaian.Cetak(namaFile, new System.Drawing.Font("Poppins", 12), selectedSiswa.IdSiswa);
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Role tidak dikenali");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    finally
-                    {
-                        doc.Close();
+                        string namaFile = "[RAPOT] " + selectedSiswa.Nama;
+                        Penilaian.Cetak(namaFile, new System.Drawing.Font("Poppins", 12), selectedSiswa.IdSiswa);
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Role tidak dikenali");
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }            
         }
 
         private void comboBoxPilihSemester_SelectedIndexChanged(object sender, EventArgs e)

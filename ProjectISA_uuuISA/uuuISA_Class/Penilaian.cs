@@ -99,7 +99,7 @@ namespace ProjectISA_uuuISA
 
                             Paragraph heading = new Paragraph("RAPOT", fontHeader1);
                             Paragraph heading2 = new Paragraph("Laporan Rapot", fontHeader2);
-                            Paragraph pembatas = new Paragraph("==================================================================================", fontNormal);
+                            Paragraph pembatas = new Paragraph("=============================================================================", fontNormal);
                             heading.Alignment = Element.ALIGN_CENTER;
                             heading2.Alignment = Element.ALIGN_CENTER;
                             pembatas.Alignment = Element.ALIGN_CENTER;
@@ -113,7 +113,7 @@ namespace ProjectISA_uuuISA
                             doc.Add(new Paragraph("Guru: " + listRapot[0].WaliKelas.ToUpper(), fontNormal));
 
                             doc.Add(new Paragraph(pembatas));
-                            doc.Add(new Paragraph(""));
+                            doc.Add(new Paragraph("\n"));                            
 
                             PdfPTable tabel = new PdfPTable(6);
                             tabel.WidthPercentage = 100;
@@ -142,14 +142,31 @@ namespace ProjectISA_uuuISA
                             doc.Add(new Paragraph("Deskripsi: " + listRapot[0].Deskripsi));
                             doc.Add(new Paragraph(pembatas));
                             doc.Add(new Paragraph(""));
-                            doc.Add(new Paragraph(listRapot[0].WaliKelas.ToUpper()));
+                            //doc.Add(new Paragraph(listRapot[0].WaliKelas.ToUpper()));
 
                             #region Gambar TTD
-                            System.Drawing.Image ttdWaliKelas = System.Drawing.Image.FromFile(listRapot[0].TtdWaliKelas);
-                            iTextSharp.text.Image imgTTD = iTextSharp.text.Image.GetInstance(ttdWaliKelas, System.Drawing.Imaging.ImageFormat.Png);
+                            //System.Drawing.Image ttdWaliKelas = System.Drawing.Image.FromFile(listRapot[0].TtdWaliKelas);
+                            PdfPTable tabelTTD = new PdfPTable(1);
+                            tabelTTD.WidthPercentage = 25;
 
+                            iTextSharp.text.Image imgTTD = iTextSharp.text.Image.GetInstance(listRapot[0].TtdWaliKelas);
                             imgTTD.Alignment = Element.ALIGN_LEFT;
-                            doc.Add(imgTTD);
+
+                            string[] headerTTD = { listRapot[0].WaliKelas.ToUpper() };                            
+
+                            foreach (string headerttD in headerTTD)
+                            {
+                                PdfPCell cell = new PdfPCell(new Phrase(headerttD));
+                                cell.BorderColor = BaseColor.WHITE;
+                                cell.BackgroundColor = BaseColor.WHITE;
+                                cell.BorderWidth = 0;                                
+                                tabelTTD.AddCell(cell);
+                                tabelTTD.HorizontalAlignment = Element.ALIGN_LEFT;
+                            }
+                            
+                            tabelTTD.AddCell(imgTTD);
+                            doc.Add(tabelTTD);
+
                             doc.Add(new Paragraph(""));
                             #endregion
                         }
@@ -159,13 +176,13 @@ namespace ProjectISA_uuuISA
                         }
                         finally
                         {
-                            doc.Close();
+                            doc.Close();    
                         }
                     }
                 }
                 //proses mencetak ke printer
-                CustomPrint p = new CustomPrint(pTipeFont, pNamaFile, 100, 50, 50, 50);
-                p.KirimKePrinter();
+                //CustomPrint p = new CustomPrint(pTipeFont, pNamaFile, 100, 50, 50, 50);
+                //p.KirimKePrinter();
             }
             else
             {

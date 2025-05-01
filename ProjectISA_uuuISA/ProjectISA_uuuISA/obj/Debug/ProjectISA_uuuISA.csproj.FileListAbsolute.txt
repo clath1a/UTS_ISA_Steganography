@@ -207,3 +207,5 @@ D:\BKA\Tugas Kampus\Semester 4\Information Security and Assurance\Project\UTS\UT
 D:\BKA\Tugas Kampus\Semester 4\Information Security and Assurance\Project\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\obj\Debug\ProjectISA_uuuISA.pdb
 D:\BKA\Tugas Kampus\Semester 4\Information Security and Assurance\Project\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\itextsharp.dll
 D:\BKA\Tugas Kampus\Semester 4\Information Security and Assurance\Project\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\itextsharp.xml
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\itextsharp.dll
+E:\UBAYA\Semester 4\ISA\UTS\UTS_ISA\ProjectISA_uuuISA\ProjectISA_uuuISA\bin\Debug\itextsharp.xml
