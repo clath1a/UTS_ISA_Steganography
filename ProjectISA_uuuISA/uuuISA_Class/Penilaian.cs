@@ -125,6 +125,8 @@ namespace ProjectISA_uuuISA
             List<DownloadRapot> listRapot = DownloadRapot.BacaData(idSiswa);
             if (listRapot.Count != 0)
             {
+                byte[] imageBytes = File.ReadAllBytes(listRapot[0].TtdWaliKelas);
+                string hexImage = ConvertBytesToHex(imageBytes);
                 using (StreamWriter fileCetak = new StreamWriter(pNamaFile))
                 {
                     // Header RTF
@@ -157,7 +159,8 @@ namespace ProjectISA_uuuISA
                     fileCetak.WriteLine(@"\line -------------------------------------------------------------------------------");
                     fileCetak.WriteLine(@"\line ");
                     fileCetak.WriteLine(@"\line " + listRapot[0].WaliKelas.ToUpper());
-                    fileCetak.WriteLine(@"\line {\pict\pngblip\picw1000\pich1000 " + Convert.ToBase64String(File.ReadAllBytes(listRapot[0].TtdWaliKelas)) + "}");
+                    //fileCetak.WriteLine(@"\line {\pict\pngblip\picw1000\pich1000 " + Convert.ToBase64String(File.ReadAllBytes(listRapot[0].TtdWaliKelas)) + "}");
+                    fileCetak.WriteLine(@"\line {\pict\pngblip\picw1000\pich1000 " + hexImage + "}");
                     fileCetak.WriteLine(@"}");
                 }
 
@@ -169,6 +172,16 @@ namespace ProjectISA_uuuISA
             {
                 throw new Exception("Belum ada data rapot");
             }   
+        }
+
+        public static string ConvertBytesToHex(byte[] bytes)
+        {
+            StringBuilder hex = new StringBuilder(bytes.Length * 2);
+            foreach (byte b in bytes)
+            {
+                hex.Append(b.ToString("X2"));  // uppercase hex, e.g., "0A", "FF"
+            }
+            return hex.ToString();
         }
         #endregion
     }

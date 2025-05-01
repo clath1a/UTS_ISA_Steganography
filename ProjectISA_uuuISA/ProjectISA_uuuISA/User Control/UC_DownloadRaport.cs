@@ -46,6 +46,8 @@ namespace ProjectISA_uuuISA.User_Control
                     string rtfPath = "[RAPOT]_" + FormUtama.siswa.IdSiswa + ".rtf";
                     string pdfPath = "[RAPOT]_" + FormUtama.siswa.IdSiswa + ".pdf";
 
+                    Penilaian.CetakRTF(rtfPath, new Font("Poppins", 12), FormUtama.siswa.IdSiswa);
+
                     // Buat class RtfToPdf dan konversi
                     RtfToPdf converter = new RtfToPdf(rtfPath);
                     converter.SaveAsPdf(pdfPath);
@@ -62,6 +64,8 @@ namespace ProjectISA_uuuISA.User_Control
 
                         string rtfPath = "[RAPOT]_" + selectedSiswa.Nama + ".rtf";
                         string pdfPath = "[RAPOT]_" + selectedSiswa.Nama + ".pdf";
+
+                        Penilaian.CetakRTF(rtfPath, new Font("Poppins", 12), FormUtama.siswa.IdSiswa);
 
                         // Buat class RtfToPdf dan konversi
                         RtfToPdf converter = new RtfToPdf(rtfPath);

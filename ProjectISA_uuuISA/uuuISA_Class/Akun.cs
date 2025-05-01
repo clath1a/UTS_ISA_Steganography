@@ -109,7 +109,7 @@ namespace ProjectISA_uuuISA
                     return new Akun(id, username, pw, role);
                 }
             }
-            return null; // Return null jika login gagal
+            throw new Exception("USERNAME ATAU PASSWORD SALAH");
         }
 
         public static bool Register_Account(string username, string password, int idRole)
