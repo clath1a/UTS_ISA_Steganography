@@ -33,7 +33,7 @@ namespace uuuISA_Class
             // Attach printing logic
             printDoc.PrintPage += (sender, e) =>
             {
-                e.Graphics.DrawString(rtb.Text, new Font("Arial", 12), Brushes.Black, e.MarginBounds);
+                e.Graphics.DrawString(rtb.Text, new Font("Poppins", 12), Brushes.Black, e.MarginBounds);
             };
 
             // Trigger printing
