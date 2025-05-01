@@ -83,16 +83,18 @@ namespace ProjectISA_uuuISA
                 fileCetak.WriteLine("RAPOT");
                 fileCetak.WriteLine("Laporan Rapot");
                 fileCetak.WriteLine("Nama Siswa: " + listRapot[0].NamaSiswa.ToUpper());
-                fileCetak.WriteLine("----------------------------------------------------------------------");
+                fileCetak.WriteLine("Kelas: " + listRapot[0].Kelas.ToUpper());
+                fileCetak.WriteLine("Guru: " + listRapot[0].NamaGuru.ToUpper());
+                fileCetak.WriteLine("-----------------------------------------------------------------------------------");
                 fileCetak.WriteLine("");
-                fileCetak.WriteLine("Tahun Ajaran | Semester | Mata Pelajaran | Nilai | Nisbi");
+                fileCetak.WriteLine("Tahun Ajaran\t|\tSemester\t|\tMata Pelajaran\t|\tNilai\t|\tNisbi");
 
                 for (int i = 0; i < listRapot.Count; i++)
                 {
-                    fileCetak.WriteLine("  " + listRapot[i].TahunAjaran + "  |  " +
-                        listRapot[i].Semester + "  |  " +
-                        listRapot[i].NamaMataPelajaran + "  |  " +
-                        listRapot[i].Nilai.ToString() + "  |  " +
+                    fileCetak.WriteLine("  " + listRapot[i].TahunAjaran + "\t|\t" +
+                        listRapot[i].Semester + "\t|\t" +
+                        listRapot[i].NamaMataPelajaran + "\t|\t" +
+                        listRapot[i].Nilai.ToString() + "\t|\t" +
                         listRapot[i].Nisbi
                     );
                 }
@@ -100,6 +102,11 @@ namespace ProjectISA_uuuISA
                 fileCetak.WriteLine();
                 fileCetak.WriteLine("-----------------------------------------------------------------------------------");
                 fileCetak.WriteLine("");
+                fileCetak.WriteLine("Deskripsi: " + listRapot[0].Deskripsi);
+                fileCetak.WriteLine("-----------------------------------------------------------------------------------");
+                fileCetak.WriteLine("");
+                fileCetak.WriteLine(listRapot[0].NamaGuru.ToUpper());
+                //Gambarnya TTD yang sudah di stegano
                 fileCetak.Close();
 
                 //proses mencetak ke printer

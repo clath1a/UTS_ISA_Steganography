@@ -18,7 +18,6 @@ namespace ProjectISA_uuuISA.User_Control
 {
     public partial class UC_UploadTTD : UserControl
     {
-        OpenFileDialog fileDialog;
         Bitmap uploadedImage;
         private const string SecretMessage = "Ini pesan rahasia dari aplikasi.";
         public UC_UploadTTD()
@@ -28,53 +27,6 @@ namespace ProjectISA_uuuISA.User_Control
 
         private void UC_UploadTTD_Load(object sender, EventArgs e)
         {
-            //pictureBoxTTD.Image = null;
-        }
-
-        private void buttonUploadTTD_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openDialog = new OpenFileDialog();
-            openDialog.Filter = "Image Files (*.png, *.jpg) | *.png; *.jpg";
-            openDialog.InitialDirectory = @"C:\Users\metech\Desktop";
-            if (openDialog.ShowDialog() == DialogResult.OK)
-            {
-                textBox1.Text  = openDialog.FileName.ToString();
-                pictureBoxTTD.ImageLocation = textBox1.Text;
-            }
-            /*try
-            {
-                using (OpenFileDialog dialog = new OpenFileDialog())
-                {
-                    dialog.Title = "Pilih Gambar TTD";
-                    dialog.Filter = "PNG Image|*.png";
-                    dialog.Multiselect = false;
-
-                    if (dialog.ShowDialog() == DialogResult.OK)
-                    {
-                        // Dispose previous image if exists
-                        if (uploadedImage != null)
-                        {
-                            uploadedImage.Dispose();
-                        }
-
-                        if (uploadedImage == null || uploadedImage.Width == 0 || uploadedImage.Height == 0)
-                        {
-                            MessageBox.Show("Invalid image. Please upload again.");
-                            return;
-                        }
-
-                        string selectedFilePath = dialog.FileName;
-                        uploadedImage = new Bitmap(selectedFilePath);
-                        pictureBoxTTD.Image = uploadedImage;
-
-                        MessageBox.Show("Gambar berhasil diunggah.");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Gagal mengunggah gambar: " + ex.Message);
-            }*/
 
         }
 
@@ -86,8 +38,30 @@ namespace ProjectISA_uuuISA.User_Control
 
         private void btnUpploadFoto_Click(object sender, EventArgs e)
         {
-            ProcessAndSaveSignature("Foto");
+            OpenFileDialog dialog = new OpenFileDialog 
+            { 
+                Title = "Select a File",
+                Filter = "Image Files|*.jpg;*.jpeg;*.png",
+                Multiselect = false
+            };
+            
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                string selectedFilePath = dialog.FileName;
 
+                string fileExtension = System.IO.Path.GetExtension(selectedFilePath).ToLower();
+
+                if (fileExtension == ".png")
+                {
+                    pictureBoxTTD.ImageLocation = selectedFilePath;
+                    uploadedImage = new Bitmap(selectedFilePath);
+                    MessageBox.Show("Gambar berhasil di upload, silahkan isi pesan lalu klik button Simpan");
+                }
+                else
+                {
+                    MessageBox.Show("Silahkan Upload Gambar sekali lagi");
+                }
+            }
         }
 
         private void ProcessAndSaveSignature(string signatureType)
@@ -115,15 +89,17 @@ namespace ProjectISA_uuuISA.User_Control
                         MessageBox.Show("Pesan berhasil disisipkan dan gambar disimpan.");
 
                         // Save path to database
-                        FormUtama.guru.Ttd = savedPath;
-                        bool berhasil = FormUtama.guru.SimpanTTDKeDatabase();
-
-                        MessageBox.Show(berhasil
-                            ? $"Path {signatureType} berhasil disimpan ke database."
-                            : $"Gagal menyimpan path {signatureType} ke database.");
+                        FormUtama.guru.Ttd = savedPath.Replace("\\", "\\\\");
+                        try
+                        {
+                            Guru.SimpanTTDKeDatabase(FormUtama.guru.Ttd, FormUtama.guru.IdGuru);
+                            MessageBox.Show("Path TTD berhasil disimpan ke database.");
+                        } catch (Exception ex)
+                        {
+                            MessageBox.Show("Gagal menyimpan path TTD ke database.\n" + ex);
+                        }
                     }
                 }
-
                 // Properly dispose the embedded image
                 hasilEmbed.Dispose();
             }
@@ -134,18 +110,18 @@ namespace ProjectISA_uuuISA.User_Control
         }
 
         // Dispose pattern implementation
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                if (uploadedImage != null)
-                {
-                    uploadedImage.Dispose();
-                    uploadedImage = null;
-                }
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        if (uploadedImage != null)
+        //        {
+        //            uploadedImage.Dispose();
+        //            uploadedImage = null;
+        //        }
+        //    }
+        //    base.Dispose(disposing);
+        //}
 
 
     }

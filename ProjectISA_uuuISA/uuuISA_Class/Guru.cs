@@ -48,13 +48,13 @@ namespace ProjectISA_uuuISA
 
         public Guru(int idGuru, string nama, string email, string nomorTelp, DateTime tglLahir, string pendidikanTerakhir, int idAkun, string ttd)
         {
-            this.idGuru = idGuru;
-            this.nama = nama;
-            this.email = email;
-            this.nomorTelp = nomorTelp;
-            this.tglLahir = tglLahir;
-            this.pendidikanTerakhir = pendidikanTerakhir;
-            this.idAkun = idAkun;
+            this.IdGuru = idGuru;
+            this.Nama = nama;
+            this.Email = email;
+            this.NomorTelp = nomorTelp;
+            this.TglLahir = tglLahir;
+            this.PendidikanTerakhir = pendidikanTerakhir;
+            this.IdAkun = idAkun;
             this.Ttd = ttd;
         }
         #endregion
@@ -107,29 +107,10 @@ namespace ProjectISA_uuuISA
             return hasil > 0;
         }
 
-        public bool SimpanTTDKeDatabase()
+        public static void SimpanTTDKeDatabase(string ttd, int idGuru)
         {
-            string connectionString = "server=localhost;user=root;password=;database=namadatabase;";
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    string query = "UPDATE guru SET ttd = @ttd WHERE id_guru = @id";
-
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@ttd", this.Ttd);
-                        cmd.Parameters.AddWithValue("@id", this.IdGuru);
-                        return cmd.ExecuteNonQuery() > 0;
-                    }
-                }
-                catch (Exception)
-                {
-                    return false;
-                }
-            }
-
+            string perintah = "UPDATE `uuuisa`.`guru` SET `ttd`='" + ttd + "' WHERE `idGuru`='" + idGuru + "';";
+            Koneksi.JalankanPerintahDML(perintah);
         }
     }
 }
