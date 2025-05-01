@@ -80,7 +80,7 @@
             this.pictureBoxTTD.Location = new System.Drawing.Point(335, 212);
             this.pictureBoxTTD.Name = "pictureBoxTTD";
             this.pictureBoxTTD.Size = new System.Drawing.Size(336, 280);
-            this.pictureBoxTTD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxTTD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxTTD.TabIndex = 69;
             this.pictureBoxTTD.TabStop = false;
             // 

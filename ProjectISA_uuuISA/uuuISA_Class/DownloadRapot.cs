@@ -20,10 +20,13 @@ namespace uuuISA_Class
         private int tahunAjaran;
         private string deskripsi;
         private string nisbi;
+        private string kelas;
+        private string namaGuru;
+        private string ttdGuru;
         #endregion  
 
         #region CONSTRUCTOR
-        public DownloadRapot(string namaSiswa, string namaMataPelajaran, int idRapot, double nilai, string semester, int tahunAjaran, string deskripsi, string nisbi)
+        public DownloadRapot(string namaSiswa, string namaMataPelajaran, int idRapot, double nilai, string semester, int tahunAjaran, string deskripsi, string nisbi, string kelas, string namaGuru, string ttdGuru)
         {
             NamaSiswa = namaSiswa;
             NamaMataPelajaran = namaMataPelajaran;
@@ -33,9 +36,10 @@ namespace uuuISA_Class
             TahunAjaran = tahunAjaran;
             Deskripsi = deskripsi;
             Nisbi = nisbi;
+            Kelas = kelas;
+            NamaGuru = namaGuru;
+            TtdGuru = ttdGuru;
         }
-
-
         #endregion
 
         #region PROPERTIES
@@ -47,6 +51,9 @@ namespace uuuISA_Class
         public int TahunAjaran { get => tahunAjaran; set => tahunAjaran = value; }
         public string Deskripsi { get => deskripsi; set => deskripsi = value; }
         public string Nisbi { get => nisbi; set => nisbi = value; }
+        public string Kelas { get => kelas; set => kelas = value; }
+        public string NamaGuru { get => namaGuru; set => namaGuru = value; }
+        public string TtdGuru { get => ttdGuru; set => ttdGuru = value; }
         #endregion
 
         #region METHOD
@@ -54,12 +61,15 @@ namespace uuuISA_Class
         public static List<DownloadRapot> BacaData(int idSiswa)
         {
             string perintah = "";
-            perintah = "select r.idRapot, s.nama, mp.namaMataPelajaran, p.nilai, p.semester, p.tahun_ajaran, p.deskripsi_penilaian, n.nama " +
+            perintah = "select r.idRapot, s.nama, mp.namaMataPelajaran, p.nilai, p.semester, p.tahun_ajaran, p.deskripsi_penilaian, n.nama, k.namaKelas, g.nama, g.ttd " +
                        "from siswa s " +
                        "inner join Rapot r on s.idsiswa = r.siswa_idsiswa  " +
                        "inner join penilaian p on r.idRapot = p.idRapot " +
                        "inner join matapelajaran mp on p.idmataPelajaran = mp.idmataPelajaran " +
                        "inner join nisbi n on p.nisbi_idnisbi = n.idnisbi " +
+                       "inner join kelas k on s.kelas_idkelas = k.idkelas " +
+                       "inner join kelas_has_guru kg on k.idkelas = kg.kelas_idkelas " +
+                       "inner join guru g on kg.guru_idGuru = g.idGuru " +
                        "where s.idsiswa ="+idSiswa+";";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
@@ -69,13 +79,17 @@ namespace uuuISA_Class
                 int idRapot = int.Parse(hasil.GetValue(0).ToString());
                 string namaSiswa = hasil.GetValue(1).ToString();
                 string namaMataPelajaran = hasil.GetValue(2).ToString();
-                double nilai = double.Parse(hasil.GetValue(3).ToString()); ;
+                double nilai = double.Parse(hasil.GetValue(3).ToString());
                 string semester = hasil.GetValue(4).ToString();
                 int tahunAjaran = int.Parse(hasil.GetValue(5).ToString());
                 string deskripsi = hasil.GetValue(6).ToString();
                 string nisbi = hasil.GetValue(7).ToString();
+                string kelas = hasil.GetValue(8).ToString();
+                string namaGuru = hasil.GetValue(9).ToString();
+                string ttdGuru = hasil.GetValue(10).ToString();
 
-                DownloadRapot tampung = new DownloadRapot(namaSiswa, namaMataPelajaran, idRapot, nilai, semester, tahunAjaran, deskripsi, nisbi);
+                DownloadRapot tampung = new DownloadRapot(namaSiswa, namaMataPelajaran, idRapot, nilai, semester, 
+                    tahunAjaran, deskripsi, nisbi, kelas, namaGuru, ttdGuru);
 
                 listRapot.Add(tampung);
             }

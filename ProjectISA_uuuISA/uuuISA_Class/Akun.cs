@@ -23,24 +23,24 @@ namespace ProjectISA_uuuISA
 
         #endregion
 
-        #region CONSTRACTOR
+        #region CONSTRUCTOR
         public Akun()
         {
-
+            
         }
         public Akun(int idAkun, string username, string password)
         {
-            this.idAkun = idAkun;
-            this.username = username;
-            this.password = password;
+            this.IdAkun = idAkun;
+            this.Username = username;
+            this.Password = password;
         }
 
         public Akun(int idAkun, string username, string password, Role role)
         {
-            this.idAkun = idAkun;
-            this.username = username;
-            this.password = password;
-            this.role = role;
+            this.IdAkun = idAkun;
+            this.Username = username;
+            this.Password = password;
+            this.Role = role;
         }
         #endregion
 
