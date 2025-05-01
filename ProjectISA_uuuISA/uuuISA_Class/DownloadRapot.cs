@@ -73,7 +73,7 @@ namespace uuuISA_Class
                         "INNER JOIN kelas k ON s.kelas_idkelas = k.idkelas " +
                         "INNER JOIN kelas_has_guru kg ON k.idkelas = kg.kelas_idkelas " +
                         "INNER JOIN guru g ON kg.guru_idGuru = g.idGuru " +
-                        "LEFT JOIN guru wg ON k.walikelas = wg.idGuru " +
+                        "LEFT JOIN guru wg ON k.idGuru_waliKelas = wg.idGuru " +
                         "WHERE s.idsiswa = "+idSiswa+";" ;
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
