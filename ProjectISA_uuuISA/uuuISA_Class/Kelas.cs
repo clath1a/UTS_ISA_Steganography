@@ -16,16 +16,18 @@ namespace ProjectISA_uuuISA
         int kapasitas;
         string lantaiRuangan;
         string jenjang;
+        int guruWaliKelas;
         #endregion
 
-        #region CONSTRACTOR
+        #region CONSTRUCTOR
         public Kelas()
         {
-            this.idKelas = 1;
-            this.nama = "";
-            this.kapasitas = 0;
-            this.lantaiRuangan = "";
-            this.jenjang = "";
+            this.IdKelas = 1;
+            this.Nama = "";
+            this.Kapasitas = 0;
+            this.LantaiRuangan = "";
+            this.Jenjang = "";
+            GuruWaliKelas = 1;
         }
         #endregion
 
@@ -35,6 +37,7 @@ namespace ProjectISA_uuuISA
         public int Kapasitas { get => kapasitas; set => kapasitas = value; }
         public string LantaiRuangan { get => lantaiRuangan; set => lantaiRuangan = value; }
         public string Jenjang { get => jenjang; set => jenjang = value; }
+        public int GuruWaliKelas { get => guruWaliKelas; set => guruWaliKelas = value; }
         #endregion
 
         #region METHODS
@@ -61,6 +64,7 @@ namespace ProjectISA_uuuISA
                 obj.Kapasitas = int.Parse(hasil.GetValue(2).ToString());
                 obj.LantaiRuangan = hasil.GetValue(3).ToString();
                 obj.Jenjang = hasil.GetValue(4).ToString();
+                obj.GuruWaliKelas = int.Parse(hasil.GetValue(5).ToString());
 
                 listKelas.Add(obj);
             }

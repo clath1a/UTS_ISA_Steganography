@@ -21,12 +21,13 @@ namespace uuuISA_Class
         private string deskripsi;
         private string nisbi;
         private string kelas;
-        private string namaGuru;
-        private string ttdGuru;
+        private string namaGuruMataPelajaran;
+        private string waliKelas;
+        private string ttdWaliKelas;
         #endregion  
 
         #region CONSTRUCTOR
-        public DownloadRapot(string namaSiswa, string namaMataPelajaran, int idRapot, double nilai, string semester, int tahunAjaran, string deskripsi, string nisbi, string kelas, string namaGuru, string ttdGuru)
+        public DownloadRapot(string namaSiswa, string namaMataPelajaran, int idRapot, double nilai, string semester, int tahunAjaran, string deskripsi, string nisbi, string kelas, string namaGuruMataPelajaran, string waliKelas, string ttdWaliKelas)
         {
             NamaSiswa = namaSiswa;
             NamaMataPelajaran = namaMataPelajaran;
@@ -37,8 +38,9 @@ namespace uuuISA_Class
             Deskripsi = deskripsi;
             Nisbi = nisbi;
             Kelas = kelas;
-            NamaGuru = namaGuru;
-            TtdGuru = ttdGuru;
+            NamaGuruMataPelajaran = namaGuruMataPelajaran;
+            WaliKelas = waliKelas;
+            TtdWaliKelas = ttdWaliKelas;
         }
         #endregion
 
@@ -52,8 +54,9 @@ namespace uuuISA_Class
         public string Deskripsi { get => deskripsi; set => deskripsi = value; }
         public string Nisbi { get => nisbi; set => nisbi = value; }
         public string Kelas { get => kelas; set => kelas = value; }
-        public string NamaGuru { get => namaGuru; set => namaGuru = value; }
-        public string TtdGuru { get => ttdGuru; set => ttdGuru = value; }
+        public string NamaGuruMataPelajaran { get => namaGuruMataPelajaran; set => namaGuruMataPelajaran = value; }
+        public string WaliKelas { get => waliKelas; set => waliKelas = value; }
+        public string TtdWaliKelas { get => ttdWaliKelas; set => ttdWaliKelas = value; }
         #endregion
 
         #region METHOD
@@ -61,7 +64,7 @@ namespace uuuISA_Class
         public static List<DownloadRapot> BacaData(int idSiswa)
         {
             string perintah = "";
-            perintah = "select r.idRapot, s.nama AS nama_siswa, mp.namaMataPelajaran, p.nilai, p.semester, p.tahun_ajaran, p.deskripsi_penilaian, n.nama AS nisbi, k.namaKelas, g.nama AS guru_pengampu, wg.nama AS wali_kelas, wg.ttd AS ttd_wali_kelas, k.jenjang " +
+            perintah = "SELECT r.idRapot, s.nama AS nama_siswa, mp.namaMataPelajaran, p.nilai, p.semester, p.tahun_ajaran, p.deskripsi_penilaian, n.nama AS nisbi, k.namaKelas, g.nama AS guru_pengampu, wg.nama AS wali_kelas, wg.ttd AS ttd_wali_kelas " +
                         "FROM siswa s " +
                         "INNER JOIN Rapot r ON s.idsiswa = r.siswa_idsiswa " +
                         "INNER JOIN penilaian p ON r.idRapot = p.idRapot " + 
@@ -69,7 +72,7 @@ namespace uuuISA_Class
                         "INNER JOIN nisbi n ON p.nisbi_idnisbi = n.idnisbi " +
                         "INNER JOIN kelas k ON s.kelas_idkelas = k.idkelas " +
                         "INNER JOIN kelas_has_guru kg ON k.idkelas = kg.kelas_idkelas " +
-                        " INNER JOIN guru g ON kg.guru_idGuru = g.idGuru " +
+                        "INNER JOIN guru g ON kg.guru_idGuru = g.idGuru " +
                         "LEFT JOIN guru wg ON k.walikelas = wg.idGuru " +
                         "WHERE s.idsiswa = "+idSiswa+";" ;
 
@@ -86,54 +89,17 @@ namespace uuuISA_Class
                 string deskripsi = hasil.GetValue(6).ToString();
                 string nisbi = hasil.GetValue(7).ToString();
                 string kelas = hasil.GetValue(8).ToString();
-                string namaGuru = hasil.GetValue(9).ToString();
-                string ttdGuru = hasil.GetValue(10).ToString();
+                string namaGuruMataPelajaran = hasil.GetValue(9).ToString();
+                string waliKelas = hasil.GetValue(10).ToString();
+                string ttdWaliKelas = hasil.GetValue(11).ToString();
 
                 DownloadRapot tampung = new DownloadRapot(namaSiswa, namaMataPelajaran, idRapot, nilai, semester,
-                    tahunAjaran, deskripsi, nisbi, kelas, namaGuru, ttdGuru);
+                    tahunAjaran, deskripsi, nisbi, kelas, namaGuruMataPelajaran, waliKelas, ttdWaliKelas);
 
                 listRapot.Add(tampung);
             }
             return listRapot;
         }
-
-        /*        public static List<DownloadRapot> BacaData(int idSiswa)
-                {
-                    string perintah = "";
-                    perintah = "select r.idRapot, s.nama, mp.namaMataPelajaran, p.nilai, p.semester, p.tahun_ajaran, p.deskripsi_penilaian, n.nama, k.namaKelas, g.nama, g.ttd " +
-                               "from siswa s " +
-                               "inner join Rapot r on s.idsiswa = r.siswa_idsiswa  " +
-                               "inner join penilaian p on r.idRapot = p.idRapot " +
-                               "inner join matapelajaran mp on p.idmataPelajaran = mp.idmataPelajaran " +
-                               "inner join nisbi n on p.nisbi_idnisbi = n.idnisbi " +
-                               "inner join kelas k on s.kelas_idkelas = k.idkelas " +
-                               "inner join kelas_has_guru kg on k.idkelas = kg.kelas_idkelas " +
-                               "inner join guru g on kg.guru_idGuru = g.idGuru " +
-                               "where s.idsiswa ="+idSiswa+";";
-
-                    MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
-                    List<DownloadRapot> listRapot = new List<DownloadRapot>();
-                    while (hasil.Read())
-                    {
-                        int idRapot = int.Parse(hasil.GetValue(0).ToString());
-                        string namaSiswa = hasil.GetValue(1).ToString();
-                        string namaMataPelajaran = hasil.GetValue(2).ToString();
-                        double nilai = double.Parse(hasil.GetValue(3).ToString());
-                        string semester = hasil.GetValue(4).ToString();
-                        int tahunAjaran = int.Parse(hasil.GetValue(5).ToString());
-                        string deskripsi = hasil.GetValue(6).ToString();
-                        string nisbi = hasil.GetValue(7).ToString();
-                        string kelas = hasil.GetValue(8).ToString();
-                        string namaGuru = hasil.GetValue(9).ToString();
-                        string ttdGuru = hasil.GetValue(10).ToString();
-
-                        DownloadRapot tampung = new DownloadRapot(namaSiswa, namaMataPelajaran, idRapot, nilai, semester, 
-                            tahunAjaran, deskripsi, nisbi, kelas, namaGuru, ttdGuru);
-
-                        listRapot.Add(tampung);
-                    }
-                    return listRapot;
-                }*/
         #endregion
     }
 }
