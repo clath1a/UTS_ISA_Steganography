@@ -1,3 +1,8 @@
+INSERT INTO `uuuisa`.`akun` (`username`, `password`, `role_idrole`) VALUES
+('admin', 'iIngRhZ1tQLVe/XEkeEKJZsyrAVLvRzTUC55DfNiZRA=', '1');
+-- pass = admin
+
+
 INSERT INTO `uuuisa`.`role` (`role`) VALUES 
 ('Admin'), 
 ('Guru'), 
