@@ -84,16 +84,17 @@ namespace ProjectISA_uuuISA
                 fileCetak.WriteLine("Laporan Rapot");
                 fileCetak.WriteLine("Nama Siswa: " + listRapot[0].NamaSiswa.ToUpper());
                 fileCetak.WriteLine("Kelas: " + listRapot[0].Kelas.ToUpper());
-                fileCetak.WriteLine("Guru: " + listRapot[0].NamaGuru.ToUpper());
+                fileCetak.WriteLine("Guru: " + listRapot[0].WaliKelas.ToUpper());
                 fileCetak.WriteLine("-----------------------------------------------------------------------------------");
                 fileCetak.WriteLine("");
-                fileCetak.WriteLine("Tahun Ajaran\t|\tSemester\t|\tMata Pelajaran\t|\tNilai\t|\tNisbi");
+                fileCetak.WriteLine("Tahun Ajaran\t|\tSemester\t|\tMata Pelajaran\t|\tGuru Pengampu\t|\tNilai\t|\tNisbi");
 
                 for (int i = 0; i < listRapot.Count; i++)
                 {
                     fileCetak.WriteLine("  " + listRapot[i].TahunAjaran + "\t|\t" +
                         listRapot[i].Semester + "\t|\t" +
                         listRapot[i].NamaMataPelajaran + "\t|\t" +
+                        listRapot[i].NamaGuruMataPelajaran + "\t|\t" +
                         listRapot[i].Nilai.ToString() + "\t|\t" +
                         listRapot[i].Nisbi
                     );
@@ -105,7 +106,7 @@ namespace ProjectISA_uuuISA
                 fileCetak.WriteLine("Deskripsi: " + listRapot[0].Deskripsi);
                 fileCetak.WriteLine("-----------------------------------------------------------------------------------");
                 fileCetak.WriteLine("");
-                fileCetak.WriteLine(listRapot[0].NamaGuru.ToUpper());
+                fileCetak.WriteLine(listRapot[0].WaliKelas.ToUpper());
                 //Gambarnya TTD yang sudah di stegano
                 fileCetak.Close();
 
@@ -117,7 +118,57 @@ namespace ProjectISA_uuuISA
             {
                 throw new Exception("Belum ada data rapot");
             }
-            
+        }
+
+        public static void CetakRTF(string pNamaFile, Font pTipeFont, int idSiswa)
+        {
+            List<DownloadRapot> listRapot = DownloadRapot.BacaData(idSiswa);
+            if (listRapot.Count != 0)
+            {
+                using (StreamWriter fileCetak = new StreamWriter(pNamaFile))
+                {
+                    // Header RTF
+                    fileCetak.WriteLine(@"{\rtf1\ansi\deff0{\fonttbl{\f0 " + pTipeFont.Name + ";}}");
+                    fileCetak.WriteLine(@"\b RAPOT \b0");
+                    fileCetak.WriteLine(@"\line Laporan Rapot");
+                    fileCetak.WriteLine(@"\line Nama Siswa: " + listRapot[0].NamaSiswa.ToUpper());
+                    fileCetak.WriteLine(@"\line Kelas: " + listRapot[0].Kelas.ToUpper());
+                    fileCetak.WriteLine(@"\line Guru: " + listRapot[0].WaliKelas.ToUpper());
+                    fileCetak.WriteLine(@"\line -------------------------------------------------------------------------------");
+                    fileCetak.WriteLine(@"\line ");
+                    fileCetak.WriteLine(@"\b Tahun Ajaran\t Semester\t Mata Pelajaran\t Guru Pengampu\t Nilai\t Nisbi \b0");
+
+                    // Isi data rapot
+                    foreach (var rapot in listRapot)
+                    {
+                        fileCetak.WriteLine(@"\line   " + rapot.TahunAjaran + "\t " +
+                                            rapot.Semester + "\t " +
+                                            rapot.NamaMataPelajaran + "\t " +
+                                            rapot.NamaGuruMataPelajaran + "\t " +
+                                            rapot.Nilai.ToString() + "\t " +
+                                            rapot.Nisbi);
+                    }
+
+                    // Deskripsi dan footer
+                    fileCetak.WriteLine(@"\line ");
+                    fileCetak.WriteLine(@"\line -------------------------------------------------------------------------------");
+                    fileCetak.WriteLine(@"\line ");
+                    fileCetak.WriteLine(@"\line Deskripsi: " + listRapot[0].Deskripsi);
+                    fileCetak.WriteLine(@"\line -------------------------------------------------------------------------------");
+                    fileCetak.WriteLine(@"\line ");
+                    fileCetak.WriteLine(@"\line " + listRapot[0].WaliKelas.ToUpper());
+                    fileCetak.WriteLine(@"\line {\pict\pngblip\picw1000\pich1000 " + Convert.ToBase64String(File.ReadAllBytes(listRapot[0].TtdWaliKelas)) + "}");
+                    fileCetak.WriteLine(@"}");
+                }
+
+                // Proses mencetak ke printer
+                CustomPrint p = new CustomPrint(pTipeFont, pNamaFile, 100, 50, 50, 50);
+                p.KirimKePrinter();
+            }
+            else
+            {
+                throw new Exception("Belum ada data rapot");
+            }   
         }
         #endregion
     }

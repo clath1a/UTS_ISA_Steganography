@@ -85,6 +85,7 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -116,6 +117,7 @@
     <Compile Include="RiwayatAktivitas.cs" />
     <Compile Include="RiwayatPeminjaman.cs" />
     <Compile Include="Role.cs" />
+    <Compile Include="RtfToPdf.cs" />
     <Compile Include="Siswa.cs" />
     <Compile Include="Status_Peminjaman.cs" />
     <Compile Include="Steganography_Raport.cs" />
